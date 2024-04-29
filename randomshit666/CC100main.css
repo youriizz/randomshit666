@@ -1,0 +1,104 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica neue", sans-serif;
+    font-weight: 500;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* #region KEYFRAMES */
+
+@keyframes slideInLeft {
+
+ from {
+  transform: translateX(-254px);
+ }
+
+ to {
+  transform: translateY(0);
+ }
+}
+
+@keyframes moveLeftRight1 {
+  0% {
+    left: 10%; /* Position de départ à gauche */
+  }
+  100% {
+    left: calc(100% - 140px); /* Position finale à droite */
+  }
+}
+
+@keyframes moveUpDown1 {
+  0% {
+    top: 20px; /* Position de départ à gauche */
+  }
+  100% {
+    top: 300px ; /* Position finale à droite */
+  }
+}
+
+@keyframes moveUpDown2 {
+  0% {
+    top: 180px; /* Position de départ à gauche */
+  }
+  100% {
+    top: 20px ; /* Position finale à droite */
+  }
+}
+
+@keyframes moveUpDown3 {
+  0% {
+    left: 380px; /* Position de départ à gauche */
+    top: 320px;
+  }
+  100% {
+    left: 70px ; /* Position finale à droite */
+    top: 320px;
+  }
+}
+
+
+
+@keyframes moveAround {
+  0% {
+    transform: translate(120px, 60px);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(230px, 150px);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(80px, 100px);
+    opacity: 0.5;
+  }
+  65% {
+    transform: translate(100px, 170px);
+    opacity: 0.8;
+  }
+
+  80% {
+    transform: translate(210px, 90px);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: translate(120px, 60px);
+    opacity: 0.5;
+  }
+
+}
+
+
+

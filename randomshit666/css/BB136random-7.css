@@ -1,0 +1,715 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+    padding: 0;
+    font-family: "Helvetica neue", sans-serif;
+    font-weight: 500;
+
+}
+
+
+.BB136containerfull {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .BB136image {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+   
+  }
+  
+  .BB136image:nth-child(1) {
+    animation: BB136diaporama-1 60s ease-in-out infinite normal forwards;
+    animation-delay: 2s;
+  }
+  
+  .BB136image:nth-child(2) {
+    animation: BB136diaporama-2 60s ease-in-out infinite normal forwards;
+    animation-delay: 2s;
+  }
+  
+  .BB136image:nth-child(3) {
+    animation: BB136diaporama-3 60s ease-in-out infinite normal forwards;
+    animation-delay: 2s;
+  }
+  
+  .BB136image:nth-child(4) {
+    animation: BB136diaporama-4 4s ease-in-out normal forwards;
+    
+  }
+  
+  
+  
+  
+  /* Add more .BB136image:nth-child(n) for additional images */
+  
+  @keyframes BB136diaporama-1 {
+    0%, 100% {
+      background-image: url(../i/BB136random-7/0normal/4parc.png);
+      left: 50%;
+      top: 0%;
+      background-size: 30%;
+    }
+  
+    10% {
+      background-image: url(../i/BB136random-7/0normal/1bike.png);
+      left: 20%;
+      top: 0%;
+      background-size: 40%;
+    }
+  
+    20% {
+      background-image: url(../i/BB136random-7/0normal/2canap.png);
+      left: 40%;
+      top: 20%;
+      background-size: 50%;
+    }
+  
+    30% {
+      background-image: url(../i/BB136random-7/0normal/3appart.png);
+      left: 20%;
+      top: 55%;
+      background-size: 40%;
+    }
+    40% {
+      background-image: url(../i/BB136random-7/1unpeu/11maison.png);
+      left: 60%;
+      top: 20%;
+      background-size: 30%;
+    }
+    50% {
+      background-image: url(../i/BB136random-7/2beaucoup/21champ.png);
+      left: 45%;
+      top: 10%;
+      background-size: 30%;
+    }
+    60% {
+      background-image: url(../i/BB136random-7/2beaucoup/22chien.png);
+      left: 10%;
+      top: 5%;
+      background-size: 30%;
+    }
+  
+    70% {
+      background-image: url(../i/BB136random-7/3passionnement/34bar.png);
+      left: 20%;
+      top: 10%;
+      background-size: 30%;
+    }
+    80% {
+      background-image: url(../i/BB136random-7/3passionnement/37papimamie.png);
+      left: 60%;
+      top: 40%;
+      background-size: 35%;
+    }
+    90% {
+      background-image: url(../i/BB136random-7/4alafolie/41foule.png);
+      left: 45%;
+      top: 10%;
+      background-size: 30%;
+    }
+  
+    
+  
+  }
+  
+  @keyframes BB136diaporama-2 {
+    0%, 100% {
+      background-image: url(../i/BB136random-7/0normal/5repas.png);
+      left: 50%;
+      top: 40%;
+      background-size: 30%;
+    }
+  
+    10% {
+      background-image: url(../i/BB136random-7/0normal/4parc.png);
+      left: 10%;
+      top: 30%;
+      background-size: 30%;
+    }
+  
+    20% {
+      background-image: url(../i/BB136random-7/0normal/5repas.png);
+      left: 10%;
+      top: 10%;
+      background-size: 30%;
+    }
+  
+    30% {
+      background-image: url(../i/BB136random-7/0normal/6lit.png);
+      left: 10%;
+      top: 5%;
+      background-size: 40%;
+    }
+  
+    40% {
+      background-image: url(../i/BB136random-7/1unpeu/12lit.png);
+      left: 10%;
+      top: 25%;
+      background-size: 30%;
+    }
+  
+    50% {
+      background-image: url(../i/BB136random-7/1unpeu/13jardin.png);
+      left: 25%;
+      top: 0%;
+      background-size: 20%;
+    }
+  
+    60% {
+      background-image: url(../i/BB136random-7/2beaucoup/23forêt.png);
+      left: 70%;
+      top: 40%;
+      background-size: 20%;
+    }
+  
+    70% {
+      background-image: url(../i/BB136random-7/2beaucoup/22chien.png);
+      left: 50%;
+      top: 5%;
+      background-size: 30%;
+    }
+  
+    80% {
+      background-image: url(../i/BB136random-7/3passionnement/35zoo.png);
+      left: 40%;
+      top: 20%;
+      background-size: 25%;
+    }
+  
+    90% {
+      background-image: url(../i/BB136random-7/4alafolie/42baignade.png);
+      left: 20%;
+      top: 40%;
+      background-size: 25%;
+    }
+  
+    /* Add more keyframes for additional images */
+  }
+  
+  @keyframes BB136diaporama-3 {
+    0%, 100% {
+      background-image: url(../i/BB136random-7/0normal/3appart.png);
+      left: 10%;
+      top: 40%;
+      background-size: 40%;
+    }
+  
+    10% {
+      background-image: url(../i/BB136random-7/0normal/7pouce.png);
+      left: 60%;
+      top: 30%;
+      background-size: 25%;
+    }
+  
+    20% {
+      background-image: url(../i/BB136random-7/0normal/8interieur.png);
+      left: 20%;
+      top: 40%;
+      background-size: 20%;
+    }
+  
+    30% {
+      background-image: url(../i/BB136random-7/0normal/9jardin.png);
+      left: 60%;
+      top: 15%;
+      background-size: 30%;
+    }
+  
+    40% {
+      background-image: url(../i/BB136random-7/1unpeu/14enfant.png);
+      left: 40%;
+      top: 20%;
+      background-size: 20%;
+    }
+  
+    50% {
+      background-image: url(../i/BB136random-7/2beaucoup/24dinosaure.png);
+      left: 5%;
+      top: 50%;
+      background-size: 40%;
+    }
+  
+    60% {
+      background-image: url(../i/BB136random-7/2beaucoup/25television.png);
+      left: 40%;
+      top: 25%;
+      background-size: 30%;
+    }
+  
+    70% {
+      background-image: url(../i/BB136random-7/2beaucoup/27roux.png);
+      left: 15%;
+      top: 45%;
+      background-size: 35%;
+    }
+  
+    80% {
+      background-image: url(../i/BB136random-7/3passionnement/32interieur.png);
+      left: 10%;
+      top: 20%;
+      background-size: 30%;
+    }
+  
+    90% {
+      background-image: url(../i/BB136random-7/4alafolie/43antiquite.png);
+      left: 10%;
+      top: 5%;
+      background-size: 30%;
+    }
+  
+  
+  }
+  
+  
+  .BB136feux {
+    position: absolute;
+    top: 82%;
+    left: 12%;
+    opacity: 0; /* Opacité initiale à 0 */
+    animation: animationBB136feux 1000s 62s infinite alternate both;
+    
+  }
+  
+  @keyframes animationBB136feux {
+    0%, 100% {
+      opacity: 0; /* Pendant les 35 premières secondes et à la fin de chaque itération, l'opacité est à 0 */
+    }
+  
+    1% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    99% {
+      opacity: 1;
+    }
+  
+    
+  }
+  
+  
+  .BB136EXITrondrouge {
+    position: absolute;
+    width: 50px; /* ajustez la taille selon vos besoins */
+    height: 50px; /* ajustez la taille selon vos besoins */
+    border-radius: 50%;
+    background-color: transparent; /* ajustez la couleur de fond selon vos besoins */
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    transform: translate(-50%, -200%);
+    box-shadow: 0 0 0px red;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB136EXITrondorange {
+    position: absolute;
+    width: 50px; /* ajustez la taille selon vos besoins */
+    height: 50px; /* ajustez la taille selon vos besoins */
+    border-radius: 50%;
+    background-color: transparent; /* ajustez la couleur de fond selon vos besoins */
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB136EXITrondvert {
+    position: absolute;
+    width: 50px; /* ajustez la taille selon vos besoins */
+    height: 50px; /* ajustez la taille selon vos besoins */
+    border-radius: 50%;
+    background-color: transparent; /* ajustez la couleur de fond selon vos besoins */
+    top: 50%;
+    left: 50%;
+    background-color: green;
+    transform: translate(-50%, 100%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB136EXITrondrouge:active,
+  .BB136EXITrondrouge:hover,
+  .BB136EXITrondrouge:focus {
+    transform: translate(-50%, -200%) scale(1.2);
+    box-shadow: 0 0 20px red;
+    opacity: 1 !important;
+  }
+  
+  
+  .BB136EXITrondorange:active, .BB136EXITrondorange:hover, .BB136EXITrondrouge:focus {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 20px orange;
+  }
+  
+  .BB136EXITrondvert:active, .BB136EXITrondvert:hover, .BB136EXITrondvert:focus {
+    transform: translate(-50%, 100%) scale(1.2);
+    box-shadow: 0 0 20px green;
+  }
+  
+  @media (min-width: 600px) {
+    .BB136EXITrondorange, .BB136EXITrondrouge, .BB136EXITrondvert {
+      width: 80px;
+      height: 80px;
+    }
+    .BB136feux {
+      position: absolute;
+      top: 80%;
+      left: 94%;
+      animation: animationBB136feux 1000s 62s infinite alternate both;
+    }
+  }
+  
+  @media (max-width: 350px) {
+    .BB136EXITrondorange, .BB136EXITrondrouge, .BB136EXITrondvert {
+      width: 40px;
+      height: 40px;
+    }
+    .BB136feux {
+      position: absolute;
+      top: 80%;
+      left: 12%;
+      animation: animationBB136feux 1000s 62s infinite alternate both;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @media screen and (max-width: 600px) {
+    @keyframes BB136diaporama-1 {
+      0%, 100% {
+        background-image: url(../i/BB136random-7/0normal/4parc.png);
+        left: 30%;
+        top: 0%;
+        background-size: 60%;
+      }
+    
+      10% {
+        background-image: url(../i/BB136random-7/0normal/1bike.png);
+        left: 20%;
+        top: 5%;
+        background-size: 70%;
+      }
+  
+      20% {
+        background-image: url(../i/BB136random-7/0normal/2canap.png);
+        left: 25%;
+        top: 20%;
+        background-size: 80%;
+      }
+  
+      30% {
+        background-image: url(../i/BB136random-7/0normal/3appart.png);
+        left: 20%;
+        top: 5%;
+        background-size: 70%;
+      }
+  
+      40% {
+        background-image: url(../i/BB136random-7/1unpeu/11maison.png);
+        left: 50%;
+        top: 10%;
+        background-size: 50%;
+      }
+  
+      50% {
+        background-image: url(../i/BB136random-7/2beaucoup/21champ.png);
+        left: 40%;
+        top: 10%;
+        background-size: 60%;
+      }
+  
+      60% {
+        background-image: url(../i/BB136random-7/2beaucoup/22chien.png);
+        left: 30%;
+        top: 0%;
+        background-size: 60%;
+      }
+  
+      70% {
+        background-image: url(../i/BB136random-7/3passionnement/34bar.png);
+        left: 30%;
+        top: 70%;
+        background-size: 60%;
+      }
+  
+      80% {
+        background-image: url(../i/BB136random-7/3passionnement/37papimamie.png);
+        left: 40%;
+        top: 20%;
+        background-size: 65%;
+      }
+  
+      90% {
+        background-image: url(../i/BB136random-7/4alafolie/41foule.png);
+        left: 45%;
+        top: 0%;
+        background-size: 60%;
+      }
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    @keyframes BB136diaporama-2 {
+      0%, 100% {
+        background-image: url(../i/BB136random-7/0normal/5repas.png);
+        left: 40%;
+        top: 70%;
+        background-size: 60%;
+      }
+    
+      10% {
+        background-image: url(../i/BB136random-7/0normal/4parc.png);
+        left: 10%;
+        top: 80%;
+        background-size: 60%;
+      }
+  
+      20% {
+        background-image: url(../i/BB136random-7/0normal/5repas.png);
+        left: 10%;
+        top: 0%;
+        background-size: 60%;
+      }
+  
+      30% {
+        background-image: url(../i/BB136random-7/0normal/6lit.png);
+        left: 0%;
+        top: 40%;
+        background-size: 50%;
+      }
+  
+      40% {
+        background-image: url(../i/BB136random-7/1unpeu/12lit.png);
+        left: 5%;
+        top: 5%;
+        background-size: 60%;
+      }
+  
+      50% {
+        background-image: url(../i/BB136random-7/1unpeu/13jardin.png);
+        left: 5%;
+        top: 0%;
+        background-size: 40%;
+      }
+  
+      60% {
+        background-image: url(../i/BB136random-7/2beaucoup/23forêt.png);
+        left: 5%;
+        top: 60%;
+        background-size: 40%;
+      }
+  
+      70% {
+        background-image: url(../i/BB136random-7/2beaucoup/26baignade.png);
+        left: 50%;
+        top: 5%;
+        background-size: 50%;
+      }
+  
+      80% {
+        background-image: url(../i/BB136random-7/3passionnement/35zoo.png);
+        left: 5%;
+        top: 0%;
+        background-size: 50%;
+      }
+  
+      90% {
+        background-image: url(../i/BB136random-7/4alafolie/42baignade.png);
+        left: 40%;
+        top: 50%;
+        background-size: 55%;
+      }
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    @keyframes BB136diaporama-3 {
+      0%, 100% {
+        background-image: url(../i/BB136random-7/0normal/3appart.png);
+        left: 10%;
+        top: 30%;
+        background-size: 60%;
+      }
+    
+      10% {
+        background-image: url(../i/BB136random-7/0normal/7pouce.png);
+        left: 40%;
+        top: 30%;
+        background-size: 50%;
+      }
+  
+      20% {
+        background-image: url(../i/BB136random-7/0normal/8interieur.png);
+        left: 20%;
+        top: 50%;
+        background-size: 40%;
+      }
+  
+      30% {
+        background-image: url(../i/BB136random-7/0normal/9jardin.png);
+        left: 50%;
+        top: 50%;
+        background-size: 50%;
+      }
+  
+      40% {
+        background-image: url(../i/BB136random-7/1unpeu/14enfant.png);
+        left: 10%;
+        top: 50%;
+        background-size: 50%;
+      }
+  
+      50% {
+        background-image: url(../i/BB136random-7/2beaucoup/24dinosaure.png);
+        left: 15%;
+        top: 70%;
+        background-size: 70%;
+      }
+  
+      60% {
+        background-image: url(../i/BB136random-7/2beaucoup/25television.png);
+        left: 40%;
+        top: 50%;
+        background-size: 50%;
+      }
+  
+      70% {
+        background-image: url(../i/BB136random-7/2beaucoup/27roux.png);
+        left: 15%;
+        top: 45%;
+        background-size: 65%;
+      }
+  
+      80% {
+        background-image: url(../i/BB136random-7/3passionnement/32interieur.png);
+        left: 10%;
+        top: 50%;
+        background-size: 60%;
+      }
+  
+      90% {
+        background-image: url(../i/BB136random-7/4alafolie/43antiquite.png);
+        left: 0%;
+        top: 40%;
+        background-size: 60%;
+      }
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @keyframes BB136diaporama-4 {
+    0% {
+      background-image: url(../i/BB136random-7/coverbook.png);
+      background-position: center;
+      background-size: cover;
+      opacity: 1;
+    }
+  
+    50% {
+      background-image: url(../i/BB136random-7/coverbook.png);
+      background-position: center;
+      background-size: cover;
+      opacity: 1;
+    }
+  
+    100% {
+      background-image: url(../i/BB136random-7/coverbook.png);
+      background-position: center;
+      background-size: cover;
+      opacity: 0;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    @keyframes BB136diaporama-4 {
+      0%, 50% {
+        background-image: url(../i/BB136random-7/coverbookphone.png);
+        background-size: cover;
+        opacity: 1;
+      }
+  
+      100% {
+        background-image: url(../i/BB136random-7/coverbookphone.png);
+        background-size: cover;
+        opacity: 0;
+      }
+    }
+  }
+  
+  

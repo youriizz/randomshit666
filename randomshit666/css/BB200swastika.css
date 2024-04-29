@@ -1,0 +1,394 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica neue", sans-serif;
+  font-weight: 500;
+  overflow-x: hidden;
+
+}
+  
+  .BB200grille-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 0px;
+  }
+  
+  .BB200item-1, .BB200item-2, .BB200item-3, .BB200item-4, .BB200item-5, .BB200item-6,
+  .BB200item-7, .BB200item-8, .BB200item-9, .BB200item-10, .BB200item-11,
+  .BB200item-12, .BB200item-13, .BB200item-14, .BB200item-15, .BB200item-16,
+  .BB200item-17, .BB200item-18, .BB200item-19, .BB200item-20, .BB200item-21,
+  .BB200item-22, .BB200item-23, .BB200item-24 {
+    aspect-ratio: 1; /* Le ratio 1:1 garde la même hauteur et largeur */
+    position: relative;
+    font-size: clamp(1.5rem, 1vw, 2.5rem);
+  }
+
+  @media (min-width: 1200px) {
+    .BB200grille-1 {
+      /* 1200px / 4 colonnes = 300px par colonne minimum */
+      grid-template-columns: repeat(4, minmax(300px, 1fr));
+    }
+  }
+  
+ 
+  @media (max-width: 600px) {
+    .BB200grille-1 {
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+  }
+  
+  
+  
+  .BB200item-1 {
+    
+    background-image: url('../i/BB200swastika/jaune.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-2 {
+    
+    background-image: url('../i/BB200swastika/viking.png'); /* Remplacez par le chemin de votre image */
+    background-size: contain; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-repeat: no-repeat;
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-3 {
+    
+    background-image: url('../i/BB200swastika/monnaie.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-4 {
+    
+    background-image: url('../i/BB200swastika/graphic.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  
+  .BB200item-5 {
+    
+    background-image: url('../i/BB200swastika/metal.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-6 {
+    
+    background-image: url('../i/BB200swastika/roches.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-7 {
+    
+    background-image: url('../i/BB200swastika/carré.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-8 {
+    
+    background-image: url('../i/BB200swastika/coussinswastiska.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-9 {
+    
+    background-image: url('../i/BB200swastika/rouge.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-10 {
+    
+    background-image: url('../i/BB200swastika/armoiries.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-11 {
+    
+    background-image: url('../i/BB200swastika/indianphoto.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-12 {
+    
+    background-image: url('../i/BB200swastika/chaise.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-13 {
+    
+    background-image: url('../i/BB200swastika/rond.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-14 {
+    
+    background-image: url('../i/BB200swastika/deuxboutons.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  
+  .BB200item-15 {
+    
+    background-image: url('../i/BB200swastika/communist.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  .BB200item-16 {
+    
+    background-image: url('../i/BB200swastika/cocacola.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  .BB200item-17 {
+    
+    background-image: url('../i/BB200swastika/vaserond.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  .BB200item-18 {
+    
+    background-image: url('../i/BB200swastika/kidhead.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  .BB200item-19 {
+    
+    background-image: url('../i/BB200swastika/old.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+
+  .BB200item-20 {
+    
+    background-image: url('../i/BB200swastika/photovase.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+
+  .BB200item-21 {
+    
+    background-image: url('../i/BB200swastika/peigne.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+  .BB200item-22 {
+    
+    background-image: url('../i/BB200swastika/soleil.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+
+  .BB200item-23 {
+    
+    background-image: url('../i/BB200swastika/dessins.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  }
+
+
+  .BB200item-24 {
+    position: relative;
+  }
+  
+
+.BB100feux {
+    position: relative;
+    z-index: 1;
+    display: flex;
+  }
+
+  .BB100EXITrondinfo {
+    position: absolute;
+    width: 50px; /* ajustez la taille selon vos besoins */
+    height: 50px; /* ajustez la taille selon vos besoins */
+    border-radius: 50%;
+    background-color: rgb(224, 224, 224); /* ajustez la couleur de fond selon vos besoins */
+    border: 2px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -220%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(20px, 3vw, 50px); /* Ajustez la taille du texte selon vos besoins */
+    color: black; /* Ajustez la couleur du texte selon vos besoins */
+  }
+  
+  .BB100EXITrondinfo::after {
+    content: "The symbol has no single function or meaning. In Hinduism, Jainism and Buddhism, the Swastika is still used today as a religious symbol of good luck. In German, a heraldic symbol that resembles the Swastika has been called a „Hakenkreuz“ since the 18th century.";
+    position: absolute;
+    width: max(250px, 15vw);
+    left: -500%; /* Ajustez si nécessaire */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Cache par défaut */
+    z-index: 2;
+    font-size: clamp(12px, 1.5vw, 25px);
+  }
+  
+  .BB100EXITrondinfo:hover::after {
+    display: block; /* Montrer au survol */
+  }
+
+  .BB100EXITrondinfo:hover{
+    background-color: rgb(251, 251, 251);
+  }
+  
+  .BB100EXITrondinfo::before {
+    content: '';
+    position: absolute;
+    left: calc(30% - 10px); /* Ajustez pour aligner avec le début du ::after */
+    top: 50%;
+    border-style: solid;
+    border-width: 10px 0 10px 10px; /* Crée un triangle */
+    border-color: transparent transparent transparent rgb(0, 0, 0); /* Triangle pointant vers le rond */
+    display: none;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  .BB100EXITrondinfo:hover::before {
+    display: block;
+  }
+
+  
+  .BB100EXITrondrouge {
+    position: absolute;
+    width: 50px; /* ajustez la taille selon vos besoins */
+    height: 50px; /* ajustez la taille selon vos besoins */
+    border-radius: 50%;
+    background-color: transparent; /* ajustez la couleur de fond selon vos besoins */
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    transform: translate(-50%, -100%);
+    box-shadow: 0 0 0px red;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .BB100EXITrondorange {
+    position: absolute;
+    width: 50px; /* ajustez la taille selon vos besoins */
+    height: 50px; /* ajustez la taille selon vos besoins */
+    border-radius: 50%;
+    background-color: transparent; /* ajustez la couleur de fond selon vos besoins */
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    transform: translate(-50%, 20%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  
+  .BB100EXITrondvert {
+    position: absolute;
+    width: 50px; /* ajustez la taille selon vos besoins */
+    height: 50px; /* ajustez la taille selon vos besoins */
+    border-radius: 50%;
+    background-color: transparent; /* ajustez la couleur de fond selon vos besoins */
+    top: 50%;
+    left: 50%;
+    background-color: green;
+    transform: translate(-50%, 140%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  
+  .BB100EXITrondrouge:active, .BB100EXITrondrouge:hover, .BB100EXITrondrouge:focus {
+    transform: translate(-50%, -100%) scale(1.2);
+    box-shadow: 0 0 20px red;
+    opacity: 100%;
+  }
+  
+  
+  .BB100EXITrondorange:active, .BB100EXITrondorange:hover, .BB100EXITrondrouge:focus {
+    transform: translate(-50%, 20%) scale(1.2);
+    box-shadow: 0 0 20px orange;
+  }
+  
+  
+  .BB100EXITrondvert:active, .BB100EXITrondvert:hover, .BB100EXITrondvert:focus {
+    transform: translate(-50%, 140%) scale(1.2);
+    box-shadow: 0 0 20px green;
+  }
+  
+  @media (min-width: 1400px) {
+    .BB100EXITrondorange, .BB100EXITrondrouge, .BB100EXITrondvert, .BB100EXITrondinfo {
+      width: 80px;
+      height: 80px;
+    }
+    .BB100feux {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      
+    }
+  }
+
+  @media (max-width: 1399px) {
+    .BB100EXITrondorange, .BB100EXITrondrouge, .BB100EXITrondvert, .BB100EXITrondinfo {
+      width: 60px;
+      height: 60px;
+    }
+    .BB100feux {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .BB100EXITrondorange, .BB100EXITrondrouge, .BB100EXITrondvert, .BB100EXITrondinfo {
+      width: 40px;
+      height: 40px;
+    }
+    .BB100feux {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+  }
+  
+  
+  /*#endregion */

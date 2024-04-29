@@ -1,0 +1,103 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+    padding: 0;
+    font-family: "Helvetica neue", sans-serif;
+    font-weight: 500;
+
+}
+
+
+.typewritercontainer-1 {
+    position: absolute;
+    width: 50%; /* 100% de la largeur de la fenêtre */
+    height: 10%; /* 100% de la hauteur de la fenêtre */
+    display: flex;
+    align-items:flex-start;
+    justify-content: flex-start;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-top: 0%;
+  }
+  
+  .typewritermessage-1 {
+    position: relative;
+    font-size: 10vw; /* Utilise 5% de la largeur de la vue pour définir la taille de la police */
+    height: 0%; /* Utilise 20% de la hauteur de l'élément parent */
+    overflow: visible;
+  }
+  
+  .typewritercontainer-2 {
+    position: absolute;
+    width: 50%; /* 100% de la largeur de la fenêtre */
+    height: 90%; /* 100% de la hauteur de la fenêtre */
+    top: 0; /* Position en haut de la fenêtre */
+    left: 50%; /* Position à gauche de la fenêtre */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-top: 0%;
+  }
+  
+  .typewritermessage-2 {
+    position: absolute;
+    font-size: 5vw; /* Utilise 5% de la largeur de la vue pour définir la taille de la police */
+    height: 0%; /* Utilise 20% de la hauteur de l'élément parent */
+    overflow: visible;
+  }
+  
+  .typewritercontainer-3 {
+    position: absolute;
+    width: 50%; /* 100% de la largeur de la fenêtre */
+    height: 10%; /* 100% de la hauteur de la fenêtre */
+    bottom: 0; /* Position en haut de la fenêtre */
+    left: 50%; /* Position à gauche de la fenêtre */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-top: 0%;
+  }
+  
+  .typewritermessage-3 {
+    position: absolute;
+    font-size: 5vw; /* Utilise 5% de la largeur de la vue pour définir la taille de la police */
+    height: 0%; /* Utilise 20% de la hauteur de l'élément parent */
+    overflow: visible;
+  }
+  
+  .typewritercontainer-4 {
+    position: absolute;
+    width: 10%; /* 100% de la largeur de la fenêtre */
+    height: 50%; /* 100% de la hauteur de la fenêtre */
+    bottom: 0; /* Position en haut de la fenêtre */
+    left: 0; /* Position à gauche de la fenêtre */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-top: 0%;
+  }
+  
+  .typewritermessage-4 {
+    position: absolute;
+    font-size: 7vw; /* Utilise 5% de la largeur de la vue pour définir la taille de la police */
+    overflow: visible;
+  }
+  
+  .typewriter-cursor {
+    font-size: 0.8em; 
+    background-color: #000;
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  
