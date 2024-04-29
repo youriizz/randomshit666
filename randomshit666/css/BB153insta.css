@@ -1,0 +1,364 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+    padding: 0;
+    font-family: "Helvetica neue", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* Style pour le conteneur principal */
+.container {
+    display: flex;           /* Utilise Flexbox pour le positionnement */
+    height: 100vh;           /* La hauteur du viewport */
+    width: 100vw;           /* La largeur du port */
+    justify-content: center;
+
+}
+
+/* Style pour les côtés gauche et droit */
+.cotegauche, .cotedroit {
+    width: 35%;              /* Chacun prend 35% de la largeur */
+    background-color: rgb(255, 255, 255); /* Couleur de fond blanc */
+}
+
+.cotegauche {
+    left: 0;
+}
+.cotedroit {
+    right: 0;
+}
+
+/* Style pour le feed central */
+.feed {
+    position: absolute;
+    width: 470px;              /* Le feed prend 30% de la largeur */
+    background-color: #ffffff; /* Couleur de fond pour le feed, gris clair pour distinguer */
+    height: 100vh;     
+}
+
+.publication {
+    position: relative;
+    width: 100%;          /* Largeur de 100% par rapport à son conteneur */
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;     /* Cache tout débordement */
+}
+
+.publication::before {
+    content: "";
+    display: block;
+    padding-top: 176%;    /* Hauteur à 1.5 fois la largeur */
+}
+
+/* Style pour le contenu interne de .publication */
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto; 
+    background-color: rgb(255, 255, 255); /* Un fond légèrement différent pour visualiser */
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+@media (max-width: 500px) {
+    .cotegauche, .cotedroit {
+        display: none;
+    }
+
+    .feed {
+        width: 100%; /* Le feed prend toute la largeur */
+        position: static; /* Annuler la position absolue pour le stacking normal */
+        border: none; /* Optionnel: supprimer la bordure pour un look plus propre */
+        padding-left: 1%;
+        padding-right: 1%;
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: block; /* Annuler le flexbox pour permettre un remplissage à 100% de la largeur */
+    }
+}
+
+
+
+.head1, .photo2, .boutons3, .description5 {
+    position: relative;
+    width: 100%;
+}
+
+.head1 {
+    background-color: #ffffff;
+    height: 7%;
+    margin-top: 5px;
+}
+.photo2 {
+    position: relative;
+    background-color: rgb(224, 224, 224);
+    height: 71%;
+    width: 100%;
+    margin: 0%;
+    border-radius: 2%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.boutons3 {
+    background-color: rgb(255, 255, 255);
+    height: 5%;
+}
+.likes4 {
+    background-color: rgb(255, 255, 255);
+    height: 2%;
+    margin-left: 2px;
+}
+.description5 {
+    background-color: rgb(255, 255, 255);
+    height: 5%;
+}
+.seecomments6 {
+    background-color: #ffffff;
+    height: 4%;
+    margin-left: 2px;
+    margin-bottom: 5px;
+}
+.writecomments7 {
+    background-color: rgb(255, 255, 255);
+    height: 2%;
+    margin-left: 2px;
+}
+
+
+
+
+
+.head1, .description5  {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.photoprofil, .nomcompte, .datepoint, .date, .troispoints, .description {
+    height: 100%;
+    display: flex;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border: 0px solid black;
+    box-sizing: border-box;
+    z-index: 1;
+    align-items: center; 
+}
+
+.troispoints {
+    justify-content: flex-end;
+}
+
+.nomcompte {
+    width: auto;
+    white-space: nowrap;
+    padding-right: 4px;
+    margin-left: 2px;
+}
+.date {
+    color: gray;
+    font-weight: 300;
+}
+
+.date, .troispoints {
+    width: 8%;
+}
+
+.troispoints {
+    margin-left: auto;
+}
+
+.troispoints img {
+    height: 5%;
+    margin-right: 4px;
+}
+
+.photoprofil {
+    width: 10%;            /* Largeur de la div photoprofil */
+    position: relative;    /* Position relative pour positionner le pseudo-élément */
+    display: flex;         /* Utilise Flexbox pour centrer le contenu */
+    align-items: center;   /* Centre verticalement */
+}
+
+.photoprofil::before {
+    content: "";           /* Nécessaire pour générer le pseudo-élément */
+    display: block;        /* Rend le pseudo-élément un bloc pour pouvoir définir la largeur et la hauteur */
+    width: 60%;            /* Taille du cercle en pourcentage par rapport à son parent */
+    padding-top: 60%;      /* Padding-top utilisé pour créer un cercle parfait, même valeur que la largeur */
+    background-color: transparent; /* Fond transparent pour le cercle */
+    border: 1px solid black; /* Bordure noire pour le cercle */
+    border-radius: 50%;    /* Rayon de la bordure pour rendre le div un cercle */
+    position: absolute;
+    margin-left: 4px;    /* Position absolue pour se placer par rapport à .photoprofil */
+}
+
+.datepoint {
+    position: relative; /* Essentiel pour positionner correctement le pseudo-élément */
+    width: 2%;        /* Ajustez selon vos besoins */
+    height: 100%;
+    margin-right: 4px; 
+}
+
+.datepoint::before {
+    content: '';        /* Le contenu du pseudo-élément doit être défini, même s'il est vide */
+    position: absolute; /* Position absolue pour le placer précisément */
+    top: 50%;           /* Déplace le pseudo-élément au milieu verticalement */
+    left: 50%;          /* Centrer horizontalement si besoin */
+    transform: translate(-50%, -50%); /* Ajuste précisément le centre du pseudo-élément */
+    width: 3px;        /* Largeur du point */
+    height: 3px;       /* Hauteur du point */
+    background-color: rgb(113, 113, 113); /* Couleur du point */
+    border-radius: 50%; /* Rend le point parfaitement rond */
+}
+
+
+
+
+
+
+
+.boutons3  {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.like, .share, .comment, .enregistrer {
+    height: 100%;
+    display: flex;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border: 0px solid black;
+    box-sizing: border-box;
+    z-index: 1;
+    justify-content: flex-start;
+    align-items: center; 
+}
+
+.like, .share, .comment, .enregistrer {
+    width: 8%;
+}
+
+.like img, .share img, .comment img {
+    width: 55%;
+    margin-left: 2px;
+}
+
+.like img {
+    width: 60%;
+}
+.enregistrer img {
+    width: 45%;
+    margin-right: 4px;
+}
+
+.enregistrer {
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+
+.likes4 {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    margin-left: 2px;
+}
+
+
+.description {
+        width: auto;
+        white-space: nowrap;
+        padding-right: 4px;
+        font-weight: 400;
+}
+.seecomments6, .writecomments7 {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    color: gray;
+}
+
+.writecomments7{
+    margin-bottom: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gallery-item {
+    position: absolute;
+    width: 100%;        /* Prend toute la largeur de son conteneur parent */
+    height: 100%;      /* Définissez une hauteur fixe ou ajustez selon vos besoins */
+    display: flex;      /* Utilisez Flexbox pour faciliter le centrage */
+    justify-content: center; /* Centre horizontalement le contenu dans le Flexbox */
+    align-items: center; /* Centre verticalement le contenu dans le Flexbox */
+    text-align: center; /* Centre le texte à l'intérieur de p */
+    display: none;      /* Cache tous les éléments initialement */
+}
+
+.visible {
+    display: flex;      /* Assurez-vous que l'élément visible utilise flex pour maintenir le centrage */
+}
+
+.comment-display {
+    position: absolute;
+    background-color: rgb(230, 230, 230);
+    width: 100%;        /* Prend toute la largeur de son conteneur */
+    height: 100%;       /* Prend toute la hauteur de son conteneur */
+    display: flex;      /* Utilise Flexbox pour le centrage */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    font-size: 20px;    /* Agrandit la taille du texte */
+    
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur/hauteur */
+}
+
+.gallery-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    z-index: 100; /* Assure que les boutons sont au-dessus des images/commentaires */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+

@@ -1,0 +1,315 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica neue", sans-serif;
+    font-weight: 500;
+
+}
+
+
+.body202 {
+    margin: 0;
+    overflow: hidden;
+    position: relative; /* Ajout de cette ligne pour positionner le header par rapport à ce conteneur */
+  }
+  
+  
+  
+  .BB202magazine-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 800%; /* Quatre fois la largeur pour afficher deux pages par fenêtre */
+    position: relative; /* Positionnement relatif pour que le header puisse prendre sa place */
+    top: 30px; /* Décaler le container de 30 pixels vers le bas */
+  }
+  
+  
+  
+  .BB202magazine-page {
+    width: calc(50vw - 2px); /* Chaque page occupe 50% de la largeur du conteneur (pour un total de 50% par fenêtre) */
+    height: calc(100vh - 29px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border: 0px solid #ccc;
+    position: relative;
+  
+  }
+  
+  .BB202magazine-page img {
+    object-fit: fill; /* Remplit la largeur du conteneur */
+    width: 90%; /* Ajuste la largeur de l'image en fonction du conteneur */
+    height: auto; /* Permet à la hauteur de s'ajuster automatiquement pour conserver le rapport d'aspect */
+  }
+  
+  
+  .BB202arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .BB202arrow:hover {
+    background-color: #ddd; /* Couleur de fond lorsque la flèche est survolée */
+  }
+  
+  
+  .BB202right {
+    right: 10px;
+  }
+  
+  .BB202left {
+    left: 10px;
+  }
+  
+  .BB202pageNumber {
+    font-size: 1.5em;
+    
+  }
+  
+  .BB202leftNumber {
+    float: left;
+    margin-left: 20px;
+  }
+  
+  .BB202rightNumber {
+    float: right;
+    margin-right: 20px;
+    
+  }
+  
+  .BB202EXITrondrouge {
+    position: absolute;
+    width: 50px; /* ajustez la taille selon vos besoins */
+    height: 50px; /* ajustez la taille selon vos besoins */
+    border-radius: 50%;
+    background-color: transparent; /* ajustez la couleur de fond selon vos besoins */
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    transform: translate(-50%, -200%);
+    box-shadow: 0 0 0px red;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  
+  
+  
+  .BB202EXITrondorange {
+    position: absolute;
+    width: 50px; /* ajustez la taille selon vos besoins */
+    height: 50px; /* ajustez la taille selon vos besoins */
+    border-radius: 50%;
+    background-color: transparent; /* ajustez la couleur de fond selon vos besoins */
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  
+  .BB202EXITrondvert {
+    position: absolute;
+    width: 50px; /* ajustez la taille selon vos besoins */
+    height: 50px; /* ajustez la taille selon vos besoins */
+    border-radius: 50%;
+    background-color: transparent; /* ajustez la couleur de fond selon vos besoins */
+    top: 50%;
+    left: 50%;
+    background-color: green;
+    transform: translate(-50%, 100%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  
+  .BB202EXITrondrouge:active, .BB202EXITrondrouge:hover, .BB202EXITrondrouge:focus {
+    transform: translate(-50%, -200%) scale(1.2);
+    box-shadow: 0 0 20px red;
+  }
+  
+  
+  .BB202EXITrondorange:active, .BB202EXITrondorange:hover, .BB202EXITrondrouge:focus {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 20px orange;
+  }
+  
+  
+  .BB202EXITrondvert:active, .BB202EXITrondvert:hover, .BB202EXITrondvert:focus {
+    transform: translate(-50%, 100%) scale(1.2);
+    box-shadow: 0 0 20px green;
+  }
+  
+  @media (min-width: 600px) {
+    .BB202EXITrondorange, .BB202EXITrondrouge, .BB202EXITrondvert {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  @media (max-width: 600px) {
+    .BB202magazine-page img {
+      object-fit: fill; /* Remplit la largeur du conteneur */
+      width: 100%; /* Ajuste la largeur de l'image en fonction du conteneur */
+      height: auto; /* Permet à la hauteur de s'ajuster automatiquement pour conserver le rapport d'aspect */
+    }
+    
+    .BB202magazine-container {
+      width: 1000%; /* Utiliser la pleine largeur de l'écran */
+    }
+  
+    .BB202magazine-page {
+      width: 1000%; /* Chaque page occupe 100% de la largeur de la fenêtre */
+    }
+    .BB202pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      position: fixed;
+      bottom: 2%;
+      z-index: 1;
+      left: 25%;
+      
+     
+  }
+  
+  .pagination-point {
+      width: 10px;
+      height: 10px;
+      background-color: #c0c0c0;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 1;
+  }
+  
+  .pagination-point.active {
+      background-color: #333;
+  }
+  
+  /* Masquer les flèches sur les écrans plus larges */
+  .BB202arrow {
+      display: none;
+  }
+  .BB202leftNumber,
+  .BB202rightNumber {
+    color: white;
+    z-index: -1;
+  }
+  
+  
+  }
+
+.BB100feux {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    
+    
+  }
+  
+  .BB100EXITrondrouge {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    transform: translate(-50%, -200%);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: Animation-BB100feurouge 12s infinite ease-in-out alternate;
+  }
+  
+  .BB100EXITrondorange {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: Animation-BB100feuorange 12s infinite ease-in-out alternate;
+  }
+  
+  .BB100EXITrondvert {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: green;
+    transform: translate(-50%, 100%);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: Animation-BB100feuvert 7s infinite ease-in-out alternate;
+  }
+  
+  .BB100EXITrondrouge:active,
+  .BB100EXITrondrouge:hover,
+  .BB100EXITrondrouge:focus {
+    transform: translate(-50%, -200%) scale(1.2);
+    box-shadow: 0 0 20px red;
+    opacity: 100%;
+    
+  }
+  
+  .BB100EXITrondorange:active,
+  .BB100EXITrondorange:hover,
+  .BB100EXITrondorange:focus {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 20px orange;
+    opacity: 100%;
+  }
+  
+  .BB100EXITrondvert:active,
+  .BB100EXITrondvert:hover,
+  .BB100EXITrondvert:focus {
+    transform: translate(-50%, 100%) scale(1.2);
+    box-shadow: 0 0 20px green;
+    opacity: 100%;
+  }
+  
+  @media (min-width: 600px) {
+    .BB100EXITrondorange,
+    .BB100EXITrondrouge,
+    .BB100EXITrondvert {
+      width: 80px;
+      height: 80px;
+    }
+  
+  }
+  
+  @media (max-width: 350px) {
+    .BB100EXITrondorange,
+    .BB100EXITrondrouge,
+    .BB100EXITrondvert {
+      width: 40px;
+      height: 40px;
+    }
+    .BB100feux {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      
+    }
+  }

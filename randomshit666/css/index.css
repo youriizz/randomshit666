@@ -1,0 +1,1388 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+    padding: 0;
+    font-family: "Helvetica neue", sans-serif;
+    font-weight: 500;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* #region KEYFRAMES */
+
+@keyframes slideInLeft {
+
+ from {
+  transform: translateX(-254px);
+ }
+
+ to {
+  transform: translateY(0);
+ }
+}
+
+@keyframes moveLeftRight1 {
+  0% {
+    left: 10%; /* Position de départ à gauche */
+  }
+  100% {
+    left: calc(100% - 140px); /* Position finale à droite */
+  }
+}
+
+@keyframes moveUpDown1 {
+  0% {
+    top: 20px; /* Position de départ à gauche */
+  }
+  100% {
+    top: 300px ; /* Position finale à droite */
+  }
+}
+
+@keyframes moveUpDown2 {
+  0% {
+    top: 180px; /* Position de départ à gauche */
+  }
+  100% {
+    top: 20px ; /* Position finale à droite */
+  }
+}
+
+@keyframes moveUpDown3 {
+  0% {
+    left: 380px; /* Position de départ à gauche */
+    top: 320px;
+  }
+  100% {
+    left: 70px ; /* Position finale à droite */
+    top: 320px;
+  }
+}
+
+
+
+@keyframes moveAround {
+  0% {
+    transform: translate(120px, 60px);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(230px, 150px);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(80px, 100px);
+    opacity: 0.5;
+  }
+  65% {
+    transform: translate(100px, 170px);
+    opacity: 0.8;
+  }
+
+  80% {
+    transform: translate(210px, 90px);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: translate(120px, 60px);
+    opacity: 0.5;
+  }
+
+}
+@keyframes moveTextaround1 {
+  0% {
+    word-spacing: -10px;
+    
+  }
+
+  100% {
+    word-spacing: 60px;
+    
+  }
+}
+
+@keyframes moveTextaround2 {
+  0% {
+    opacity: 0%;
+    word-spacing: 60px;
+    
+  }
+   
+  
+
+  100% {
+  
+    opacity: 100%;
+    word-spacing: -10px
+   
+  
+    
+  }
+}
+
+
+
+@keyframes feuxopacite {
+  0% {
+    opacity: 0%;
+  }
+   
+  50% {
+      opacity: 20%;
+     
+  }
+
+  100% {
+    opacity: 80%;
+    
+  }
+}
+
+
+
+
+
+
+
+
+.FF100writing-1 {
+    
+  font-size: 2.5rem;
+  position: absolute;
+    top: 50%; /* Positionner au milieu verticalement */
+  left: 50%; /* Positionner au milieu horizontalement */
+  transform: translate(-50%, -50%); /* Ajuster pour centrer correctement */
+  text-align: center;
+  font-weight: 800;
+}
+.FF100writing-2 {
+  position: absolute;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: justify;
+  top: -8px;
+  letter-spacing: -2px;
+  line-height: 1.2;
+  animation: moveTextaround1 10s infinite alternate ease-in-out
+
+}
+
+
+
+
+
+
+
+
+.FF100grille-1 {
+  display: grid;
+  grid-template-rows: repeat(minmax(300px, 1fr), auto-fit);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 0px;
+ }
+
+ .FF100item-1, .FF100item-2, .FF100item-3, .FF100item-4, .FF100item-5, .FF100item-6,
+ .FF100item-7, .FF100item-8, .FF100item-9, .FF100item-10, .FF100item-11,
+ .FF100item-12, .FF100item-13, .FF100item-14, .FF100item-15, .FF100item-16,
+ .FF100item-17, .FF100item-18, .FF100item-19, .FF100item-20,
+ .FF100item-21, .FF100item-22, .FF100item-23, .FF100item-24,
+ .FF100item-25, .FF100item-26, .FF100item-27, .FF100item-28,
+ .FF100item-29, .FF100item-30, .FF100item-31, .FF100item-32,
+ .FF100item-33, .FF100item-34, .FF100item-35, .FF100item-36,
+ .FF100item-37, .FF100item-38, .FF100item-39, .FF100item-40 {
+   /* Vos styles CSS ici */
+ 
+    aspect-ratio: 1.25; /* Le ratio 1:1 garde la même hauteur et largeur */
+    border-bottom: 2px solid black; /* Bordure en bas */
+    border-right: 2px solid black; /* Bordure à droite */
+    overflow: hidden;
+    
+    position: relative;
+  }
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  .FF100item-2 {
+    aspect-ratio: 1.25; /* Le ratio 1:1 garde la même hauteur et largeur */
+    border-bottom: 2px solid black; /* Bordure en bas */
+    border-right: 2px solid black; /* Bordure à droite */
+    
+    background-image: url('../i/FF100frontpage/image1_500_400.jpg'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+  
+  }
+
+
+
+
+
+  .FF100item-3, .FF100item-4 {
+    border-bottom: 2px solid black;
+    position: relative;
+    overflow: hidden; /* Cache tout ce qui dépasse du conteneur */
+      aspect-ratio: 1.25; /* Le ratio 1:1 garde la même hauteur et largeur */
+  }
+
+  .FF100item-3 img {
+    width: 100%; /* Ajuste la largeur de l'image */
+    height: 100%; /* Ajuste la hauteur de l'image */
+    position: absolute; /* Positionne l'image par rapport à l'élément parent */
+    top: 0; /* Aligne l'image en haut */
+    right: 0; /* Aligne l'image à gauche */
+    z-index: 1;
+    
+  }
+
+  .FF100item-4 {
+    aspect-ratio: 1.25; /* Le ratio 1:1 garde la même hauteur et largeur */
+    border-bottom: 2px solid black; /* Bordure en bas */
+    border-right: 2px solid black; /* Bordure à droite */
+    background-color: skyblue;
+    background-image: url('../i/FF100frontpage/probeH823-Ablack.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: center; /* Centre l'image dans l'élément */
+    position: relative;
+    
+  }
+  .FF100item-4 img {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    z-index: 0;
+    
+    }
+  
+
+    .FF100item-4:hover img {
+  display: none;
+  
+  }
+
+  .FF100item-4-link-1 {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Moitié supérieure verticale */
+  z-index: 1;
+  }
+
+
+  
+
+
+
+
+
+
+
+
+
+  .FF100item-6 {
+    overflow: visible;
+  }
+  
+
+
+
+  .FF100item-7 {
+    position: relative;
+    background-color: yellow;
+    overflow: hidden;
+    
+  }
+
+  .FF100item-7-link-1 {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Moitié supérieure verticale */
+    z-index: 1;
+  }
+
+  .FF100item-7:hover img {
+    display: none;
+
+  }
+  .FF100item-7 img {
+    display: none;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+  }
+
+  .FF100item-7-video-1 {
+    object-fit: cover;
+  }
+
+
+
+
+
+
+.FF100item-9 {
+    background-image: url(../i/FF100frontpage/blanckpage.svg);
+    background-size: cover;
+  }
+
+
+
+
+
+
+  .FF100item-10 img[src="i/FF100frontpage/waves1double.jpg?v=2"] {
+    position: relative;
+    height: 100%;
+    width: auto;
+    right: 0;
+    z-index: -1;
+    opacity: 100%;
+  }
+  .FF100item-10 img[src="i/FF100frontpage/waves1double.jpg?v=2"] {
+
+    animation-name: slideInLeft  ;
+    animation-duration: 80s ;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    
+  }
+
+  .FF100item-10 img[src="i/FF100frontpage/waves1.png"] {
+    width: 100%; /* Ajuste la largeur de l'image */
+    height: 100%; /* Ajuste la hauteur de l'image */
+    position: absolute; /* Positionne l'image par rapport à l'élément parent */
+    top: 0; /* Aligne l'image en haut */
+    right: 0; /* Aligne l'image à gauche */
+    z-index: -1; /* Place l'image au-dessus de l'image de fond */
+    opacity: 100%;
+  }
+
+
+
+
+  .FF100item-11 {
+    
+    position: relative;
+    background-color: yellow;
+  }
+  .FF100item-11-link-1 {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Moitié supérieure verticale */
+
+    z-index: 1;
+  }
+  .FF100item-11:hover img {
+    display: none;
+  }
+  .FF100item-11 img {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    
+  }
+
+  .FF100item-12-link-1 {
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Moitié supérieure verticale */
+    z-index: 1;
+  }
+
+  .FF100item-12-GIF-1 {
+    background-color: rgb(255, 255, 255);
+    object-fit: contain;
+  }
+
+  .FF100item-12-GIF-1:hover {
+    background-color: rgb(255, 125, 125);
+  }
+
+  .FF100item-12-GIF-1:active {
+    background-color: red;
+  }
+
+  .FF100item-12 {
+    position: relative;
+    display: inline-block; /* ou selon votre mise en page */
+  }
+
+  
+
+
+
+
+  
+  .FF100item-13 {
+       aspect-ratio: 1.25; /* Le ratio 1:1 garde la même hauteur et largeur */
+       border-bottom: 2px solid black; /* Bordure en bas */
+       border-right: 2px solid black; /* Bordure à droite */
+       background-color: skyblue;
+       background-image: url('../i/FF100frontpage/eagle.png'); /* Remplacez par le chemin de votre image */
+       background-size: contain; /* Ajuste la taille de l'image pour remplir l'élément */
+      background-position: center; /* Centre l'image dans l'élément */
+      position: relative;
+        
+   }
+    .FF100item-13-link-1, .FF100item-14-link-1 {
+  
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; /* Moitié supérieure verticale */
+      z-index: 1;
+
+    }
+  
+    .FF100item-13:hover img {
+      display: none;
+    }
+  
+    .FF100item-13 img {
+      display: none;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 1;
+      
+    }
+
+    .FF100item-14:hover {
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5); /* Exemple de box-shadow */
+      z-index: 3;
+    }
+
+    .FF100item-14 {
+      display: flex;
+      align-items: center; /* Centre verticalement */
+      justify-content: center;
+      transition: box-shadow 0.1s ease-in-out;
+    }
+
+  
+     
+    .FF100item-14 img {
+      object-fit: contain;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Ajuster pour centrer correctement */
+      width: 20%;
+      height: 20%;
+      z-index: 1;
+      
+    }
+
+    .FF100item-14-animatedsvg {
+      height: 100%;
+      width: auto; /* Cela garde l'aspect ratio du SVG */
+      transform: translate(0%, 0%);
+  }
+  .FF100item-14-animatedsvg path {
+    transition: fill 0.1s ease-in-out; /* Smooth transition pour le remplissage */
+    fill: transparent; /* Couleur de remplissage initiale */
+  }
+  
+  .FF100item-14:active .FF100item-14-animatedsvg path {
+    fill: rgb(0, 0, 0); /* Changez à la couleur désirée lors du hover */
+  }
+  
+
+  
+    
+    
+
+
+  
+.FF100item-15 {
+  background-color: skyblue;
+  background-image: url('../i/FF100frontpage/moideface.png'); /* Remplacez par le chemin de votre image */
+  background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+  background-position: center; /* Centre l'image dans l'élément */
+  position: relative;
+  
+}
+
+  .FF100item-15-link-1 {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Moitié supérieure verticale */
+  z-index: 1;
+  }
+
+  .FF100item-15:hover img {
+  display: none;
+  }
+
+  .FF100item-15 img {
+
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+
+  }
+
+
+
+.FF100item-16 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.FF100-ronddé1, .FF100-ronddé2, .FF100-ronddé3, .FF100-ronddé4, .FF100-ronddé5, .FF100-ronddé6 {
+  position: absolute;
+  background-color: black; /* Couleur de fond du rond */
+  border-radius: 50%; /* Début avec un fond non arrondi */
+  height: 16.25%; /* Hauteur du rond */
+  width: 13%; /* Largeur du rond */
+}
+
+.FF100-ronddé1:hover, .FF100-ronddé2:hover, .FF100-ronddé3:hover, .FF100-ronddé4:hover, .FF100-ronddé5:hover, .FF100-ronddé6:hover {
+  background-color: red; /* Change la couleur de fond en rouge au survol */
+}
+
+
+.FF100-ronddé1 {
+  animation: move-ronddé1 12s ease-in-out infinite alternate;
+}
+
+.FF100-ronddé2 {
+  animation: move-ronddé2 12s ease-in-out infinite alternate;
+}
+
+.FF100-ronddé3 {
+  animation: move-ronddé3 12s ease-in-out infinite alternate;
+}
+
+.FF100-ronddé4 {
+  animation: move-ronddé4 12s ease-in-out infinite alternate;
+}
+
+.FF100-ronddé5 {
+  animation: move-ronddé5 12s ease-in-out infinite alternate;
+}
+
+.FF100-ronddé6 {
+  animation: move-ronddé6 12s ease-in-out infinite alternate;
+}
+
+
+@keyframes move-ronddé1 {
+  0%, 8.33% { transform: translate(0, 0); } /* Première pause initiale */
+  8.33%, 16.66% { transform: translate(150%, -150%); } /* Premier mouvement */
+  16.66%, 25% { transform: translate(150%, -150%); } /* Deuxième pause, reste en position après le 1er mouvement */
+  25%, 33.33% { transform: translate(-150%, 150%); } /* Deuxième mouvement */
+  33.33%, 41.66% { transform: translate(-150%, 150%); } /* Troisième pause, reste en position après le 2e mouvement */
+  41.66%, 50% { transform: translate(150%, -150%); } /* Troisième mouvement */
+  50%, 58.33% { transform: translate(150%, -150%); } /* Quatrième pause, reste en position après le 3e mouvement */
+  58.33%, 66.66% { transform: translate(-150%, 150%); } /* Quatrième mouvement */
+  66.66%, 75% { transform: translate(-150%, 150%); } /* Cinquième pause, reste en position après le 4e mouvement */
+  75%, 83.33% { transform: translate(-150%, -150%); } /* Cinquième mouvement */
+  83.33%, 91.66% { transform: translate(-150%, -150%); } /* Sixième pause, reste en position après le 5e mouvement */
+  91.66%, 100% { transform: translate(0, 0); } /* Retour au centre et pause finale */
+}
+
+
+
+@keyframes move-ronddé2 {
+  0%, 8.33% { transform: translate(0, 0); }
+  8.33%, 16.66% { transform: translate(-150%, 150%); }
+  16.66%, 25% { transform: translate(-150%, 150%); }
+  25%, 33.33% { transform: translate(150%, -150%); }
+  33.33%, 41.66% { transform: translate(150%, -150%); }
+  41.66%, 50% { transform: translate(-150%, 150%); }
+  50%, 58.33% { transform: translate(-150%, 150%); }
+  58.33%, 66.66% { transform: translate(150%, -150%); }
+  66.66%, 75% { transform: translate(150%, -150%); }
+  75%, 83.33% { transform: translate(150%, 150%); }
+  83.33%, 91.66% { transform: translate(150%, 150%); }
+  91.66%, 100% { transform: translate(0, 0); }
+}
+
+
+@keyframes move-ronddé3 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  20% { transform: translate(0,0); opacity: 0;} /* Exemple de position 2 */
+  21% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  33.33% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  41.66%, 50% { transform: translate(150%, 150%); opacity: 1} /* Exemple de position 3 */
+  50%, 58.33% { transform: translate(150%, 150%); opacity: 1} /* Exemple de position 3 */
+  58.33%, 66.66% { transform: translate(-150%, -150%); opacity: 1} /* Exemple de position 4 */
+  66.66%, 75% { transform: translate(-150%, -150%); opacity: 1} /* Exemple de position 4 */
+  75%, 83.33% { transform: translate(-150%, 150%); opacity: 1} /* Exemple de position 5 */
+  83.33%, 91.66% { transform: translate(-150%, 150%); opacity: 1} /* Exemple de position 5 */
+  91.66%, 100% { transform: translate(0, 0); opacity: 1; }
+}
+
+@keyframes move-ronddé4 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  20% { transform: translate(0,0); opacity: 0;} /* Exemple de position 2 */
+  21% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  33.33%, 41.66% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  41.66%, 50% { transform: translate(-150%,-150%); opacity: 1} /* Exemple de position 3 */
+  50%, 58.33% { transform: translate(-150%,-150%); opacity: 1} /* Exemple de position 3 */
+  58.33%, 66.66% { transform: translate(150%,150%); opacity: 1} /* Exemple de position 4 */
+  66.66%, 75% { transform: translate(150%,150%); opacity: 1} /* Exemple de position 4 */
+  75%, 83.33% { transform: translate(150%,-150%); opacity: 1} /* Exemple de position 5 */
+  83.33%, 91.66% { transform: translate(150%,-150%); opacity: 1} /* Exemple de position 5 */
+  91.66%, 100% { transform: translate(0, 0); opacity: 1; }
+}
+ 
+@keyframes move-ronddé5 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  53% { transform: translate(0,0); opacity: 0;} /* Exemple de position 2 */
+  54% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  66.66% { transform: translate(0, 0); opacity: 1} /* Exemple de position 4 */
+  75%, 83.33% { transform: translate(-150%, 0%); opacity: 1}
+  83.33%, 91.66% { transform: translate(-150%, 0%); opacity: 1} /* Exemple de position 5 */
+  91.66%, 100% { transform: translate(0, 0); opacity: 1; }
+}
+
+@keyframes move-ronddé6 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  53% { transform: translate(0,0); opacity: 0;} /* Exemple de position 2 */
+  54% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  66.66% { transform: translate(0, 0); opacity: 1} /* Exemple de position 4 */
+  75%, 83.33% { transform: translate(150%, 0%); opacity: 1} /* Exemple de position 5 */
+  83.33%, 91.66% { transform: translate(150%, 0%); opacity: 1} /* Exemple de position 5 */
+  91.66%, 100% { transform: translate(0, 0); opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+  .FF100-ronddé1, .FF100-ronddé2, .FF100-ronddé3, .FF100-ronddé4, .FF100-ronddé5, .FF100-ronddé6 {
+    animation-duration: 6s;
+  }
+
+@keyframes move-ronddé1 {
+  0%, 100% { transform: translate(0, 0); }
+  16.66% { transform: translate(150%, -150%); } /* Exemple de position 1 */
+  33.33% { transform: translate(-150%, 150%); } /* Exemple de position 2 */
+  50% { transform: translate(150%, -150%); } /* Exemple de position 3 */
+  66.66% { transform: translate(-150%, 150%); } /* Exemple de position 4 */
+  83.33% { transform: translate(-150%, -150%); } /* Exemple de position 5 */
+}
+
+@keyframes move-ronddé2 {
+  0%, 100% { transform: translate(0, 0); }
+  16.66% { transform: translate(-150%, 150%); } /* Exemple de position 1 */
+  33.33% { transform: translate(150%, -150%); } /* Exemple de position 2 */
+  50% { transform: translate(-150%, 150%); } /* Exemple de position 3 */
+  66.66% { transform: translate(150%, -150%); } /* Exemple de position 4 */
+  83.33% { transform: translate(150%, 150%); } /* Exemple de position 5 */
+}
+
+@keyframes move-ronddé3 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  16.66% { transform: translate(0,0); opacity: 0;} /* Exemple de position 1 */
+  25% { transform: translate(0,0); opacity: 0;} /* Exemple de position 2 */
+  26% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  33.33% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  50% { transform: translate(150%, 150%); opacity: 1} /* Exemple de position 3 */
+  66.66% { transform: translate(-150%, -150%); opacity: 1} /* Exemple de position 4 */
+  83.33% { transform: translate(-150%, 150%); opacity: 1} /* Exemple de position 5 */
+  100% { transform: translate(0, 0); opacity: 1; }
+}
+
+@keyframes move-ronddé4 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  16.66% { transform: translate(0,0); opacity: 0;} /* Exemple de position 1 */
+  25% { transform: translate(0,0); opacity: 0;} /* Exemple de position 2 */
+  26% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  33.33% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  50% { transform: translate(-150%,-150%); opacity: 1} /* Exemple de position 3 */
+  66.66% { transform: translate(150%,150%); opacity: 1} /* Exemple de position 4 */
+  83.33% { transform: translate(150%,-150%); opacity: 1} /* Exemple de position 5 */
+  100% { transform: translate(0, 0); opacity: 1; }
+}
+ 
+@keyframes move-ronddé5 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  50% { transform: translate(0, 0); opacity: 0} /* Exemple de position 3 */
+  58% { transform: translate(0,0); opacity: 0;} /* Exemple de position 2 */
+  59% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  66.66% { transform: translate(0, 0); opacity: 1} /* Exemple de position 4 */
+  83.33% { transform: translate(-150%, 0%); opacity: 1} /* Exemple de position 5 */
+  100% { transform: translate(0, 0); opacity: 1; }
+}
+
+@keyframes move-ronddé6 {
+  0% { transform: translate(0, 0); opacity: 0; }
+  50% { transform: translate(0, 0); opacity: 0} /* Exemple de position 3 */
+  58% { transform: translate(0,0); opacity: 0;} /* Exemple de position 2 */
+  59% { transform: translate(0,0); opacity: 1} /* Exemple de position 2 */
+  66.66% { transform: translate(0, 0); opacity: 1} /* Exemple de position 4 */
+  83.33% { transform: translate(150%, 0%); opacity: 1} /* Exemple de position 5 */
+  100% { transform: translate(0, 0); opacity: 1; }
+}
+
+}
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .FF100item-17 {
+    overflow: visible;
+  }
+
+
+
+  .FF100item-18 {
+    aspect-ratio: 1.25; /* Le ratio 1:1 garde la même hauteur et largeur */
+    border-bottom: 2px solid black; /* Bordure en bas */
+    border-right: 2px solid black; /* Bordure à droite */
+    background-color: skyblue;
+    background-image: url('../i/FF100frontpage/duchamp4.png'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+    background-position: left center; /* Centre l'image dans l'élément */
+    position: relative;
+    
+  }
+
+  @media (min-width: 600px) {
+    .FF100item-18:hover img {
+        display: none;
+        object-fit: cover;
+    }
+}
+
+  .FF100item-18-link-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Moitié supérieure verticale */
+  z-index: 1;
+  }
+
+  .FF100item-18 img {
+  display: none;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.FF100item-20 {
+  position: relative;
+  background-color: rgba(0, 153, 255, 0.587);
+}
+.FF100item-20-link-1 {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Moitié supérieure verticale */
+
+  z-index: 1;
+}
+.FF100item-20:hover img {
+  display: none;
+}
+.FF100item-20 img {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+  
+}
+
+
+
+
+
+
+
+
+
+.FF100item-24 {
+  background-image: url('../i/FF100frontpage/quasimoto1.svg?v=3'); /* Remplacez par le chemin de votre image */
+  background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+  background-position: center; /* Centre l'image dans l'élément */
+  position: relative;
+  z-index: 0;
+}
+.FF100item-24::before {
+  content: "";
+  background-image: url('../i/FF100frontpage/quasimoto2.svg?v=2'); /* Remplacez par le chemin de votre autre image */
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 100%; /* Démarre en bas de l'élément */
+  left: 0;
+  right: 0;
+  height: 0; /* Commence avec une hauteur de 0 */
+  transition: top 0.4s, height 0.4s; /* Ajoute une transition pour l'effet d'apparition/disparition */
+}
+.FF100item-24:hover::before {
+  top: 0; /* Monte jusqu'au sommet de l'élément au survol */
+  height: 100%; /* Augmente la hauteur pour couvrir l'élément */
+}
+.FF100item-24-link-1 {
+position: absolute;
+bottom: 5%; /* Ajustez cette valeur en pourcentage pour positionner le lien en bas */
+right: 2%; /* Ajustez cette valeur en pourcentage pour positionner le lien à droite */
+width: 25%; /* Ajustez cette valeur en pourcentage pour la largeur du lien */
+height: 18%; /* Ajustez cette valeur en pourcentage pour la hauteur du lien */
+z-index: 0;
+}
+
+
+
+
+
+.FF100item-27 {
+  text-align: center;
+  position: relative;
+  font-weight: 800;
+  background-color: yellow;
+}
+.FF100item-27-link-1 {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Moitié supérieure verticale */
+
+  z-index: 1;
+}
+.FF100item-27:hover img {
+  display: none;
+}
+.FF100item-27 img {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+  
+}
+
+
+
+  
+.FF100item-30 {
+ 
+  background-color: skyblue;
+  background-image: url('../i/FF100frontpage//copyrightblack.png'); /* Remplacez par le chemin de votre image */
+  background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+  background-position: center; /* Centre l'image dans l'élément */
+  position: relative;
+  
+}
+.FF100item-30-link-1 {
+
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%; /* Moitié supérieure verticale */
+z-index: 1;
+}
+.FF100item-30:hover img {
+display: none;
+}
+.FF100item-30 img {
+display: none;
+position: absolute;
+object-fit: cover;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: block;
+z-index: 1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.FF100ovale {
+  background-color: lightcoral;
+  width: 110px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  
+}
+
+.FF100ovale-1 {
+  background-color: lightcoral;
+  width: 120px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+  right: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+  transform: translate(0, 0); /* Réinitialise la transformation */
+  z-index: 1;
+  border: 2px solid black;
+  margin-bottom: 40px;
+}
+
+.FF100ovale-2 {
+  background-color: lightcoral;
+  width: 110px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+  left: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+  transform: translate(0, 0); /* Réinitialise la transformation */
+  z-index: 1;
+  border: 2px solid black;
+  margin-bottom: 40px;
+  animation: moveLeftRight1 8s infinite alternate ease-in-out; /* Animation infinie de gauche à droite */
+}
+
+.FF100ovale-3 {
+  background-color: lightcoral;
+  width: 110px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+  left: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+  transform: translate(0, 0); /* Réinitialise la transformation */
+  z-index: 2;
+  border: 2px solid black;
+  animation: moveUpDown2 8s infinite alternate ease-in-out;
+}
+
+.FF100ovale-4 {
+  background-color: lightcoral;
+  width: 110px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+  right: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+  transform: translate(0, 0); /* Réinitialise la transformation */
+  z-index: 2;
+  border: 2px solid black;
+  animation: moveUpDown1 8s infinite alternate ease-in-out;
+}
+
+  .FF100ovale-5 {
+    background-color: lightcoral;
+    width: 110px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+    left: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+    transform: translate(0, 0); /* Réinitialise la transformation */
+    z-index: 1;
+    border: 2px solid black;
+    margin-bottom: 40px;
+    animation: moveLeftRight1 8s infinite alternate ease-in-out; /* Animation infinie de gauche à droite */
+  }
+
+  .FF100ovale-6 {
+    background-color: lightcoral;
+    width: 110px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+    left: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+    transform: translate(0, 0); /* Réinitialise la transformation */
+    z-index: 2;
+    border: 2px solid black;
+    animation: moveUpDown2 8s infinite alternate ease-in-out;
+  }
+  .FF100ovale-7 {
+    background-color: lightcoral;
+    width: 110px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+    right: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+    transform: translate(0, 0); /* Réinitialise la transformation */
+    z-index: 2;
+    border: 2px solid black;
+    animation: moveUpDown1 8s infinite alternate ease-in-out;
+  }
+
+  .FF100ovale-8 {
+    background-color: lightcoral;
+    width: 110px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+    right: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+    transform: translate(0, 0); /* Réinitialise la transformation */
+    z-index: 2;
+    border: 2px solid black;
+    animation: moveUpDown3 8s infinite alternate ease-in-out;
+  }
+
+  .FF100ovale-9 {
+    background-color: lightcoral;
+    width: 110px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+    left: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+    transform: translate(0, 0); /* Réinitialise la transformation */
+    z-index: 2;
+    border: 2px solid black;
+    animation: moveLeftRight1 8s infinite alternate ease-in-out;
+  }
+  .FF100ovale-10 {
+    background-color: lightcoral;
+    width: 110px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+    right: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+    transform: translate(0, 0); /* Réinitialise la transformation */
+    z-index: 2;
+    border: 2px solid black;
+    animation: moveUpDown1 8s infinite alternate ease-in-out;
+  }
+
+  .FF100ovale-11 {
+    background-color: lightcoral;
+    width: 110px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+    left: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+    transform: translate(0, 0); /* Réinitialise la transformation */
+    z-index: 2;
+    border: 2px solid black;
+    animation: moveUpDown2 8s infinite alternate ease-in-out;
+  }
+  .FF100ovale-12 {
+    background-color: lightcoral;
+    width: 110px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+    left: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+    transform: translate(0, 0); /* Réinitialise la transformation */
+    z-index: 2;
+    border: 2px solid black;
+    animation: moveUpDown2 8s infinite alternate ease-in-out;
+  }
+  .FF100ovale-13 {
+    background-color: lightcoral;
+    width: 110px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+    right: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+    transform: translate(0, 0); /* Réinitialise la transformation */
+    z-index: 2;
+    border: 2px solid black;
+    animation: moveUpDown1 8s infinite alternate ease-in-out;
+  }
+
+  .FF100ovale-14 {
+    background-color: lightcoral;
+    width: 110px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Ajuste cette valeur pour le positionnement vertical */
+    right: 20px; /* Ajuste cette valeur pour le positionnement horizontal */
+    transform: translate(0, 0); /* Réinitialise la transformation */
+    z-index: 2;
+    border: 2px solid black;
+    animation: moveLeftRight1 8s infinite alternate ease-in-out;
+  }
+
+  .FF100ovale span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+
+  .FF100ovale a {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    z-index: 1;
+  }
+
+  .FF100ovale-1:hover, .FF100ovale-2:hover, .FF100ovale-3:hover, .FF100ovale-4:hover, .FF100ovale-5:hover, .FF100ovale-6:hover, .FF100ovale-7:hover, .FF100ovale-8:hover, .FF100ovale-9:hover, .FF100ovale-10:hover, .FF100ovale-11:hover, .FF100ovale-12:hover, .FF100ovale-13:hover, .FF100ovale-14:hover {
+    background-color: yellow;
+    box-shadow: 0 0 35px yellow;
+    border: 2px solid yellow;
+    
+  }
+
+
+  @media (max-width: 600px) {
+
+
+    .FF100grille-1 {
+      display: grid;
+      grid-template-rows: repeat(minmax(100px, 1fr), auto-fit);
+      grid-template-columns: repeat(auto-fit, minmax(calc(33.33% - 2px), 1fr)); /* Trois colonnes maximum par ligne */
+      grid-gap: 0px;
+      z-index: 0;
+      position: relative;
+    }
+     .FF100item-1, .FF100item-2, .FF100item-3, .FF100item-4, .FF100item-5, .FF100item-6,
+     .FF100item-7, .FF100item-8, .FF100item-9, .FF100item-10, .FF100item-11,
+     .FF100item-12, .FF100item-13, .FF100item-14, .FF100item-15, .FF100item-16,
+     .FF100item-17, .FF100item-18, .FF100item-19, .FF100item-20,
+     .FF100item-21, .FF100item-22, .FF100item-23, .FF100item-24,
+     .FF100item-25, .FF100item-26, .FF100item-27, .FF100item-28,
+     .FF100item-29, .FF100item-30 {
+       /* Vos styles CSS ici */
+     
+        aspect-ratio: 1; /* Le ratio 1:1 garde la même hauteur et largeur */
+        border-bottom: 0.5px solid black; /* Bordure en bas */
+        border-right: 0.5px solid black; /* Bordure à droite */
+        
+        position: relative;
+      }
+   
+    
+    }
+  
+
+
+
+  @media only screen and (max-width: 600px) {
+   
+      .FF100ovale, 
+      .FF100item-20,
+      .FF100item-24, .FF100item-24::before, .FF100item-24:hover::before, .FF100item-24-link-1 {
+        display: none;
+        }
+    }
+
+
+
+
+
+
+
+
+    @media only screen and (max-width: 600px) {
+
+      .FF100-ronddé1, .FF100-ronddé2, .FF100-ronddé3, .FF100-ronddé4, .FF100-ronddé5, .FF100-ronddé6 {
+        height: 15%;
+        width: 15%;
+      }
+
+
+      .FF100item-7 img {
+        display: none;
+      }
+
+      .FF100item-18 {
+        background-color: skyblue;
+        background-image: url('../i/FF100frontpage/PHONE/duchamp6phonelargevide.png'); /* Remplacez par le chemin de votre image */
+        background-size: cover; /* Ajuste la taille de l'image pour remplir l'élément */
+        background-position: right; /* Centre l'image dans l'élément */
+        position: relative;
+        
+      }
+
+    .FF100picture-1 img {
+      position: absolute;
+      right: 0; /* Commence à droite */
+      animation: slideImage 2s linear infinite; /* Ajustez le temps selon le besoin */
+      width: auto; /* Gardez l'aspect ratio de l'image */
+      height: 100%; /* L'image remplit la hauteur du conteneur */
+  }
+  .FF100picture-2 img {
+    position: absolute;
+    right: 0; /* Commence à droite */
+    animation: slideImage 5s linear infinite; /* Ajustez le temps selon le besoin */
+    width: auto; /* Gardez l'aspect ratio de l'image */
+    height: 100%; /* L'image remplit la hauteur du conteneur */
+  }
+
+  .FF100item-18:active img {
+    display: none;
+    object-fit: cover;
+}
+
+  @keyframes slideImage {
+    0% {
+        right: -100%; /* Commence en dehors du conteneur, ajustez selon la largeur de votre image */
+        opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+        right: 0%; /* Fait glisser l'image pour qu'elle disparaisse complètement à gauche */
+        opacity: 0;
+    }
+}
+    }
+  
+  
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+

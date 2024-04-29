@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BB200swastika</title>
+  <link rel="stylesheet" type="text/css" href="../css/BB200swastika.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+  <meta charset="UTF-8" />
+
+
+</head>
+<body>
+
+
+<div class="BB200grille-1">
+
+    <div class="BB200item BB200item-1">Item 1</div>
+    <div class="BB200item BB200item-2">Item 2</div>
+    <div class="BB200item BB200item-3">Item 3</div>
+    <div class="BB200item BB200item-4">Item 4</div>
+    <div class="BB200item BB200item-5">Item 5</div>
+    <div class="BB200item BB200item-6">Item 6</div>
+    <div class="BB200item BB200item-7">Item 7</div>
+    <div class="BB200item BB200item-8">Item 8</div>
+    <div class="BB200item BB200item-9">Item 9</div>
+    <div class="BB200item BB200item-10">Item 10</div>
+    <div class="BB200item BB200item-11">Item 11</div>
+    <div class="BB200item BB200item-12">Item 12</div>
+    <div class="BB200item BB200item-13">Item 13</div>
+    <div class="BB200item BB200item-14">Item 14</div>
+    <div class="BB200item BB200item-15">Item 15</div>
+    <div class="BB200item BB200item-16">Item 16</div>
+    <div class="BB200item BB200item-17">Item 17</div>
+    <div class="BB200item BB200item-18">Item 18</div>
+    <div class="BB200item BB200item-19">Item 19</div>
+    <div class="BB200item BB200item-20">Item 20</div>
+    <div class="BB200item BB200item-21">Item 21</div>
+    <div class="BB200item BB200item-22">Item 22</div>
+    <div class="BB200item BB200item-23">Item 23</div>
+    <div class="BB200item BB200item-24"> 
+      <div class="BB100feux">
+      <div class="BB100EXITrondinfo">?</div>
+      <a href="../index.html" class="BB100EXITrondrouge"></a>
+      <a href="../index.html" class="BB100EXITrondorange"></a>
+      <a href="../index.html" class="BB100EXITrondvert"></a>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelector('.BB100EXITrondinfo').addEventListener('touchstart', function(e) {
+    // Créer ou sélectionner l'élément de note si déjà existant
+    let note = document.getElementById('rondinfo-note');
+    if (!note) {
+      note = document.createElement('div');
+      note.id = 'rondinfo-note';
+      note.style.position = 'fixed';
+      note.style.width = '100vw';
+      note.style.height = '30vh';
+      note.style.bottom = '0';
+      note.style.left = '0';
+      note.style.backgroundColor = 'white';
+      note.style.border = '1px solid black';
+      note.style.padding = '10px';
+      note.style.borderRadius = '5px';
+      note.style.display = 'flex';
+      note.style.justifyContent = 'center';
+      note.style.alignItems = 'center';
+      note.style.fontSize = 'clamp(12px, 2vw, 16px)';
+      note.style.zIndex = '100';
+      note.textContent = "The symbol has no single function or meaning. In Hinduism, Jainism and Buddhism, the swastika is still used today as a religious symbol of good luck. In German, a heraldic symbol that resembles the swastika has been called a 'swastika' since the 18th century.";
+      document.body.appendChild(note);
+    } else {
+      // Basculer la visibilité
+      note.style.display = note.style.display === 'none' ? 'flex' : 'none';
+    }
+  });
+</script>
+
+
+
+ 
+    
+
+
+
+</body>
+</html>

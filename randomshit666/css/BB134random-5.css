@@ -1,0 +1,45 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+    padding: 0;
+    font-family: "Helvetica neue", sans-serif;
+    font-weight: 500;
+
+}
+
+
+
+.BB134test1 {
+    background-color : white;
+    color: black;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+    font-size: 50px;
+  
+  
+  }
+  
+  .BB134test1 {
+    opacity: 0;
+    transform: translateX(-100%);
+    filter: blur(3px);
+    transition: all 3s;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .BB134test1 {
+      transition: none;
+    }
+  }
+  
+  
+  .BB134show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  

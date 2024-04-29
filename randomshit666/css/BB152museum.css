@@ -1,0 +1,129 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.document-window {
+    width: 200vw;
+    height: 200vh;
+    position: absolute;
+    touch-action: none;
+    user-select: none;
+    transform-origin: 0 0;
+    border: 10px solid black;
+}
+
+.artboard {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    border: 1px solid black;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+  
+.BB140feux {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    
+    
+  }
+  
+  .BB140EXITrondrouge {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    transform: translate(-50%, -200%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB140EXITrondorange {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB140EXITrondvert {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: green;
+    transform: translate(-50%, 100%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB140EXITrondrouge:active,
+  .BB140EXITrondrouge:hover,
+  .BB140EXITrondrouge:focus {
+    transform: translate(-50%, -200%) scale(1.2);
+    box-shadow: 0 0 20px red;
+    
+  }
+  
+  .BB140EXITrondorange:active,
+  .BB140EXITrondorange:hover,
+  .BB140EXITrondorange:focus {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 20px orange;
+  }
+  
+  .BB140EXITrondvert:active,
+  .BB140EXITrondvert:hover,
+  .BB140EXITrondvert:focus {
+    transform: translate(-50%, 100%) scale(1.2);
+    box-shadow: 0 0 20px green;
+  }
+  
+  @media (min-width: 600px) {
+    .BB140EXITrondorange,
+    .BB140EXITrondrouge,
+    .BB140EXITrondvert {
+      width: 80px;
+      height: 80px;
+    }
+  
+  }
+  
+  @media (max-width: 350px) {
+    .BB140EXITrondorange,
+    .BB140EXITrondrouge,
+    .BB140EXITrondvert {
+      width: 40px;
+      height: 40px;
+    }
+    .BB140feux {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      
+    }
+  }
+  

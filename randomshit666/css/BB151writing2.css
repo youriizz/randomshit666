@@ -1,0 +1,179 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.BB151container-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Assure que le conteneur remplit tout l'écran */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.BB151item-1 {
+    position: absolute; /* Positionne par rapport à son parent direct */
+    display: flex; /* Utilise flexbox pour centrer l'image */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 50%;
+    width: 80%;
+    border: 0px solid black;
+}
+
+.BB151item-1 .draggable {
+    position: relative;
+    max-width: 100%; /* Garantit que l'image ne dépasse pas du conteneur */
+    max-height: 100%; /* Garantit que l'image ne dépasse pas du conteneur */
+    object-fit: contain; /* Garantit que l'aspect ratio de l'image est préservé */
+    cursor: grab;
+}
+
+#draggable-image-1, #draggable-image-2, #draggable-image-3, #BB151feux-container {
+    display: none;
+}
+
+#draggable-image-2 {
+    position: absolute;
+    width: 80%;
+    height: auto;
+}
+
+#draggable-text-1, #draggable-text-2, #draggable-text-3, #draggable-text-4, #draggable-text-5, #draggable-text-6, #draggable-text-7, #draggable-text-8, #draggable-text-9 {
+    z-index: 0; /* S'assure que le texte apparaît au-dessus de l'image */
+    color: rgb(0, 0, 0); /* Ajustez la couleur du texte pour la visibilité */
+    text-align: center; /* Centre le texte si celui-ci est multi-lignes */
+    font-size: clamp(50px, 12vw, 120px);
+    font-weight: 900;
+    background-color: rgb(255, 58, 143);
+}
+
+#draggable-text-7, #draggable-text-8, #draggable-text-9 {
+    background-color: rgb(45, 90, 255);
+}
+
+#draggable-text-3, #draggable-text-4 {
+    background-color: rgb(197, 197, 197);
+
+}
+
+#draggable-text-2, #draggable-text-3, #draggable-text-4, #draggable-text-5, #draggable-text-6, #draggable-text-7, #draggable-text-8, #draggable-text-9 {
+    display: none;
+}
+
+
+/* Empeche le surlignage du texte */
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+
+
+
+  
+  .BB151feux {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    
+    
+  }
+  
+  .BB151EXITrondrouge {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    transform: translate(-50%, -200%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB151EXITrondorange {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB151EXITrondvert {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: green;
+    transform: translate(-50%, 100%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB151EXITrondrouge:active,
+  .BB151EXITrondrouge:hover,
+  .BB151EXITrondrouge:focus {
+    transform: translate(-50%, -200%) scale(1.2);
+    box-shadow: 0 0 20px red;
+    
+  }
+  
+  .BB151EXITrondorange:active,
+  .BB151EXITrondorange:hover,
+  .BB151EXITrondorange:focus {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 20px orange;
+  }
+  
+  .BB151EXITrondvert:active,
+  .BB151EXITrondvert:hover,
+  .BB151EXITrondvert:focus {
+    transform: translate(-50%, 100%) scale(1.2);
+    box-shadow: 0 0 20px green;
+  }
+  
+  @media (min-width: 600px) {
+    .BB151EXITrondorange,
+    .BB151EXITrondrouge,
+    .BB151EXITrondvert {
+      width: 80px;
+      height: 80px;
+    }
+  
+  }
+  
+  @media (max-width: 350px) {
+    .BB151EXITrondorange,
+    .BB151EXITrondrouge,
+    .BB151EXITrondvert {
+      width: 40px;
+      height: 40px;
+    }
+    .BB151feux {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      
+    }
+  }
+  

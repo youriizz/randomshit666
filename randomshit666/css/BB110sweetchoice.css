@@ -1,0 +1,645 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica neue", sans-serif;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+#firstWindow {
+  top: -100%;
+}
+
+.window {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  transition: top 0.5s, opacity 0.5s;
+  opacity: 1;
+}
+
+#thirdWindow {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.initialcircle1, .initialcircle2 {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border: 3px solid black;
+  border-radius: 50%;
+  transform: translateY(-100%);
+  background-color: white;
+}
+
+.initialcircle2 {
+  transform: translateY(100%);
+}
+
+.initialcircle1::before, .initialcircle2::before {
+  position: absolute;
+  top: 50%; /* Centrer verticalement */
+  left: 50%; /* Centrer horizontalement */
+  transform: translate(-50%, -50%); /* Ajustement fin pour centrer parfaitement */
+  display: block;
+  text-align: center; /* Pour centrer le texte si plus long que le cercle */
+}
+
+.initialcircle1::before {
+  content: "2001";
+}
+
+.initialcircle2::before {
+  content: "2023";
+}
+
+
+
+
+/* Assurez-vous que votre CSS initialise tous les cercles et SVGs avec display: none */
+.circle, .svg-container, .circle-2, .svg-container-2{
+  display: none;
+}
+
+
+.circle-container {
+  position: absolute;
+  display: flex;
+  width: 50%; /* Définit la largeur à 50% du conteneur parent */
+  height: 50%;/* Calcule la hauteur comme étant 50% du conteneur parent moins 4 pixels */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Haut gauche */
+.circle-container:nth-child(1) {
+  top: 0;
+  left: 0;
+  background-color: aqua;
+}
+
+/* Bas gauche */
+.circle-container:nth-child(4) {
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255, 196, 0);
+}
+
+/* Bas droit */
+.circle-container:nth-child(2) {
+  bottom: 0;
+  right: 0; /* Changé de left à right */
+  background-color: rgb(255, 0, 0);
+}
+
+.circle {
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
+
+  .circle::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid black; /* Style de la bordure intérieure */
+    width: 40%; /* Diamètre intérieur */
+    height: 40%; /* Diamètre intérieur */
+    /* Ajustez ces valeurs pour centrer précisément */
+    top: calc(30% - 2px); /* Ajustement pour centrer en tenant compte de la bordure */
+    left: calc(30% - 2px); /* Ajustement pour centrer en tenant compte de la bordure */
+    background-color: transparent;
+  }
+
+  .circle-container:nth-child(1) .circle::after {
+    content: '9h47'; /* Texte ajouté ici */
+    position: absolute;
+    width: 100%; /* Largeur à 100% du parent pour permettre un centrage facile */
+    top: -30px; /* Positionnez le texte au-dessus du cercle */
+    left: 50%; /* Centrage horizontal */
+    transform: translateX(-50%); /* Décale le texte de 50% de sa propre largeur vers la gauche pour le centrer parfaitement */
+    font-size: 20px; /* Taille de police */
+    color: black; /* Couleur du texte */
+    z-index: 2; /* S'assure que le texte est au-dessus de tous les autres contenus */
+}
+
+.circle-container:nth-child(2) .circle::after {
+    content: ''; /* Ajoutez votre texte ici */
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 70%;
+    height: 70%;
+    top: calc(15% - 2px);
+    left: calc(15% - 2px);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px; /* Ajustez la taille de police selon l'espace disponible */
+    color: black; /* Couleur du texte */
+}
+
+.circle-container:nth-child(4) .circle::after {
+  content: '10h56'; /* Texte ajouté ici */
+  position: absolute;
+  width: 100%; /* Largeur à 100% du parent pour permettre un centrage facile */
+  top: -30px; /* Positionnez le texte au-dessus du cercle */
+  left: 50%; /* Centrage horizontal */
+  transform: translateX(-50%); /* Décale le texte de 50% de sa propre largeur vers la gauche pour le centrer parfaitement */
+  font-size: 20px; /* Taille de police */
+  color: rgb(17, 0, 255); /* Couleur du texte */
+  z-index: 2; /* S'assure que le texte est au-dessus de tous les autres contenus */
+}
+
+  .circle-container:nth-child(1) .circle {
+    top: 0;
+    left: 50%;
+    transform: translate(0, 0); /* Ajustez pour positionner précisément si nécessaire */
+    z-index: 1;
+  }
+  
+  /* Cercle en bas au centre de son conteneur */
+  .circle-container:nth-child(2) .circle {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0); /* Centrage horizontal */
+  }
+
+  .svg-container {
+    position: absolute;
+    width: 20%; /* Assurez-vous que la largeur correspond à celle de vos circle-containers */
+    height: auto; /* Assurez-vous que la hauteur correspond */
+    top: 10px; /* Ajustez selon la position que vous désirez */
+    right: 10px; /* Ajustez pour le positionnement */
+    display: none; /* Cachez initialement */
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    background-color: rgb(255, 255, 0);
+  }
+
+  .svg-container:nth-of-type(5) {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 20%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .circle-container-2 {
+    position: absolute;
+    display: flex;
+    width: 50%; /* Définit la largeur à 50% du conteneur parent */
+    height: 50%;/* Calcule la hauteur comme étant 50% du conteneur parent moins 4 pixels */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Haut gauche */
+  .circle-container-2:nth-child(1) {
+    top: 0;
+    left: 0;
+    background-color: aqua;
+  }
+  
+  /* Bas gauche */
+  .circle-container-2:nth-child(2) {
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0, 255, 4);
+  }
+  
+  /* Bas droit */
+  .circle-container-2:nth-child(4) {
+    bottom: 0;
+    right: 0; /* Changé de left à right */
+    background-color: rgb(255, 0, 0);
+  }
+  
+  .circle-2 {
+      position: relative;
+      border-radius: 50%;
+      border: 2px solid black;
+      width: 100px;
+      height: 100px;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+  
+  
+    .circle-2::before {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid black; /* Style de la bordure intérieure */
+      width: 40%; /* Diamètre intérieur */
+      height: 40%; /* Diamètre intérieur */
+      /* Ajustez ces valeurs pour centrer précisément */
+      top: calc(30% - 2px); /* Ajustement pour centrer en tenant compte de la bordure */
+      left: calc(30% - 2px); /* Ajustement pour centrer en tenant compte de la bordure */
+      background-color: transparent;
+    }
+  
+    .circle-container-2:nth-child(1) .circle-2::after {
+      content: '9h47'; /* Texte ajouté ici */
+      position: absolute;
+      width: 100%; /* Largeur à 100% du parent pour permettre un centrage facile */
+      top: -30px; /* Positionnez le texte au-dessus du cercle */
+      left: 50%; /* Centrage horizontal */
+      transform: translateX(-50%); /* Décale le texte de 50% de sa propre largeur vers la gauche pour le centrer parfaitement */
+      font-size: 20px; /* Taille de police */
+      color: black; /* Couleur du texte */
+      z-index: 2; /* S'assure que le texte est au-dessus de tous les autres contenus */
+  }
+  
+  .circle-container-2:nth-child(2) .circle-2::after {
+      content: ''; /* Ajoutez votre texte ici */
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid black;
+      width: 70%;
+      height: 70%;
+      top: calc(15% - 2px);
+      left: calc(15% - 2px);
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px; /* Ajustez la taille de police selon l'espace disponible */
+      color: black; /* Couleur du texte */
+  }
+  
+  .circle-container-2:nth-child(4) .circle-2::after {
+    content: '10h56'; /* Texte ajouté ici */
+    position: absolute;
+    width: 100%; /* Largeur à 100% du parent pour permettre un centrage facile */
+    top: -30px; /* Positionnez le texte au-dessus du cercle */
+    left: 50%; /* Centrage horizontal */
+    transform: translateX(-50%); /* Décale le texte de 50% de sa propre largeur vers la gauche pour le centrer parfaitement */
+    font-size: 20px; /* Taille de police */
+    color: rgb(17, 0, 255); /* Couleur du texte */
+    z-index: 2; /* S'assure que le texte est au-dessus de tous les autres contenus */
+  }
+  
+    .circle-container-2:nth-child(1) .circle-2 {
+      top: 0;
+      left: 50%;
+      transform: translate(0, 0); /* Ajustez pour positionner précisément si nécessaire */
+      z-index: 1;
+    }
+    
+    /* Cercle en bas au centre de son conteneur */
+    .circle-container-2:nth-child(2) .circle-2 {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0); /* Centrage horizontal */
+    }
+  
+    .svg-container-2 {
+      position: absolute;
+      width: 20%; /* Assurez-vous que la largeur correspond à celle de vos circle-containers */
+      height: auto; /* Assurez-vous que la hauteur correspond */
+      top: 10px; /* Ajustez selon la position que vous désirez */
+      right: 10px; /* Ajustez pour le positionnement */
+      display: none; /* Cachez initialement */
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+      background-color: rgb(255, 255, 0);
+    }
+    
+    .svg-container-2:nth-of-type(5) {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      width: 10%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  .BB140feux {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    opacity: 0; /* Commencez avec une opacité de 0 */
+    transition: opacity 1s ease;
+    
+    
+  }
+
+  .BB140EXITrondrouge {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    transform: translate(-50%, -200%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB140EXITrondorange {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB140EXITrondvert {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: green;
+    transform: translate(-50%, 100%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB140EXITrondrouge:active,
+  .BB140EXITrondrouge:hover,
+  .BB140EXITrondrouge:focus {
+    transform: translate(-50%, -200%) scale(1.2);
+    box-shadow: 0 0 20px red;
+    
+  }
+  
+  .BB140EXITrondorange:active,
+  .BB140EXITrondorange:hover,
+  .BB140EXITrondorange:focus {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 20px orange;
+  }
+  
+  .BB140EXITrondvert:active,
+  .BB140EXITrondvert:hover,
+  .BB140EXITrondvert:focus {
+    transform: translate(-50%, 100%) scale(1.2);
+    box-shadow: 0 0 20px green;
+  }
+  
+  @media (min-width: 600px) {
+    .BB140EXITrondorange,
+    .BB140EXITrondrouge,
+    .BB140EXITrondvert {
+      width: 80px;
+      height: 80px;
+    }
+  
+  }
+  
+  @media (max-width: 350px) {
+    .BB140EXITrondorange,
+    .BB140EXITrondrouge,
+    .BB140EXITrondvert {
+      width: 40px;
+      height: 40px;
+    }
+    .BB140feux {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      
+    }
+  }
+
+
+
+
+
+
+
+
+
+  .BB140feux2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    opacity: 0; /* Commencez avec une opacité de 0 */
+    transition: opacity 1s ease;
+    
+    
+  }
+  
+
+  .BB140EXITrondrouge2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    transform: translate(-50%, -200%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB140EXITrondorange2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB140EXITrondvert2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    background-color: green;
+    transform: translate(-50%, 100%);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .BB140EXITrondrouge2:active,
+  .BB140EXITrondrouge2:hover,
+  .BB140EXITrondrouge2:focus {
+    transform: translate(-50%, -200%) scale(1.2);
+    box-shadow: 0 0 20px red;
+    
+  }
+  
+  .BB140EXITrondorange2:active,
+  .BB140EXITrondorange2:hover,
+  .BB140EXITrondorange2:focus {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 20px orange;
+  }
+  
+  .BB140EXITrondvert2:active,
+  .BB140EXITrondvert2:hover,
+  .BB140EXITrondvert2:focus {
+    transform: translate(-50%, 100%) scale(1.2);
+    box-shadow: 0 0 20px green;
+  }
+  
+  @media (min-width: 600px) {
+    .BB140EXITrondorange2,
+    .BB140EXITrondrouge2,
+    .BB140EXITrondvert2 {
+      width: 80px;
+      height: 80px;
+    }
+  
+  }
+  
+  @media (max-width: 350px) {
+    .BB140EXITrondorange2,
+    .BB140EXITrondrouge2,
+    .BB140EXITrondvert2 {
+      width: 40px;
+      height: 40px;
+    }
+    .BB140feux2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      
+    }
+  }
