@@ -1,0 +1,120 @@
+*, *::before, *::after {
+    box-sizing: border-box; /* Assure que padding et border sont inclus dans la largeur/hauteur */
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0px;
+    padding: 0;
+    font-family: "Helvetica neue", sans-serif;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+.gallery {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 20vh;
+    border: 1px solid black;
+    background-color: rgb(222, 222, 222);
+    box-sizing: border-box;
+    overflow-x: auto;
+    animation: slide 20s linear infinite;
+}
+
+.gallery:nth-of-type(1) {
+    background-color: lightblue; /* Couleur de fond pour la première galerie */
+}
+
+.gallery:nth-of-type(2) {
+    background-color: rgb(247, 255, 177); /* Couleur de fond pour la première galerie */
+    height: 15vh;
+    animation: slide2 30s linear infinite;
+}
+
+.gallery:nth-of-type(3) {
+    background-color: rgb(251, 212, 255); /* Couleur de fond pour la première galerie */
+    height: 10vh;
+    animation: slide3 80s linear infinite;
+}
+
+.gallery:nth-of-type(4) {
+    background-color: rgb(255, 250, 219); /* Couleur de fond pour la première galerie */
+    height: 15vh;
+    animation: slide4 20s linear infinite;
+}
+.gallery:nth-of-type(5) {
+    background-color: rgb(206, 206, 206); /* Couleur de fond pour la première galerie */
+    height: 10vh;
+    animation: slide5 50s linear infinite;
+}
+.gallery:nth-of-type(6) {
+    background-color: rgb(203, 255, 198); /* Couleur de fond pour la première galerie */
+    height: 25vh;
+    animation: slide6 30s linear infinite;
+}
+.gallery:nth-of-type(7) {
+    background-color: rgb(180, 255, 252); /* Couleur de fond pour la première galerie */
+    height: 15vh;
+    animation: slide7 10s linear infinite;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none; /* Cache les barres de défilement pour Webkit et Chrome */
+}
+
+.gallery {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+.container1, .container2 {
+    flex-shrink: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.container1 {
+    width: 30vw;
+}
+.container2 {
+    width: 40vw;
+}
+
+
+@keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes slide2 {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+@keyframes slide3 {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+@keyframes slide4 {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+@keyframes slide5 {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+@keyframes slide6 {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+@keyframes slide7 {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
