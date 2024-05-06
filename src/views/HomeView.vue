@@ -7,6 +7,7 @@ const items = [
   {name: 'item 3'},
   {name: 'item 4'},
   {name: 'item 5'},
+  {name: 'Netflix', route: "netflix"},
 ];
 
 </script>
