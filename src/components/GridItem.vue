@@ -1,4 +1,11 @@
-<script>
+<script lang="ts">
+export type GridItem = {
+    name: String;
+    route: String;
+}
+
+
+
 export default {
     props: {
         item: Object,

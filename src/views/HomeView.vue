@@ -1,12 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import Grid from '@/components/Grid.vue';
+import { GridItem } from '@/components/GridItem.vue';
 
-const items = [
-  {name: 'item 1'},
-  {name: 'item 2'},
-  {name: 'item 3'},
-  {name: 'item 4'},
-  {name: 'item 5'},
+const items: GridItem[] = [
+  {name: 'item 1', route: ""},
+  {name: 'item 2', route: ""},
+  {name: 'item 3', route: ""},
+  {name: 'item 4', route: ""},
+  {name: 'item 5', route: ""},
   {name: 'Netflix', route: "netflix"},
 ];
 
