@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import Netflix from "@/components/Netflix.vue";
+import Netflix from "@/components/Netflix/Netflix.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
