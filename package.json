@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsc && vite",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@babel/types": "^7.24.5",
-    "typescript": "^5.4.5",
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
