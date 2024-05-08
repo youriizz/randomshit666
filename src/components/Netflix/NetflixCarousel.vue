@@ -9,9 +9,11 @@ export default defineComponent({
         idx: {
             type: Number,
         },
+        items: {
+            type: Array
+        }
     },
     mounted() {
-        // Initialize Splide with Autoscroll extension
         new Splide('#splide-' + this.idx, this.options).mount({ AutoScroll });
     },
     computed: {
@@ -39,9 +41,9 @@ export default defineComponent({
         <div :id="'splide-' + this.idx" class="splide">
             <div class="splide__track">
                 <ul class="splide__list">
-                    <li class="splide__slide">
+                    <!-- <li class="splide__slide" v-for="(item, index) in items" :key="index">
                         <img class="slide" height="200" width="300" style="background-color: red;" />
-                    </li>
+                    </li> -->
                     <li class="splide__slide">
                         <img class="slide" height="200" width="300" style="background-color: blue;" />
                     </li>
@@ -84,30 +86,5 @@ export default defineComponent({
 <style scoped>
 .netflix-carousel {
     width: 100%;
-}
-
-.marquee {
-    position: relative;
-    width: 100vw;
-    max-width: 100%;
-    height: 200px;
-    overflow-x: hidden;
-}
-
-.track {
-    position: absolute;
-    white-space: nowrap;
-    will-change: transform;
-    animation: marquee 2s linear infinite;
-}
-
-@keyframes marquee {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
 }
 </style>

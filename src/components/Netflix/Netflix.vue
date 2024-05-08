@@ -10,14 +10,7 @@ export default {
 
 <template>
     <div class="netflix">
-        <netflix-carousel v-for="splide in 10" :key="splide" :idx="splide"></netflix-carousel>
-        <!-- <netflix-carousel /> -->
-        <!-- <netflix-carousel direction="rtl" /> -->
-        <!-- <netflix-carousel /> -->
-        <!-- <netflix-carousel direction="rtl" /> -->
-        <!-- <netflix-carousel /> -->
-        <!-- <netflix-carousel direction="rtl" /> -->
-        <!-- <netflix-carousel /> -->
+        <netflix-carousel v-for="splide in 10" :key="splide" :idx="splide" />
     </div>
 </template>
 
