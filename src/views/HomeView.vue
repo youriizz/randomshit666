@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Grid from '@/components/Grid.vue';
 import { GridItem } from '@/components/GridItem.vue';
+import TrafficLight from "@/components/TrafficLight.vue";
 
 const items: GridItem[] = [
   {name: 'item 1', route: ""},
@@ -16,5 +17,6 @@ const items: GridItem[] = [
 <template>
   <main>
     <Grid :items="items" />
+    <TrafficLight />
   </main>
 </template>
