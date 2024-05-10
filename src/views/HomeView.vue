@@ -4,12 +4,12 @@ import { GridItem } from '@/components/GridItem.vue';
 import TrafficLight from "@/components/TrafficLight.vue";
 
 const items: GridItem[] = [
-  {name: 'item 1', route: ""},
-  {name: 'item 2', route: ""},
-  {name: 'item 3', route: ""},
-  {name: 'item 4', route: ""},
-  {name: 'item 5', route: ""},
-  {name: 'Netflix', route: "netflix"},
+  { name: 'item 1', route: "" },
+  { name: 'item 2', route: "" },
+  { name: 'item 3', route: "" },
+  { name: 'item 4', route: "" },
+  { name: 'item 5', route: "" },
+  { name: 'Netflix', route: "netflix" },
 ];
 
 </script>

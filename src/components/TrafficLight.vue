@@ -1,13 +1,13 @@
 <template>
     <div class="traffic-light">
-        <TraficLightBtn light-type="red" />
-        <TraficLightBtn light-type="orange" />
-        <TraficLightBtn light-type="green" />
+        <TrafficLightBtn light-type="red" />
+        <TrafficLightBtn light-type="orange" />
+        <TrafficLightBtn light-type="green" />
     </div>
 </template>
 
 <script>
-import TrafficLightBtn from "./TrafficLightBtn.vue";
+import TrafficLightBtn from "@/components/TrafficLightBtn.vue";
 
 export default {
     components: { TrafficLightBtn },
@@ -22,8 +22,8 @@ export default {
     width: 100px;
     height: 200px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 </style>

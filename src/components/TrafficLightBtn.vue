@@ -1,42 +1,56 @@
 <template>
-     <div :class="lightClass" class="light" @click="navigate"></div>
+  <div :class="lightClass" class="light" @click="navigate"></div>
 </template>
 
 <script>
 export default {
-    props: {
-        lightType: String,
-    },
-    computed: {
-        lightClass() {
-            if (this.type === 'red') {
-                return "red";
-            }
+  props: {
+    lightType: String,
+  },
+  computed: {
+    lightClass() {
+      if (this.lightType === 'red') {
+        return "red";
+      }
 
-            if (this.type === 'orange') {
-                return "orange";
-            }
-            
-            if (this.type === 'green') {
-                return "green";
-            }
-        }
+      if (this.lightType === 'orange') {
+        return "orange";
+      }
+
+      if (this.lightType === 'green') {
+        return "green";
+      }
     }
+  },
+  methods: {
+    navigate() {
+      if (this.lightType === 'red') {
+        this.$router.push({ name: 'home' });
+      }
+
+      if (this.lightType === 'orange') {
+        this.$router.push({ name: "notsimilar" });
+      }
+
+      if (this.lightType === 'green') {
+        this.$router.push({ name: "similar" });
+      }
+    }
+  },
 }
 </script>
 
 <style scoped>
-
 .red {
-    background-color: red;
+  background-color: red;
 }
 
 .orange {
-    background-color: orange;
+  background-color: orange;
 }
 
 .green {
-    background-color: green;
+  background-color: green;
 }
 
 .light {
@@ -54,7 +68,7 @@ export default {
   transform: scale(1.2);
   box-shadow: 0 0 20px light;
   opacity: 100%;
-  
+
 }
 
 @media (min-width: 600px) {
@@ -65,10 +79,9 @@ export default {
 }
 
 @media (max-width: 350px) {
- .light {
+  .light {
     width: 40px;
     height: 40px;
   }
 }
-
 </style>

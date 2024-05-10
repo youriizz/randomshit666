@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import Netflix from "@/components/Netflix/Netflix.vue";
+import NotSimilar from "@/components/NotSimilar.vue";
+import Similar from "@/components/Similar.vue";
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +17,16 @@ const router = createRouter({
       path: "/netflix",
       name: "netflix",
       component: Netflix,
+    },
+    {
+      path: "/similar",
+      name: "similar",
+      component: Similar,
+    },
+    {
+      path: "/notsimilar",
+      name: "notsimilar",
+      component: NotSimilar,
     },
     // {
     //   path: '/about',
