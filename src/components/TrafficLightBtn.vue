@@ -43,14 +43,21 @@ export default {
 <style scoped>
 .red {
   background-color: red;
+  transform: translateY(-15%);
+  --translateY: -15%;
+  --shadow-color: red;
 }
 
 .orange {
   background-color: orange;
+  --shadow-color: orange;
 }
 
 .green {
   background-color: green;
+  transform: translateY(15%);
+  --translateY: 15%;
+  --shadow-color: green;
 }
 
 .light {
@@ -65,8 +72,8 @@ export default {
 .light:active,
 .light:hover,
 .light:focus {
-  transform: scale(1.2);
-  box-shadow: 0 0 20px light;
+  transform: scale(1.2) translateY(var(--translateY, 0%));
+  box-shadow: 0 0 20px var(--shadow-color);
   opacity: 100%;
 
 }
