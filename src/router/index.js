@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import Netflix from "@/components/Netflix/Netflix.vue";
 import NotSimilar from "@/components/NotSimilar.vue";
 import Similar from "@/components/Similar.vue";
+import ILoveGaza from "@/components/ILoveGaza/ILoveGazaGallery.vue";
 
 
 const router = createRouter({
@@ -27,6 +28,11 @@ const router = createRouter({
       path: "/notsimilar",
       name: "notsimilar",
       component: NotSimilar,
+    },
+    {
+      path: "/ilovegaza",
+      name: "ilovegaza",
+      component: ILoveGaza,
     },
     // {
     //   path: '/about',
