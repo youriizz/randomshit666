@@ -4,6 +4,8 @@ import Netflix from "@/components/Netflix/Netflix.vue";
 import NotSimilar from "@/components/NotSimilar.vue";
 import Similar from "@/components/Similar.vue";
 import ILoveGaza from "@/components/ILoveGaza/ILoveGazaGallery.vue";
+import InternationalThumbnail from "@/components/International/InternationalThumbnail.vue";
+import International from "@/components/International/International.vue";
 
 
 const router = createRouter({
@@ -34,6 +36,12 @@ const router = createRouter({
       name: "ilovegaza",
       component: ILoveGaza,
     },
+    {
+      path: "/international",
+      name: "international",
+      component: International,
+    },
+    
     // {
     //   path: '/about',
     //   name: 'about',
