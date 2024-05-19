@@ -1,19 +1,9 @@
 <template>
-  <div class="gallery">
-    <ILoveGazaDynamicTshirt
-      v-if="tshirts[0]"
-      :contents="tshirts[0].contents"
-      :clickCount="clickCount"
-      @clicked="handleClick(0)"
-      class="gallery-item"
-    />
-    <ILoveGazaStaticTshirts
-      v-for="(tshirt, index) in tshirts.slice(1, -1)"
-      :key="tshirt.id"
-      :contents="tshirt.contents"
-      :class="{ 'is-hidden': !showGallery }" 
-      class="gallery-item"
-    >
+  <div class="gallery" v-dragscroll>
+    <ILoveGazaDynamicTshirt v-if="tshirts[0]" :contents="tshirts[0].contents" :clickCount="clickCount"
+      @clicked="handleClick(0)" class="gallery-item" />
+    <ILoveGazaStaticTshirts v-for="(tshirt, index) in tshirts.slice(1, -1)" :key="tshirt.id" :contents="tshirt.contents"
+      :class="{ 'is-hidden': !showGallery }" class="gallery-item">
       <img :src="tshirt.contents[0]" alt="T-shirt image" />
     </ILoveGazaStaticTshirts>
     <div v-if="clickCount >= 6" class="gallery-item centered">
@@ -55,7 +45,7 @@ export default {
             image2,
             image3,
             image4,
-            "25$", 
+            "25$",
             ''
           ]
         },
@@ -106,7 +96,7 @@ export default {
     isGreyBackground() {
       return this.clickCount >= 5;
     }
-    },
+  },
 
   methods: {
     handleClick(index) {
@@ -126,6 +116,10 @@ export default {
 <style scoped>
 .is-hidden {
   display: none;
+}
+
+img {
+  pointer-events: none;
 }
 
 .gallery {
@@ -169,13 +163,16 @@ export default {
   .gallery {
     gap: 4vw;
   }
+
   .gallery-item {
     width: 80vw;
     height: 70vh;
   }
+
   .gallery-item:first-child {
     margin-left: 10vw;
   }
+
   .gallery-item:last-child {
     margin-right: 10vw;
   }
