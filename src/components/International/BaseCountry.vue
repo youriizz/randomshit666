@@ -91,7 +91,7 @@
         return this.styles.filter(style => this.clickCount >= style.start && this.clickCount <= style.end);
       },
       showTrafficLights() {
-        return this.clickCount >= 9;
+        return this.clickCount >= 20;
       }
     },
     methods: {
@@ -102,6 +102,7 @@
         if (this.clickCount >= 3) {
           this.bringToFront();
         }
+        this.checkForNukeTrigger();
       },
       handleClickAndEmit() {
         this.$emit('country-selected', this.id);
@@ -146,8 +147,24 @@
           classes.push(style.animation.className);
         }
         return classes.join(' ');
+      },
+      checkForNukeTrigger() {
+      // Vérifie si les images nukes sont affichées et émet un événement
+      if (
+        this.activeImages.some(
+          (image) =>
+            ['nuke', 'nuke2', 'nuke3'].includes(image.class) &&
+            this.clickCount >= image.start &&
+            this.clickCount <= image.end
+        )
+      ) {
+        EventBus.emit('nuke-triggered');
+        console.log('Nuke event triggered');
       }
-    },
+    }
+  },
+    
+    
     created() {
       EventBus.on('update-click-count', (count) => {
         if (count <= 2) {

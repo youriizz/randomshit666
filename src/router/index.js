@@ -6,6 +6,8 @@ import Similar from "@/components/Similar.vue";
 import ILoveGaza from "@/components/ILoveGaza/ILoveGazaGallery.vue";
 import InternationalThumbnail from "@/components/International/InternationalThumbnail.vue";
 import International from "@/components/International/International.vue";
+import Oval1 from '@/components/Oval/Oval1.vue';
+import Oval2 from '@/components/Oval/Oval2.vue'
 
 
 const router = createRouter({
@@ -40,6 +42,16 @@ const router = createRouter({
       path: "/international",
       name: "international",
       component: International,
+    },
+    {
+      path: "/oval",
+      name: "oval",
+      component: Oval1,
+    },
+    {
+      path: "/oval2",
+      name: "oval2",
+      component: Oval2,
     },
     
     // {

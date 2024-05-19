@@ -6,6 +6,7 @@ import AnotherThumbnail from '@/components/AnotherThumbnail.vue';
 import TrafficLight from "@/components/TrafficLight.vue";
 import ILoveGazaThumbnail from "@/components/ILoveGaza/ILoveGazaThumbnail.vue";
 import InternationalThumbnail from '@/components/International/InternationalThumbnail.vue';
+import OvalThumbnail from '@/components/Oval/OvalThumbnail.vue';
 
 
 const items: GridItem[] = [
@@ -15,7 +16,8 @@ const items: GridItem[] = [
   { name: 'item 4', route: "" },
   { name: 'ILoveGaza', route: "ilovegaza", component: ILoveGazaThumbnail },
   { name: 'Netflix', route: "netflix", component: NetflixThumbnail },
-  { name: 'International', route: "international", component: InternationalThumbnail }
+  { name: 'International', route: "international", component: InternationalThumbnail },
+  { name: 'Oval', route: "oval", component: OvalThumbnail }
 ];
 
 </script>

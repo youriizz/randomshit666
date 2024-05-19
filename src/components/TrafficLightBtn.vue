@@ -6,6 +6,8 @@
 export default {
   props: {
     lightType: String,
+    orangeRoute: String,
+    greenRoute: String,
   },
   computed: {
     lightClass() {
@@ -28,12 +30,12 @@ export default {
         this.$router.push({ name: 'home' });
       }
 
-      if (this.lightType === 'orange') {
-        this.$router.push({ name: "notsimilar" });
+      if (this.lightType === 'orange' && this.orangeRoute) {
+        this.$router.push({ name: this.orangeRoute });
       }
 
-      if (this.lightType === 'green') {
-        this.$router.push({ name: "similar" });
+      if (this.lightType === 'green' && this.greenRoute) {
+        this.$router.push({ name: this.greenRoute });
       }
     }
   },
@@ -75,7 +77,6 @@ export default {
   transform: scale(1.2) translateY(var(--translateY, 0%));
   box-shadow: 0 0 20px var(--shadow-color);
   opacity: 100%;
-
 }
 
 @media (min-width: 600px) {

@@ -3,14 +3,29 @@
   </template>
   
   <script>
+  import EventBus from '../../eventBus';
   import BaseCountry from './BaseCountry.vue';
-  import oceanImage from '@/assets/ILoveGaza/ocean9.png';
 import TrafficLight from '../TrafficLight.vue';
-import explosion from '@/assets/International/explosion.gif'
-import softpower from '@/assets/International/softpower.gif'
-import twofaces from '@/assets/International/twofaces.svg'
-import churchill from '@/assets/International/churchill.mp3'
-import flagwestalia from '@/assets/International/flagwestalia.webp'
+import explosion from '@/assets/International/images/explosion.gif'
+import softpower from '@/assets/International/images/softpower.gif'
+import churchill from '@/assets/International/sounds/churchill.mp3'
+import flagwestalia from '@/assets/International/images/flagwestalia.webp'
+
+
+const healthcare = 'https://media1.tenor.com/m/ODwN_mzoi-cAAAAd/stop-nuclear-weapons-nti.gif'
+
+
+
+
+ import CommunistAlert from '@/assets/International/sounds/communistalert.mp3'
+
+ const nuke1 = 'https://media.tenor.com/OYFqADjduDsAAAAj/nuclear-explosion-starcraft-remastered.gif'
+ const nuke2 = 'https://media1.tenor.com/m/SaNndlb2qbQAAAAd/janestree.gif'
+ const nukehand = 'https://media1.tenor.com/m/nSS5geb1XGoAAAAd/nuke-press-button.gif'
+
+
+
+
   
   export default {
     components: {
@@ -20,26 +35,47 @@ import flagwestalia from '@/assets/International/flagwestalia.webp'
     data() {
       return {
         images: [
-          {src: flagwestalia, start: 1, end: 3, class: 'flag', animation : {className: 'littleflag', start: 2, end: 3}},
-          { src: softpower, start: 20, end: 20, class: 'softpower-image' },
-          { src: explosion, start: 5, end: 7, class: 'explosion-image', animation: {className: 'fade-in-out', start: 6, end: 6}}
+          {src: flagwestalia, start: 1, end: 2, class: 'flag', animation : {className: 'littleflag', start: 2, end: 2}},
+          { src: softpower, start: 13, end: 13, class: 'softpower-image' },
+          { src: explosion, start: 18, end: 20, class: 'explosion-image', animation: {className: 'fade-in-out', start: 17, end: 19}},
+          { src : nukehand, start: 18, end: 19, class: 'nukehand'},
+          { src: nuke1, start: 19, end: 21, class: 'nuke'},
+          { src: nuke1, start: 18, end: 20, class: 'nuke2'},
+          { src: nuke2, start: 19, end: 22, class: 'nuke3'},
         ],
         sounds: [
           { src: churchill, start: 5, end: 8, class: 'churchill-sound' },
+          { src: CommunistAlert, start: 18, end: 25, class: 'communistalert' },
         ],
         videos: [
           { src: 'path/to/video1.mp4', start: 3, end: 5, class: 'video1' }
         ],
         styles: [
-          { class: 'border-red', start: 7, end: 8 },
-          { class: 'background-yellow', start: 3, end: 5 }
+          { class: 'TrafficLights', start: 20, end: 100},
+          
         ],
         texts: [
         { content: 'Westalia', start: 2, end: 2, class: 'countryname countryname1' }
         ]
+      };
+    },
+    created() {
+    EventBus.on('nuke-triggered', this.triggerNukes);
+  },
+  methods: {
+    triggerNukes() {
+      console.log('Nuke event received in Country2');
+      this.images = this.images.map(image => {
+        if (['nuke', 'nuke2', 'nuke3'].includes(image.class)) {
+          image.start = 0;
+          image.end = Infinity;
+        }
+        return image;
+      });
     }
   }
 }
+
   </script>
   
 <style>
@@ -108,5 +144,39 @@ import flagwestalia from '@/assets/International/flagwestalia.webp'
   color: #000000; /* Noir */
   border: 2px solid #000000; /* Bordure assortie à la couleur du texte */
 }
+
+
+.nukehand {
+  width: 20%;
+  top: 70%;
+  left: 0;
+}
+.nuke1 {
+  width: 20%;
+  left: 10%;
+  top: 30%;
+}
+
+.nuke2 {
+  width: 40%;
+  top: -20%;
+  left: 0;
+}
+
+.nuke3 {
+  width: 100%;
+  left: 20%;
+}
+
+.TrafficLights {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  transition: all 1s ease; /* Assurez-vous que toutes les propriétés changent de manière fluide */
+}
+
+
+
 </style>
   

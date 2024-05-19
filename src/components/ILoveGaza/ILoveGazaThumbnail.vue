@@ -11,9 +11,20 @@ export default {
 </script>
 
 <style scoped>
-img {
+
+.container-1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.FF100item-12-GIF-1 {
+    display: flex;
     width: 100%;
     cursor: pointer;
+    object-fit: contain;
 }
 
 .container-1:active, .container-1:hover {
