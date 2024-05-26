@@ -71,15 +71,15 @@
 
 
         { src : nukehand, start: 18, end: 19, class: 'nukehand'},
-          { src: nuke2, start: 19, end: 21, class: 'nuke'},
+          { src: nuke2, start: 19, end: 21, class: 'nuke1'},
           { src: nuke1, start: 18, end: 20, class: 'nuke2'},
           { src: nuke1, start: 19, end: 22, class: 'nuke3'},
 
         ],
         sounds: [
-        {src: Chineseman1, start: 3, end: 9, class: 'Idontlikeyouimg3'},
-        {src: MaoZedongSong, start: 7, end: 18, class: 'MaoZedongSong'},
-        {src: CatCommunismHuh, start: 9, end: 13, class: 'CatCommunismHuh'},
+        {src: Chineseman1, start: 3, end: 30, class: 'Idontlikeyouimg3'},
+        {src: MaoZedongSong, start: 9, end: 30, class: 'MaoZedongSong'},
+        {src: CatCommunismHuh, start: 7, end: 30, class: 'CatCommunismHuh'},
         {src: JohnCenaSound, start: 14, end: 25, class: 'JohnCenaSound'},
         {src: SocialCreditSiren, start: 17, end: 26, class: 'SocialCreditSiren'},
         
