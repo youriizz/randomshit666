@@ -17,12 +17,13 @@
   import HarmoniaPattern from '@/assets/International/svg/earthpattern.svg'
 
   const IAmChill = 'https://media1.tenor.com/m/2yueWwSxqAgAAAAd/frog-lily.gif'
-  const CitizensOfTheWorld = 'https://tenor.com/en-GB/view/moveon-foreign-policy-united-nations-day-united-nations-un-gif-23484079'
-  const FalseBorders = 'https://tenor.com/en-GB/view/spongebob-spongebob-rainbow-spongebob-imagination-borders-are-a-social-construct-moveon-gif-23493321'
+  import TheBestDrop from '@/assets/International/sounds/best-beat-drop-in-human-history.mp3'
+  const Citizens = 'https://media.tenor.com/sPwYxT9KqZEAAAAj/the-united-nations-is-our-one-great-hope-for-a-peaceful-moveon.gif'
+  const FalseBorders = 'https://media1.tenor.com/m/rgrem9AcbVAAAAAd/maravillosodia-girl.gif'
   
   import TheFuture from '@/assets/International/sounds/the-future-is-ours-to-decide.mp3'
   const GrowingCity = 'https://lh3.googleusercontent.com/-NBFy10FBq2Q/UTtqy4BFUaI/AAAAAAAAAFE/Pau6AlX24Hk/s500/timelapselow.gif'
-  const FutureCity = 'https://tenor.com/en-GB/view/mundo-feliz-onetreehsll-world-if-gif-14071235670792471304'
+  const FutureCity = 'https://media1.tenor.com/m/w0cSSjxkAwgAAAAd/mundo-feliz-onetreehsll.gif'
 
 
   const WorriedCat = 'https://media.tenor.com/h4Jp8GaeC5cAAAAj/huh-what.gif'
@@ -32,7 +33,7 @@
   import nobodycares from '@/assets/International/sounds/nobodycares.mp3'
   const nobodycaresgif = 'https://media.tenor.com/sPGE00PcxlYAAAAj/nobody-cares-text.gif';
 
-  const Surrendering = 'https://tenor.com/en-GB/view/surrender-give-up-포기하다-항복-항복하다-gif-2238169736073519114'
+  const Surrendering = 'https://media.tenor.com/Hw-ThEGxIAoAAAAi/surrender-give-up.gif'
 
 
 
@@ -53,14 +54,34 @@
       return {
         images: [
         { src: flagharmonia, start: 1, end: 2, class: 'flag', animation: { className: 'littleflag', start: 2, end: 2 } },
-        { src: nobodycaresgif, start: 3, end: 4, class: 'nobodycaresimg' },
+        { src: Friends, start: 4, end: 7, class: 'friends' },
+        { src: Education, start: 6, end: 9, class: 'education' },
+        { src: Maths, start: 7, end: 11, class: 'maths' },
+        { src: HarmoniaPattern, start: 9, end: 20, class: 'harmoniapattern' },
+        { src: IAmChill, start: 10, end: 13, class: 'iamchill' },
+        { src: Citizens, start: 11, end: 15, class: 'citizens' },
+        { src: FalseBorders, start: 12, end: 15, class: 'falseborders' },
+        { src: GrowingCity, start: 13, end: 15, class: 'growingcity' },
+        { src: FutureCity, start: 14, end: 15, class: 'futurecity' },
+        { src: WorriedCat, start: 16, end: 19, class: 'worriedcat' },
+        { src: Fearful, start: 17, end: 20, class: 'fearful' },
+        { src: Surrendering, start: 17, end: 20, class: 'surrendering' },
+
+
+
+        { src: nobodycaresgif, start: 17, end: 19, class: 'nobodycaresimg' },
         { src: nukehand, start: 18, end: 19, class: 'nukehand' },
-        { src: nuke1, start: 19, end: 21, class: 'nuke' },
+        { src: nuke1, start: 19, end: 21, class: 'nuke1' },
         { src: nuke1, start: 18, end: 20, class: 'nuke2' },
         { src: nuke2, start: 19, end: 22, class: 'nuke3' },
       ],
       sounds: [
-        { src: nobodycares, start: 3, end: 4, class: 'nobodycaresaudio' },
+      { src: AnimalCrossing, start: 3, end: 9, class: 'animalcrossing' },
+      { src: SubwaySurfers, start: 5, end: 9, class: 'subwaysurfers' },
+      { src: TheBestDrop, start: 10, end: 15, class: 'thebestdrop' },
+      { src: TheFuture, start: 16, end: 16, class: 'thefuture' },
+      { src: Whatisgoingon, start: 16, end: 25, class: 'whatisgoingon' },
+        { src: nobodycares, start: 16, end: 25, class: 'nobodycaresaudio' },
         { src: CommunistAlert, start: 18, end: 25, class: 'communistalert' },
       ],
       videos: [
@@ -71,8 +92,8 @@
       ],
       texts: [
         { content: 'Harmonia', start: 2, end: 2, class: 'countryname countryname2' },
-        { content: 'Hey guys, do you want to be friends with our country', start: 3, end: 5, class: 'doyouwanttobefriends'},
-        { content: 'GUYS, Stop doing this!! We can still be friends', start: 6, end: 9, class: 'doyouwanttobefriends'}
+        { content: 'Hey guys, do you want to be friends with our country??', start: 3, end: 5, class: 'doyouwanttobefriends'},
+        { content: 'GUYS, Stop doing this!! We can still be friends', start: 16, end: 19, class: 'doyouwanttobefriends'}
       ]
     };
   },
@@ -95,7 +116,156 @@
 </script>
 
 <style>
+.nobodycaresimg {
+  left: -20%;
+  top: 0;
 
+}
+.surrendering {
+  right: 0;
+}
+.fearful {
+  width: 40%;
+  bottom: -10%;
+}
+.worriedcat {
+  left: 0;
+  bottom: 0;
+}
+.futurecity {
+  width: 50%;
+  right: 0;
+}
+.growingcity {
+  width: 40%;
+  left: 0;
+  top: 0;
+}
+.falseborders {
+  width: 40%;
+  left: 10%;
+  top: 0;
+}
+.citizens {
+  width: 50%;
+  left: -20%;
+  bottom: -10%;
+  z-index: 1;
+
+}
+.iamchill {
+  width: 30%;
+  right: 10%;
+  transform: rotate(380deg);
+  transition: 2s;
+}
+.harmoniapattern {
+  z-index: -1;
+  width: 120%;
+}
+.maths {
+  width: 40%;
+  top: 0;
+  left: 20%;
+}
+.education {
+ width: 50%;
+ right: 0;
+}
+
+.friends {
+  width: 50%;
+  left: -15%;
+  bottom: -15%;
+}
+
+@media (max-width: 600px) {
+  
+
+  .nobodycaresimg {
+  left: -20%;
+  top: 0;
+
+}
+.surrendering {
+  right: -10%;
+  width: 140%;
+
+}
+.fearful {
+  width: 40%;
+  bottom: -10%;
+}
+.worriedcat {
+  left: -10%;
+  bottom: 0;
+  width: 70%;
+
+}
+.futurecity {
+  width: 90%;
+  bottom: 10%;
+}
+.growingcity {
+  width: 80%;
+  left: 0;
+  top: 20%;
+}
+.falseborders {
+  width: 60%;
+  left: 10%;
+  top: 0;
+}
+.citizens {
+  width: 80%;
+  left: -40%;
+  bottom: -10%;
+  z-index: 1;
+
+}
+.iamchill {
+  width: 70%;
+  right: 10%;
+  bottom: -10%;
+  transform: rotate(380deg);
+  transition: 2s;
+}
+.harmoniapattern {
+  z-index: -1;
+  left: -10%;
+  width: 250%;
+  height: 120%;
+}
+.maths {
+  width: 80%;
+  top: 0;
+  left: -10%;
+}
+.education {
+ width: 80%;
+ right: 0;
+}
+
+.friends {
+  width: 80%;
+  left: -35%;
+  bottom: -15%;
+}
+
+}
+
+.doyouwanttobefriends {
+  position: absolute;
+  font-size: clamp(20px, 7vw, 70px);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+  width: 50%;
+  top: 0;
+  right: 10%;
+  transition: 1s;
+  transform: rotate(360deg);
+  z-index: 1;
+}
 .greenpoint {
     width: 120%;
     height: 120%;

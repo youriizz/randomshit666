@@ -4,10 +4,12 @@ import Netflix from "@/components/Netflix/Netflix.vue";
 import NotSimilar from "@/components/NotSimilar.vue";
 import Similar from "@/components/Similar.vue";
 import ILoveGaza from "@/components/ILoveGaza/ILoveGazaGallery.vue";
-import InternationalThumbnail from "@/components/International/InternationalThumbnail.vue";
 import International from "@/components/International/International.vue";
 import Oval1 from '@/components/Oval/Oval1.vue';
-import Oval2 from '@/components/Oval/Oval2.vue'
+import Oval2 from '@/components/Oval/Oval2.vue';
+import Fingers from '@/components/Fingers/Fingers.vue';
+import CommunistShit from '@/components/CommunistShit/CommunistShit.vue';
+import Ismmm from '@/components/Ismmm/Ismmm.vue';
 
 
 const router = createRouter({
@@ -53,8 +55,22 @@ const router = createRouter({
       name: "oval2",
       component: Oval2,
     },
-    
-    // {
+    {
+      path: "/fingers",
+      name: "fingers",
+      component: Fingers,
+    },
+    {
+    path: "/communistshit",
+    name: "communistshit",
+    component: CommunistShit,
+    },
+    {
+      path: "/ismmm",
+      name: "ismmm",
+      component: Ismmm,
+    }
+      // {
     //   path: '/about',
     //   name: 'about',
     //   // route level code-splitting
