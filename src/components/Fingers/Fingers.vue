@@ -27,7 +27,7 @@
   import EveningContainer from './EveningContainer.vue';
   import MidnightContainer from './MidnightContainer.vue';
   import TitleContainer from './TitleContainer.vue'
-  import DownArrow from '../GlobalTouches/DownArrow.vue';
+  import DownArrow from '../GestureIndications/DownArrow.vue';
   import TrafficLightBtn from '../TrafficLightBtn.vue';
 
   

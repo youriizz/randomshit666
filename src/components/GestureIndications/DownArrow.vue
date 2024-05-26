@@ -5,7 +5,7 @@
   </template>
   
   <script>
-  import arrowSrc from '@/assets/GlobalTouches/arrowround.svg';
+  import arrowSrc from '@/assets/GestureIndications/arrowround.svg';
   
   export default {
     name: 'DownArrow',
