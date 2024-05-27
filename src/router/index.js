@@ -5,12 +5,15 @@ import NotSimilar from "@/components/NotSimilar.vue";
 import Similar from "@/components/Similar.vue";
 import ILoveGaza from "@/components/ILoveGaza/ILoveGazaGallery.vue";
 import International from "@/components/International/International.vue";
-import Oval1 from '@/components/Oval/Oval1.vue';
-import Oval2 from '@/components/Oval/Oval2.vue';
-import Fingers from '@/components/Fingers/Fingers.vue';
-import CommunistShit from '@/components/CommunistShit/CommunistShit.vue';
-import Ismmm from '@/components/Ismmm/Ismmm.vue';
+import Oval1 from "@/components/Oval/Oval1.vue";
+import Oval2 from "@/components/Oval/Oval2.vue";
+import Fingers from "@/components/Fingers/Fingers.vue";
+import CommunistShit from "@/components/CommunistShit/CommunistShit.vue";
+import Ismmm from "@/components/Ismmm/Ismmm.vue";
+import YouHaveToWrite from "@/components/YouHaveToWrite/YouHaveToWrite.vue";
+import JsonData from "@/components/JsonData.vue";
 
+import youHaveToWriteJson from "@/database/you-have-to-write.json";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -61,16 +64,30 @@ const router = createRouter({
       component: Fingers,
     },
     {
-    path: "/communistshit",
-    name: "communistshit",
-    component: CommunistShit,
+      path: "/communistshit",
+      name: "communistshit",
+      component: CommunistShit,
     },
     {
       path: "/ismmm",
       name: "ismmm",
       component: Ismmm,
-    }
-      // {
+    },
+    {
+      path: "/you-have-to-write",
+      name: "you-have-to-write",
+      component: YouHaveToWrite,
+    },
+    // JSON VIEWER
+    {
+      path: "/you-have-to-write/json",
+      name: "you-have-to-write-json",
+      component: JsonData,
+      props: {
+        jsonData: youHaveToWriteJson,
+      },
+    },
+    // {
     //   path: '/about',
     //   name: 'about',
     //   // route level code-splitting

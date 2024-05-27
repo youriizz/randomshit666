@@ -10,6 +10,7 @@ import OvalThumbnail from '@/components/Oval/OvalThumbnail.vue';
 import FingersThumbnail from '@/components/Fingers/FingersThumbnail.vue';
 import CommunistShitThumbnail from '@/components/CommunistShit/CommunistShitThumbnail.vue';
 import IsmmmThumbnail from '@/components/Ismmm/IsmmmThumbnail.vue';
+import YouHaveToWrite from '@/components/YouHaveToWrite/YouHaveToWrite.vue';
 
 
 const items: GridItem[] = [
@@ -22,8 +23,9 @@ const items: GridItem[] = [
   { name: 'International', route: "international", component: InternationalThumbnail },
   { name: 'Oval', route: "oval", component: OvalThumbnail },
   { name: 'Fingers', route: 'fingers', component: FingersThumbnail },
-  { name: 'CommunistShit', route: 'communistshit', component: CommunistShitThumbnail }, 
-  { name: 'Ismmm', route: 'ismmm', component: IsmmmThumbnail }
+  { name: 'CommunistShit', route: 'communistshit', component: CommunistShitThumbnail },
+  { name: 'Ismmm', route: 'ismmm', component: IsmmmThumbnail },
+  { name: 'you-have-to-write', route: 'you-have-to-write', component: YouHaveToWrite },
 ];
 
 </script>
