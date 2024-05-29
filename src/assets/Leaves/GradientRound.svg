@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 350">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #000;
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="250" cy="175" fx="250" fy="175" r="215.29" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".03" stop-color="rgba(18, 18, 18, .07)" stop-opacity=".07"/>
+      <stop offset=".14" stop-color="rgba(73, 73, 73, .29)" stop-opacity=".29"/>
+      <stop offset=".26" stop-color="rgba(121, 121, 121, .48)" stop-opacity=".48"/>
+      <stop offset=".37" stop-color="rgba(162, 162, 162, .64)" stop-opacity=".64"/>
+      <stop offset=".49" stop-color="rgba(196, 196, 196, .77)" stop-opacity=".77"/>
+      <stop offset=".61" stop-color="rgba(222, 222, 222, .87)" stop-opacity=".87"/>
+      <stop offset=".73" stop-color="rgba(240, 240, 240, .94)" stop-opacity=".94"/>
+      <stop offset=".86" stop-color="rgba(251, 251, 251, .99)" stop-opacity=".99"/>
+      <stop offset="1" stop-color="#fff"/>
+    </radialGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <rect class="cls-1" x=".5" y=".5" width="499" height="349"/>
+      <path class="cls-2" d="M499,1v348H1V1h498M500,0H0v350h500V0h0Z"/>
+    </g>
+  </g>
+</svg>
