@@ -10,6 +10,8 @@ import Oval2 from '@/components/Oval/Oval2.vue';
 import Fingers from '@/components/Fingers/Fingers.vue';
 import CommunistShit from '@/components/CommunistShit/CommunistShit.vue';
 import Ismmm from '@/components/Ismmm/Ismmm.vue';
+import Cities from "@/components/Cities/Cities.vue";
+
 
 
 const router = createRouter({
@@ -69,6 +71,11 @@ const router = createRouter({
       path: "/ismmm",
       name: "ismmm",
       component: Ismmm,
+    },
+    {
+      path: "/cities",
+      name: "cities",
+      component: Cities,
     }
       // {
     //   path: '/about',
