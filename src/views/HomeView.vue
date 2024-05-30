@@ -2,7 +2,6 @@
 import Grid from '@/components/Grid.vue';
 import { GridItem } from '@/components/GridItem.vue';
 import NetflixThumbnail from '@/components/Netflix/NetflixThumbnail.vue';
-import AnotherThumbnail from '@/components/AnotherThumbnail.vue';
 import TrafficLight from "@/components/TrafficLight.vue";
 import ILoveGazaThumbnail from "@/components/ILoveGaza/ILoveGazaThumbnail.vue";
 import InternationalThumbnail from '@/components/International/InternationalThumbnail.vue';
