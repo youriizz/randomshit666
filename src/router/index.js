@@ -10,7 +10,7 @@ import Oval2 from '@/components/Oval/Oval2.vue';
 import Fingers from '@/components/Fingers/Fingers.vue';
 import CommunistShit from '@/components/CommunistShit/CommunistShit.vue';
 import Ismmm from '@/components/Ismmm/Ismmm.vue';
-
+import Leaves from '@/components/Leaves/Leaves.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -69,6 +69,11 @@ const router = createRouter({
       path: "/ismmm",
       name: "ismmm",
       component: Ismmm,
+    },
+    {
+      path: "/leaves",
+      name: "leaves",
+      component: Leaves,
     }
       // {
     //   path: '/about',
