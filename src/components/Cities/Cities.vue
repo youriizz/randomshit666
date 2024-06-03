@@ -56,31 +56,31 @@
         <div class="BB140item-5-transparentcube-1">
           <div class="BB140item-5-ellipse-1">
             <div class="BB140item-5-title-1">Cities:</div>
-            <a href="BB141rio.html">
+            <router-link to="/rio">
               <div class="BB140item-5-title-2">Rio de Janeiro
                 <div class="BB140item-5-ellipse-2"></div>
               </div>
-            </a>
-            <a href="BB145dubai.html">
+            </router-link>
+            <router-link to="/dubai">
               <div class="BB140item-5-title-3">Dubai
                 <div class="BB140item-5-ellipse-3"></div>
               </div>
-            </a>
-            <a href="BB142beijing.html">
+            </router-link>
+            <router-link to="/beijing">
               <div class="BB140item-5-title-4">Beijing
                 <div class="BB140item-5-ellipse-4"></div>
               </div>
-            </a>
-            <a href="BB143newyork.html">
+            </router-link>
+            <router-link to="/newyork">
               <div class="BB140item-5-title-5">New York
                 <div class="BB140item-5-ellipse-5"></div>
               </div>
-            </a>
-            <a href="BB144rome.html">
+            </router-link>
+            <router-link to="/rome">
               <div class="BB140item-5-title-6">Rome
                 <div class="BB140item-5-ellipse-6"></div>
               </div>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
@@ -88,9 +88,9 @@
       <div class="BB140item BB140item-6">
         <div class="BB140item-6-ellipse-1"></div>
         <div class="BB140feux">
-          <a href="../index.html" class="BB140EXITrondrouge"></a>
-          <a href="../index.html" class="BB140EXITrondorange"></a>
-          <a href="../index.html" class="BB140EXITrondvert"></a>
+        <TrafficLightBtn lightType="red" class="traffic-light-red" />
+        <TrafficLightBtn lightType="orange" orangeRoute="notsimilar" class="traffic-light-orange" />
+        <TrafficLightBtn lightType="green" greenRoute="similar" class="traffic-light-green" />
         </div>
       </div>
     </div>
@@ -103,17 +103,24 @@
 
 <script>
 import p5 from 'p5';
+import TrafficLightBtn from '../TrafficLightBtn.vue';
+
 
 export default {
+  components: {
+        TrafficLightBtn
+    },
+
   data() {
     return {
       p5Instance: null
     };
   },
   mounted() {
-    console.log("Component mounted");
-    this.createP5Instance();
-  },
+      console.log("Component mounted");
+      window.scrollTo(0, 0); // Scroll to top when the component is mounted
+      this.createP5Instance();
+    },
   beforeUnmount() {
     console.log("Component beforeDestroy");
     if (this.p5Instance) {
@@ -228,7 +235,17 @@ export default {
   
   
   
-  
+  .traffic-light-red {
+  z-index: 2;
+}
+
+.traffic-light-orange {
+  z-index: 2;
+}
+
+.traffic-light-green {
+  z-index: 2;
+}
   
   
   
@@ -363,8 +380,8 @@ export default {
     margin-right: 15%;
   }
   .BB140item-4-title-4 {
-    top: 78%;
-    margin-left: 40%;
+    top: 82%;
+    margin-left: 10%;
     margin-right: 10%;
     text-align: right;
   }
@@ -431,23 +448,23 @@ export default {
   }
   
     .BB140item-1-ellipse-1 {
-      background-image: url('../i/BB140-6cities/typoabc@2x.webp'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+      background-image: url('@/assets/Cities/typoabc.webp'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
       background-size: auto 22%;
     }
     .BB140item-2-ellipse-1 {
-      background-image: url('../i/BB140-6cities/densite@2x.webp'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+      background-image: url('@/assets/Cities/densite.webp'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
     }
     .BB140item-3-ellipse-1 {
-      background-image: url('../i/BB140-6cities/mouvement.webp'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+      background-image: url('@/assets/Cities/mouvement.webp'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
     }
   
   
   
   .BB140item-4-ellipse-1 {
-    background-image: url('../i/BB140-6cities/pipette@4x.webp'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
-    background-size: auto 0%;
+    background-image: url('@/assets/Cities/pipette.webp'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+    background-size: auto 10%;
     background-repeat: no-repeat; /* Ajustez la taille de l'image pour qu'elle tienne dans le conteneur */
-    background-position: 50% 3%; /* Centrez l'image horizontalement et verticalement */
+    background-position: 78% 9%; /* Centrez l'image horizontalement et verticalement */
   
   }
   
@@ -506,7 +523,7 @@ export default {
   
   
   .BB140item-5-ellipse-1 {
-    background-image: url('../i/BB140-6cities/localisation@4x.webp'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+    background-image: url('@/assets/Cities/localisation.webp'); /* Remplacez 'votre-image.jpg' par le chemin de votre image */
     background-size: auto 13%;
     background-repeat: no-repeat; /* Ajustez la taille de l'image pour qu'elle tienne dans le conteneur */
     background-position: 85% 30%; /* Centrez l'image horizontalement et verticalement */
@@ -1062,91 +1079,14 @@ export default {
   
   .BB140feux {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 22%;
+    left: 43%;
     z-index: 1;
-    
-    
   }
   
-  .BB140EXITrondrouge {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: transparent;
-    top: 50%;
-    left: 50%;
-    background-color: red;
-    transform: translate(-50%, -200%);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .BB140EXITrondorange {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: transparent;
-    top: 50%;
-    left: 50%;
-    background-color: orange;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .BB140EXITrondvert {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: transparent;
-    top: 50%;
-    left: 50%;
-    background-color: green;
-    transform: translate(-50%, 100%);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .BB140EXITrondrouge:active,
-  .BB140EXITrondrouge:hover,
-  .BB140EXITrondrouge:focus {
-    transform: translate(-50%, -200%) scale(1.2);
-    box-shadow: 0 0 20px red;
-    
-  }
-  
-  .BB140EXITrondorange:active,
-  .BB140EXITrondorange:hover,
-  .BB140EXITrondorange:focus {
-    transform: translate(-50%, -50%) scale(1.2);
-    box-shadow: 0 0 20px orange;
-  }
-  
-  .BB140EXITrondvert:active,
-  .BB140EXITrondvert:hover,
-  .BB140EXITrondvert:focus {
-    transform: translate(-50%, 100%) scale(1.2);
-    box-shadow: 0 0 20px green;
-  }
-  
-  @media (min-width: 600px) {
-    .BB140EXITrondorange,
-    .BB140EXITrondrouge,
-    .BB140EXITrondvert {
-      width: 80px;
-      height: 80px;
-    }
-  
-  }
   
   @media (max-width: 350px) {
-    .BB140EXITrondorange,
-    .BB140EXITrondrouge,
-    .BB140EXITrondvert {
-      width: 40px;
-      height: 40px;
-    }
+
     .BB140feux {
       position: absolute;
       top: 50%;
