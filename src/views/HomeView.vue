@@ -10,6 +10,7 @@ import FingersThumbnail from '@/components/Fingers/FingersThumbnail.vue';
 import CommunistShitThumbnail from '@/components/CommunistShit/CommunistShitThumbnail.vue';
 import IsmmmThumbnail from '@/components/Ismmm/IsmmmThumbnail.vue';
 import LeavesThumbnail from '@/components/Leaves/LeavesThumbnail.vue';
+import SwastikaThumbnail from '@/components/Swastika/SwastikaThumbnail.vue';
 
 
 const items: GridItem[] = [
@@ -24,7 +25,8 @@ const items: GridItem[] = [
   { name: 'Fingers', route: 'fingers', component: FingersThumbnail },
   { name: 'CommunistShit', route: 'communistshit', component: CommunistShitThumbnail }, 
   { name: 'Ismmm', route: 'ismmm', component: IsmmmThumbnail },
-  { name: 'Leaves', route: 'leaves', component: LeavesThumbnail}
+  { name: 'Leaves', route: 'leaves', component: LeavesThumbnail},
+  { name: 'Swastika', route: 'swastika', component: SwastikaThumbnail}
 ];
 
 </script>
@@ -32,6 +34,5 @@ const items: GridItem[] = [
 <template>
   <main>
     <Grid :items="items" />
-    <TrafficLight />
   </main>
 </template>

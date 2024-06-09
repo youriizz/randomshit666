@@ -11,6 +11,7 @@ import Fingers from '@/components/Fingers/Fingers.vue';
 import CommunistShit from '@/components/CommunistShit/CommunistShit.vue';
 import Ismmm from '@/components/Ismmm/Ismmm.vue';
 import Leaves from '@/components/Leaves/Leaves.vue';
+import Swastika from '@/components/Swastika/Swastika.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -74,6 +75,11 @@ const router = createRouter({
       path: "/leaves",
       name: "leaves",
       component: Leaves,
+    },
+    {
+      path: "/swastika",
+      name: "swastika",
+      component: Swastika,
     }
       // {
     //   path: '/about',
