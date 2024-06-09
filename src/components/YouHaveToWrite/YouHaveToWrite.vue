@@ -11,7 +11,9 @@
 </template>
 
 <script>
-import jsonMessages from "@/database/you-have-to-write.json";
+// import jsonMessages from "@/database/you-have-to-write.json";
+import { db } from "@/database/firebase";
+import { addDoc, collection, doc, getDocs, orderBy, query, serverTimestamp, setDoc, where } from "firebase/firestore";
 
 const CHAR_MAX = 50;
 const CHAR_MIN = 10;
@@ -23,7 +25,7 @@ export default {
         return {
             currentMessage: "",
             currentUserCharLimit: 0,
-            jsonMessages,
+            messages: [],
         }
     },
     computed: {
@@ -33,21 +35,23 @@ export default {
         upperLimit() {
             return CHAR_MAX - CHAR_MIN;
         },
-        messages() {
-            return this.jsonMessages;
-        },
         darkColorRgb() {
             return this.getRgb(DARK_YELLOW);
         },
         lightColorRgb() {
             return this.getRgb(LIGHT_YELLOW);
         },
+        currentUserUniqueId() {
+            return "asdsa";
+        },
     },
-    mounted() {
+    async mounted() {
         // Check if current user id matches one in the db
         // If yes disable input field and remove focus forever
         // If no enable input
         this.currentUserCharLimit = this.getRandomCharAmount();
+
+        await this.getMessages();
     },
     methods: {
         getTextColor(text) {
@@ -96,14 +100,45 @@ export default {
         getNormalizedCharCount(count) {
             return count - CHAR_MIN
         },
-        pushMessage() {
-            this.messages.push({ content: this.currentMessage });
-            this.currentMessage = "";
-            this.currentUserCharLimit = this.getRandomCharAmount();
-        },
+        // pushMessage() {
+        // this.messages.push({ content: this.currentMessage });
+        //     this.currentMessage = "";
+        //     this.currentUserCharLimit = this.getRandomCharAmount();
+        // },
         resetFocus(event) {
             event.target.focus();
             event.stopPropagation();
+        },
+        async pushMessage() {
+            try {
+                await addDoc(collection(db, import.meta.env.VITE_FIREBASE_COLLECTION_YOUHAVETOWRITE), {
+                    id: this.currentUserUniqueId,
+                    content: this.currentMessage,
+                    created_at: serverTimestamp()
+                })
+            } catch (error) {
+                console.error("Failed to create message", error);
+            }
+
+            this.currentMessage = "";
+            this.currentUserCharLimit = this.getRandomCharAmount();
+            this.getMessages();
+        },
+        async getMessages() {
+            try {
+                const q = query(
+                    collection(db, import.meta.env.VITE_FIREBASE_COLLECTION_YOUHAVETOWRITE),
+                    where('id', '!=', 'AVOID'),
+                    orderBy('created_at', 'asc'),
+                );
+
+                const querySnapshot = await getDocs(q);
+                this.messages = querySnapshot.docs.map((doc) => {
+                    return doc.data();
+                });
+            } catch (error) {
+                console.error(error);
+            }
         }
     },
 }
