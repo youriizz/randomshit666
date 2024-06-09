@@ -1,5 +1,5 @@
 <template>
-  <div v-if="visible" class="gesture-indications" @click="hideIndication" @touchstart="hideIndication">
+  <div v-if="visible" class="gesture-indications">
     <div class="text-container">
       <div v-for="gesture in type" :key="gesture" class="gesture-text">{{ formatGestureText(gesture) }}</div>
     </div>
@@ -41,15 +41,13 @@ export default {
     };
   },
   methods: {
-    hideIndication() {
-      this.visible = false;
-    },
     formatGestureText(gesture) {
       return gesture.replace('-', ' ');
     }
   }
 };
 </script>
+
 <style scoped>
 .gesture-indications {
   position: fixed;
@@ -61,8 +59,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.8);
-  z-index: 10;
+  background: transparent;
+  z-index: 5; /* Set z-index lower than Introduction.vue */
   height: 100vh; /* Ensure full height */
   width: 100vw; /* Ensure full width */
 }
@@ -184,8 +182,3 @@ export default {
   }
 }
 </style>
-
-
-
-
-
