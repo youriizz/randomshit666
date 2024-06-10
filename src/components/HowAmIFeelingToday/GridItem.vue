@@ -5,17 +5,13 @@
     @click="toggleActive"
     :style="getStyle"
   >
-  <div class="card">
+    <div class="card">
       <FrontCard :item-id="item.id" />
       <BackCard :is-active="isActive" :item-id="item.id" />
     </div>
     <LeftCard :is-active="isActive" :item-id="item.id" />
     <RightCard :is-active="isActive" :item-id="item.id" />
-    <BottomLeftCard :is-active="isActive">
-      <div class="traffic-light-wrapper">
-        <TrafficLight />
-      </div>
-    </BottomLeftCard>
+    <BottomLeftCard :is-active="isActive" />
     <TopLeftCard :is-active="isActive" :item-id="item.id" />
     <TopRightCard :is-active="isActive" />
   </div>
@@ -29,7 +25,6 @@ import RightCard from './RightCard.vue';
 import BottomLeftCard from './BottomLeftCard.vue';
 import TopLeftCard from './TopLeftCard.vue';
 import TopRightCard from './TopRightCard.vue';
-import TrafficLight from '../TrafficLight.vue';
 
 export default {
   props: ['item', 'activeItemId'],
@@ -40,8 +35,7 @@ export default {
     RightCard,
     BottomLeftCard,
     TopLeftCard,
-    TopRightCard,
-    TrafficLight
+    TopRightCard
   },
   methods: {
     toggleActive() {
@@ -103,7 +97,6 @@ export default {
   width: 30%;
 }
 
-
 .back-card {
   justify-content: center;
   align-items: center;
@@ -120,27 +113,14 @@ export default {
   color: white;
 }
 
-.traffic-light-wrapper {
-  position: absolute;
-  width: 50%;
-  height: 150%;
-  pointer-events: auto; /* Enable interactions */
-}
-
-.traffic-light-wrapper TrafficLight {
-  width: 50%;
-  height: 150%;
-  pointer-events: auto; /* Enable interactions */
-}
-
 @media (max-width: 768px) {
   .item {
     height: 25%;
     width: 40%;
   }
   .item.active {
-  height: 35%;
-  width: 55%;
-}
+    height: 35%;
+    width: 55%;
+  }
 }
 </style>
