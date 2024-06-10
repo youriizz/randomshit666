@@ -1,14 +1,11 @@
 <template>
-     <div>
-    <!-- Introduction Component -->
     <Introduction
       v-if="showIntroduction"
       :title="title"
       :description="description"
-      :gestureType="['touch']"
+      :gestureType="['touch', 'scroll-left', 'scroll-right', 'scroll-up', 'scroll-down']"
       :buttonText="startButtonText"
       :clickThrough="true"
-      @start="handleStart"
     />
     <div class="international" @click="handleGlobalClick">
       <Country1 id="country1" ref="country1" @country-selected="bringToFront('country1')" />
@@ -16,43 +13,42 @@
       <Country3 id="country3" ref="country3" @country-selected="bringToFront('country3')" />
       <Country4 id="country4" ref="country4" @country-selected="bringToFront('country4')" />
     </div>
-     </div>
-  </template>
-  
-  <script>
-  import Country1 from './Country1.vue';
-  import Country2 from './Country2.vue';
-  import Country3 from './Country3.vue';
-  import Country4 from './Country4.vue';
-  import EventBus from '../../eventBus';
-  import Introduction from '../GestureIndications/Introduction.vue';
-  
-  export default {
-    components: {
-      Country1,
-      Country2,
-      Country3,
-      Country4,
-      Introduction
-    },
-    data() {
-      return {
+</template>
+
+<script>
+import Country1 from './Country1.vue';
+import Country2 from './Country2.vue';
+import Country3 from './Country3.vue';
+import Country4 from './Country4.vue';
+import EventBus from '../../eventBus';
+import Introduction from '../GestureIndications/Introduction.vue';
+
+export default {
+  components: {
+    Country1,
+    Country2,
+    Country3,
+    Country4,
+    Introduction
+  },
+  data() {
+    return {
       showIntroduction: true,
-      title: 'Bienvenue',
-      description: 'Voici une introduction à notre galerie.',
+      title: 'Voici une introduction à notre galerie.',
+      description: 'Duration : 50 Seconds',
       startButtonText: 'Commencer',
-        globalClickCount: 0
-      };
+      globalClickCount: 0
+    };
+  },
+  methods: {
+    handleGlobalClick() {
+      if (this.globalClickCount < 2) {
+        this.globalClickCount++;
+        console.log("Global click count:", this.globalClickCount);
+        EventBus.emit('update-click-count', this.globalClickCount);
+      }
     },
-    methods: {
-      handleGlobalClick() {
-        if (this.globalClickCount < 2) {
-          this.globalClickCount++;
-          console.log("Global click count:", this.globalClickCount);
-          EventBus.emit('update-click-count', this.globalClickCount);
-        }
-      },
-      bringToFront(countryId) {
+    bringToFront(countryId) {
       const country = this.$refs[countryId];
       if (country && country.$el) {
         country.$el.style.zIndex = '10';
@@ -64,27 +60,25 @@
       } else {
         console.error(`bringToFront method not found on ${countryId}`);
       }
-      }
-    },
-    created() {
-      EventBus.on('update-click-count', (count) => {
-        this.globalClickCount = count;
-        console.log(`Global click count updated to ${this.globalClickCount}`);
-      });
     }
+  },
+  created() {
+    EventBus.on('update-click-count', (count) => {
+      this.globalClickCount = count;
+      console.log(`Global click count updated to ${this.globalClickCount}`);
+    });
   }
-  </script>
-  
-  <style>
-  .international {
-    position: absolute;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    overflow: hidden;
-  }
+}
+</script>
 
-  </style>
-  
+<style>
+.international {
+  position: absolute;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  overflow: hidden;
+}
+</style>

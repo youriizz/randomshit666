@@ -1,21 +1,26 @@
 <template>
     <div v-if="visible" class="introduction">
-      <Title :title="title" />
-      <Description :description="description" />
-      <GestureIndications :type="gestureType" />
-      <StartButton :buttonText="buttonText" @start="start" :clickThrough="clickThrough" />
+      <TitleComponent :title="title" @titleMoved="handleTitleMoved"/>
+      <Description v-if="descriptionVisible" :description="description" />
+      <GestureIndications v-if="gestureVisible" :type="gestureType" />
+      <StartButton v-if="startButtonVisible" 
+        :buttonText="buttonText" 
+        @start="start" 
+        :clickThrough="clickThrough" 
+      />
     </div>
   </template>
   
+  
   <script>
-  import Title from './Title.vue';
+  import TitleComponent from './Title.vue';
   import Description from './Description.vue';
   import GestureIndications from './GestureIndications.vue';
   import StartButton from './StartButton.vue';
   
   export default {
     components: {
-      Title,
+      TitleComponent,
       Description,
       GestureIndications,
       StartButton
@@ -44,11 +49,31 @@
     },
     data() {
       return {
-        visible: true
+        visible: true,
+        descriptionVisible: false,
+        gestureVisible: false,
+        startButtonVisible: false
       };
     },
     methods: {
+      handleTitleMoved() {
+        console.log('Title has moved');
+        // Show description when title movement is done
+        this.descriptionVisible = true;
+        // Show gesture indications 0.5s before title finishes moving
+        setTimeout(() => {
+          console.log('Gesture indications visible');
+          this.gestureVisible = true;
+        }, 1000); // 1 second after title starts moving
+  
+        // Show start button 2 seconds after title finishes moving
+        setTimeout(() => {
+          console.log('Start button visible');
+          this.startButtonVisible = true;
+        }, 2000); // 2 seconds after title finishes moving
+      },
       start() {
+        console.log('Start button clicked');
         this.visible = false;
         this.$emit('start');
       }
@@ -71,22 +96,13 @@
     z-index: 20; /* Ensure Introduction.vue is above other elements */
     padding: 20px;
     transition: opacity 1s;
+    font-weight: normal;
   }
   
   .introduction.hidden {
     opacity: 0;
   }
   
-  .start-button {
-    margin-top: 40px;
-    transition: opacity 3s;
-    opacity: 0;
-    position: relative;
-    top: 50px;
-  }
-  
-  .start-button.visible {
-    opacity: 1;
-  }
   </style>
+  
   

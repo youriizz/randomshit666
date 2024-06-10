@@ -1,5 +1,5 @@
 <template>
-  <div v-if="visible" class="gesture-indications">
+  <div :class="['gesture-indications', { 'visible': visible }]">
     <div class="text-container">
       <div v-for="gesture in type" :key="gesture" class="gesture-text">{{ formatGestureText(gesture) }}</div>
     </div>
@@ -8,23 +8,17 @@
       <div class="circle"></div>
       <div class="circle"></div>
     </div>
-    <div v-if="type.includes('scroll-down')" class="scroll-animation">
-      <div class="arrow-down"></div>
-    </div>
-    <div v-if="type.includes('scroll-up')" class="scroll-animation">
-      <div class="arrow-up"></div>
-    </div>
-    <div v-if="type.includes('scroll-left')" class="scroll-animation">
-      <div class="arrow-left"></div>
-    </div>
-    <div v-if="type.includes('scroll-right')" class="scroll-animation">
-      <div class="arrow-right"></div>
-    </div>
+    <div v-if="type.includes('scroll-down')" class="scroll-animation arrow-down"></div>
+    <div v-if="type.includes('scroll-up')" class="scroll-animation arrow-up"></div>
+    <div v-if="type.includes('scroll-left')" class="scroll-animation arrow-left"></div>
+    <div v-if="type.includes('scroll-right')" class="scroll-animation arrow-right"></div>
     <div v-if="type.includes('zoom')" class="zoom-animation">
       <img src="https://imgvisuals.com/cdn/shop/products/animated-zoom-out-linear-ui-icon-900016.gif?v=1697071168" alt="Zoom animation" class="zoom-gif"/>
     </div>
   </div>
 </template>
+
+
 
 <script>
 export default {
@@ -37,8 +31,13 @@ export default {
   },
   data() {
     return {
-      visible: true
+      visible: false
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.visible = true;
+    }, 100); // Delay before making elements visible
   },
   methods: {
     formatGestureText(gesture) {
@@ -47,6 +46,8 @@ export default {
   }
 };
 </script>
+
+
 
 <style scoped>
 .gesture-indications {
@@ -61,13 +62,21 @@ export default {
   justify-content: center;
   background: transparent;
   z-index: 5; /* Set z-index lower than Introduction.vue */
-  height: 100vh; /* Ensure full height */
+  height: 100%; /* Ensure full height */
   width: 100vw; /* Ensure full width */
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.gesture-indications.visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .text-container {
   position: absolute;
-  top: 30%;
+  top: 20%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column; /* Ensure text is in a column */
@@ -77,6 +86,13 @@ export default {
   font-weight: bold;
   text-align: center;
   font-size: clamp(20px, 2vw, 40px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.gesture-indications.visible .text-container {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gesture-text {
@@ -92,6 +108,11 @@ export default {
   background-color: black;
   opacity: 0;
   animation: pulse 1.5s infinite;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.gesture-indications.visible .touch-animation .circle {
+  opacity: 1;
 }
 
 .arrow-down,
@@ -103,29 +124,39 @@ export default {
   border-left: 2px solid black;
   border-bottom: 2px solid black;
   position: fixed; /* Ensure arrows are fixed to the window */
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.gesture-indications.visible .arrow-down,
+.gesture-indications.visible .arrow-up,
+.gesture-indications.visible .arrow-left,
+.gesture-indications.visible .arrow-right {
+  opacity: 1;
 }
 
 .arrow-down {
   bottom: 10%;
-  left: 50%;
+  left: 49%;
   animation: bounce-down 1s infinite;
 }
 
 .arrow-up {
   top: 10%;
-  left: 50%;
+  left: 49%;
   animation: bounce-up 1s infinite;
 }
 
 .arrow-left {
   left: 10%;
-  top: 50%;
+  top: 49%;
   animation: bounce-left 1s infinite;
 }
 
 .arrow-right {
   right: 10%;
-  top: 50%;
+  top: 49%;
   animation: bounce-right 1s infinite;
 }
 
@@ -133,6 +164,31 @@ export default {
   object-fit: contain;
   width: 400px;
   height: 400px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.gesture-indications.visible .zoom-gif {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .arrow-down {
+    bottom: 5%;
+    left: 46%;
+  }
+  .arrow-up {
+    top: 5%;
+    left: 46%;
+  }
+  .arrow-left {
+    left: 7%;
+    top: 48%;
+  }
+  .arrow-right {
+    right: 7%;
+    top: 48%;
+  }
 }
 
 @keyframes pulse {
@@ -182,3 +238,5 @@ export default {
   }
 }
 </style>
+
+
