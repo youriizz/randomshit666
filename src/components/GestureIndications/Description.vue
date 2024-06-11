@@ -45,8 +45,11 @@
 
   @media (max-width:768px) {
     h1 {
-        width: 35%;
-        border: 0.5px solid rgb(0, 0, 255);
+        width: 40%;
+        height: 20%;
+        top: 7.5%;
+        left: 55%;
+        border: 0px solid rgb(0, 0, 255);
     }
   }
   </style>

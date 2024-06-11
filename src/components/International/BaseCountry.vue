@@ -221,12 +221,6 @@
     transition: 0.3s;
   }
   
-  .blue {
-    width: 120%;
-    height: 120%;
-    background-color: blue;
-    transition: 0.3s;
-  }
   
   .bigger {
     transform: scale(1.5);

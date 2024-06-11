@@ -1,22 +1,31 @@
 <template>
     <div class="traffic-light">
-        <TrafficLightBtn light-type="red" />
-        <TrafficLightBtn light-type="orange" />
-        <TrafficLightBtn light-type="green" />
+      <TrafficLightBtn light-type="red" />
+      <TrafficLightBtn light-type="orange" :orange-route="orangeRoute" />
+      <TrafficLightBtn light-type="green" :green-route="greenRoute" />
     </div>
-</template>
-
-<script>
-import TrafficLightBtn from "@/components/TrafficLightBtn.vue";
-
-export default {
+  </template>
+  
+  <script>
+  import TrafficLightBtn from "@/components/TrafficLightBtn.vue";
+  
+  export default {
     components: { TrafficLightBtn },
-}
-</script>
-
-
-<style scoped>
-.traffic-light {
+    props: {
+      orangeRoute: {
+        type: String,
+        default: null
+      },
+      greenRoute: {
+        type: String,
+        default: null
+      }
+    }
+  }
+  </script>
+  
+  <style scoped>
+  .traffic-light {
     border: 1px solid black;
     position: absolute;
     width: 200px;
@@ -25,5 +34,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-</style>
+  }
+  </style>
+  

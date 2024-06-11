@@ -1,18 +1,25 @@
 <template>
+     <div>
+    <!-- Introduction Component -->
     <Introduction
       v-if="showIntroduction"
       :title="title"
       :description="description"
-      :gestureType="['touch', 'scroll-left', 'scroll-right', 'scroll-up', 'scroll-down']"
+      :gestureType="['touch']"
       :buttonText="startButtonText"
       :clickThrough="true"
+      :orangeRoute="orangeRoute"
+      :greenRoute="greenRoute"
+      @start="handleStart"
     />
+
     <div class="international" @click="handleGlobalClick">
       <Country1 id="country1" ref="country1" @country-selected="bringToFront('country1')" />
       <Country2 id="country2" ref="country2" @country-selected="bringToFront('country2')" />
       <Country3 id="country3" ref="country3" @country-selected="bringToFront('country3')" />
       <Country4 id="country4" ref="country4" @country-selected="bringToFront('country4')" />
     </div>
+     </div>
 </template>
 
 <script>
@@ -34,9 +41,11 @@ export default {
   data() {
     return {
       showIntroduction: true,
-      title: 'Voici une introduction à notre galerie.',
-      description: 'Duration : 50 Seconds',
+      title: 'Bienvenue',
+      description: 'Voici une introduction à notre galerie.',
       startButtonText: 'Commencer',
+      orangeRoute: 'notsimilar',
+      greenRoute: 'similar',
       globalClickCount: 0
     };
   },

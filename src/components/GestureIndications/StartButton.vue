@@ -65,7 +65,7 @@ button {
   padding: 10px 20px;
   font-size: 1.2em;
   cursor: pointer;
-  z-index: 10;
+  z-index: 11;
   transition: opacity 1s, transform 1s;
   opacity: 0;
   transform: translateY(0); /* Initial position */
@@ -78,5 +78,23 @@ button {
 button.move {
   opacity: 1;
   transform: translate(-50%, 300%); /* Move 20% down */
+}
+
+@media (max-width : 768px) {
+  button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  z-index: 11;
+  transition: opacity 1s, transform 1s;
+  opacity: 0;
+  transform: translateY(0); /* Initial position */
+  position: absolute; /* Ensure button can move independently */
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 }
 </style>
