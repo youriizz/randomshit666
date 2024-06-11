@@ -17,6 +17,7 @@ import Rio from '@/components/Cities/Rio.vue';
 import NewYork from '@/components/Cities/NewYork.vue';
 import Beijing from '@/components/Cities/Beijing.vue';
 import Leaves from '@/components/Leaves/Leaves.vue';
+import HowAmIFeelingToday from '@/components/HowAmIFeelingToday/HowAmIFeelingToday.vue';
 
 
 const router = createRouter({
@@ -111,6 +112,11 @@ const router = createRouter({
       path: "/leaves",
       name: "leaves",
       component: Leaves,
+    },
+    {
+      path: "/howamifeelingtoday",
+      name: "howamifeelingtoday",
+      component: HowAmIFeelingToday,
     }
       // {
     //   path: '/about',
