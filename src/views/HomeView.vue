@@ -9,6 +9,10 @@ import OvalThumbnail from '@/components/Oval/OvalThumbnail.vue';
 import FingersThumbnail from '@/components/Fingers/FingersThumbnail.vue';
 import CommunistShitThumbnail from '@/components/CommunistShit/CommunistShitThumbnail.vue';
 import IsmmmThumbnail from '@/components/Ismmm/IsmmmThumbnail.vue';
+import CitiesThumbnail from '@/components/Cities/CitiesThumbnail.vue';
+import LeavesThumbnail from '@/components/Leaves/LeavesThumbnail.vue';
+import HowAmIFeelingTodayThumbnail from '@/components/HowAmIFeelingToday/HowAmIFeelingTodayThumbnail.vue';
+
 
 
 const items: GridItem[] = [
@@ -22,7 +26,10 @@ const items: GridItem[] = [
   { name: 'Oval', route: "oval", component: OvalThumbnail },
   { name: 'Fingers', route: 'fingers', component: FingersThumbnail },
   { name: 'CommunistShit', route: 'communistshit', component: CommunistShitThumbnail }, 
-  { name: 'Ismmm', route: 'ismmm', component: IsmmmThumbnail }
+  { name: 'Ismmm', route: 'ismmm', component: IsmmmThumbnail },
+  { name: 'Cities', route: 'cities', component: CitiesThumbnail },
+  { name: 'Leaves', route: 'leaves', component: LeavesThumbnail},
+  { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail}
 ];
 
 </script>
