@@ -1,25 +1,27 @@
 <template>
-    <div class="big-container">
-      <div class="container-left"></div>
-      <div class="container-middle">
-        <component
-          v-for="(container, index) in containers"
-          :key="index"
-          :is="container.type"
-          :text="container.text"
-          :height="container.height"
-          :additional-styles="container.additionalStyles"
-          class="dynamic-container"
-        ></component>
-      </div>
-      <div class="container-right"></div>
-      <div class="traffic-light-container">
-        <TrafficLightBtn lightType="red" />
-        <TrafficLightBtn lightType="orange" :orangeRoute="'someOrangeRoute'" />
-        <TrafficLightBtn lightType="green" :greenRoute="'someGreenRoute'" />
-      </div>
+  <div class="big-container">
+    <GestureIndications :type="['zoom']" class="gesture-indication"/>
+    <div class="container-left"></div>
+    <div class="container-middle">
+      <component
+        v-for="(container, index) in containers"
+        :key="index"
+        :is="container.type"
+        :text="container.text"
+        :height="container.height"
+        :additional-styles="container.additionalStyles"
+        class="dynamic-container"
+      ></component>
     </div>
-  </template>
+    <div class="container-right"></div>
+    <div class="traffic-light-container">
+      <TrafficLightBtn lightType="red" />
+      <TrafficLightBtn lightType="orange" :orangeRoute="'someOrangeRoute'" />
+      <TrafficLightBtn lightType="green" :greenRoute="'someGreenRoute'" />
+    </div>
+  </div>
+</template>
+
   
   <script>
   import MorningContainer from './MorningContainer.vue';
@@ -27,8 +29,9 @@
   import EveningContainer from './EveningContainer.vue';
   import MidnightContainer from './MidnightContainer.vue';
   import TitleContainer from './TitleContainer.vue'
-  import DownArrow from '../GlobalTouches/DownArrow.vue';
   import TrafficLightBtn from '../TrafficLightBtn.vue';
+  import GestureIndications from '../GestureIndications/GestureIndications.vue';
+
 
   
   export default {
@@ -38,16 +41,14 @@
       EveningContainer,
       MidnightContainer,
       TitleContainer,
-      DownArrow,
-      TrafficLightBtn
+      TrafficLightBtn,
+      GestureIndications
 
     },
     data() {
       return {
         containers: [
-          { type: 'TitleContainer', text: 'Scroll', height: 20 },
-          { type: 'DownArrow' },
-          { type: 'DownArrow' },
+          { type: 'TitleContainer', text: 'Scroll', height: 120 },
           { type: 'MorningContainer', text: 'yellow = 09:00', height: 70, additionalStyles: { fontSize: 'clamp(40px, 4vw, 75px)' , justifyContent: 'center', hoverColor: 'rgb(257, 265, 183)' } },
           { type: 'MorningContainer', text: 'The birds are singing.', height: 50, additionalStyles: { justifyContent: 'center'  }},
           { type: 'AfternoonContainer', text: 'pink = 14:00', height: 70, additionalStyles:{ fontSize: 'clamp(40px, 4vw, 75px)' , justifyContent: 'center'}  },

@@ -1,16 +1,20 @@
 <script>
 import NetflixCarousel from './NetflixCarousel.vue'
+import { carousels } from './carousels';
 
 export default {
     components: { NetflixCarousel },
-    computed: {
+    data() {
+        return {
+            carousels,
+        }
     },
 }
 </script>
 
 <template>
     <div class="netflix">
-        <netflix-carousel v-for="splide in 10" :key="splide" :idx="splide" />
+        <netflix-carousel v-for="(carousel, index) in carousels" :carousel="carousel" :key="index" :idx="index" />
     </div>
 </template>
 

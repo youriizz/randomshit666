@@ -1,10 +1,22 @@
 <template>
+     <div>
+    <!-- Introduction Component -->
+    <Introduction
+      v-if="showIntroduction"
+      :title="title"
+      :description="description"
+      :gestureType="['touch']"
+      :buttonText="startButtonText"
+      :clickThrough="true"
+      @start="handleStart"
+    />
     <div class="international" @click="handleGlobalClick">
       <Country1 id="country1" ref="country1" @country-selected="bringToFront('country1')" />
       <Country2 id="country2" ref="country2" @country-selected="bringToFront('country2')" />
       <Country3 id="country3" ref="country3" @country-selected="bringToFront('country3')" />
       <Country4 id="country4" ref="country4" @country-selected="bringToFront('country4')" />
     </div>
+     </div>
   </template>
   
   <script>
@@ -13,16 +25,22 @@
   import Country3 from './Country3.vue';
   import Country4 from './Country4.vue';
   import EventBus from '../../eventBus';
+  import Introduction from '../GestureIndications/Introduction.vue';
   
   export default {
     components: {
       Country1,
       Country2,
       Country3,
-      Country4
+      Country4,
+      Introduction
     },
     data() {
       return {
+      showIntroduction: true,
+      title: 'Bienvenue',
+      description: 'Voici une introduction à notre galerie.',
+      startButtonText: 'Commencer',
         globalClickCount: 0
       };
     },
