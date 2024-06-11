@@ -1,4 +1,16 @@
 <template>
+     <div>
+    <!-- Introduction Component -->
+    <Introduction
+      v-if="showIntroduction"
+      :title="title"
+      :description="description"
+      :gestureType="['touch']"
+      :buttonText="startButtonText"
+      :clickThrough="true"
+      @start="handleStart"
+    />
+
   <div class="gallery" v-dragscroll>
     <ILoveGazaDynamicTshirt v-if="tshirts[0]" :contents="tshirts[0].contents" :clickCount="clickCount"
       @clicked="handleClick(0)" class="gallery-item" />
@@ -10,6 +22,7 @@
       <TrafficLights />
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -28,15 +41,21 @@ import image9 from '@/assets/ILoveGaza/ocean9.png';
 import image10 from '@/assets/ILoveGaza/fastfashion10.png';
 import image11 from '@/assets/ILoveGaza/capitalism11.png';
 import image12 from '@/assets/ILoveGaza/capitalism12.png';
+import Introduction from '../GestureIndications/Introduction.vue';
 
 export default {
   components: {
     ILoveGazaDynamicTshirt,
     ILoveGazaStaticTshirts,
-    TrafficLights
+    TrafficLights, 
+    Introduction
   },
   data() {
     return {
+      showIntroduction: true,
+      title: 'Bienvenue',
+      description: 'Voici une introduction à notre galerie.',
+      startButtonText: 'Commencer',
       tshirts: [
         {
           id: 0,
