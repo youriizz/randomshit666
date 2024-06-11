@@ -18,11 +18,12 @@ export default {
     clickCount: Number
   },
   methods: {
-    handleClick() {
+    handleClick(event) {
+      console.log('ILoveGazaDynamicTshirt clicked', event);
       this.$emit('clicked');
     },
     isImage(content) {
-      return content.includes('.jpg') || content.includes('.gif') || content.includes('.svg') || content.includes('.png'); // Vérifie si le contenu est une image
+      return content.includes('.jpg') || content.includes('.gif') || content.includes('.svg') || content.includes('.png');
     },
     getClass(index) {
       return `dynamic-class-${index}`;
@@ -47,7 +48,6 @@ img,
   height: auto;
 }
 
-
 .tshirt-container {
   position: relative;
   display: flex;
@@ -56,7 +56,6 @@ img,
   overflow: hidden;
 }
 
-/* Classes dynamiques pour le premier t-shirt */
 .dynamic-class-0 {
   position: absolute;
   color: red;
@@ -71,7 +70,6 @@ img,
   margin: 0 auto;
   left: 49%;
   bottom: 53%;
-
 }
 
 .dynamic-class-2 {
@@ -86,7 +84,6 @@ img,
   width: 95%;
   margin: 0 auto;
   z-index: -1;
-
 }
 
 .dynamic-class-4 {
@@ -94,7 +91,6 @@ img,
   bottom: 10px;
   right: 10px;
   background-color: rgba(0, 0, 0, 0.7);
-  /* Fond semi-transparent pour la lisibilité */
   color: white;
   padding: 5px 15px;
   border-radius: 15px;
@@ -107,7 +103,6 @@ img,
   height: 100%;
   z-index: -2;
 }
-
 
 @media (max-width: 600px) {
   .dynamic-class-0 {
@@ -129,7 +124,6 @@ img,
 
   .dynamic-class-4 {
     font-size: 30px;
-    /* Augmentation proportionnelle du font-size pour l'item spécifique */
   }
 }
 </style>
