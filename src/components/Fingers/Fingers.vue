@@ -16,8 +16,8 @@
     <div class="container-right"></div>
     <div class="traffic-light-container">
       <TrafficLightBtn lightType="red" />
-      <TrafficLightBtn lightType="orange" :orangeRoute="'someOrangeRoute'" />
-      <TrafficLightBtn lightType="green" :greenRoute="'someGreenRoute'" />
+      <TrafficLightBtn lightType="orange" :orangeRoute="'similar'" />
+      <TrafficLightBtn lightType="green" :greenRoute="'notsimilar'" />
     </div>
   </div>
 </template>

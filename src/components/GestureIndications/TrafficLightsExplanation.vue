@@ -18,6 +18,7 @@
         <TrafficLight
           :orange-route="orangeRoute"
           :green-route="greenRoute"
+          :relativeSize="true"
         />
       </div>
     </div>
@@ -71,7 +72,7 @@
     transition: opacity 1s;
     z-index: 10;
     font-weight: 400;
-    font-size: clamp(0.2em, 1vw, 1em);
+    font-size: clamp(0.2em, 2vw, 1.2em);
   }
   
   .traffic-lights-explanation.visible {
@@ -92,7 +93,7 @@
   .header {
     position: relative;
     top: 0%;
-    font-size: clamp(1em, 4vw, 2em); /* Larger font size for the header */
+    font-size: clamp(1em, 2vw, 1.6em); /* Larger font size for the header */
     font-weight: 500;
   }
   
@@ -110,10 +111,11 @@
     position: absolute;
     display: flex;
     align-items: flex-end; /* Align the traffic lights to the bottom */
-    bottom: 0;
+    bottom: -15px;
     right: 10px;
-    width: 30%; /* Adjust the width as needed */
+    width: 20%; /* Adjust the width as needed */
     height: 80%; /* Adjust the height as needed */
+    opacity: 50%;
   }
 
   @media (max-width: 768px) {
@@ -140,7 +142,17 @@
   .light-explanation {
     width: 100%; /* Ensure each explanation takes full width */
     margin-bottom: 0%;
-    margin-top: 0%;
+    margin-top: 5%;
+  }
+  .traffic-light-container {
+    position: absolute;
+    display: flex;
+    align-items: flex-end; /* Align the traffic lights to the bottom */
+    bottom: 15px;
+    right: 0px;
+    width: 20%; /* Adjust the width as needed */
+    height: 80%; /* Adjust the height as needed */
+    opacity: 50%;
   }
   }
   </style>

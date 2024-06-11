@@ -1,4 +1,16 @@
 <template>
+  <div>
+    <Introduction
+      v-if="showIntroduction"
+      :title="title"
+      :description="description"
+      :gestureType="['touch', 'scroll-right', 'scroll-left']"
+      :buttonText="startButtonText"
+      :clickThrough="true"
+      :orangeRoute="orangeRoute"
+      :greenRoute="greenRoute"
+      @start="handleStart"
+    />
     <div class="container">
       <div class="background"></div>
       <div class="carousels">
@@ -6,11 +18,13 @@
         <LeavesCarousel :currentIndex="currentIndex" @containerClick="updateIndex" />
       </div>
     </div>
+  </div>
   </template>
   
   <script>
    import TreesCarousel from './TreesCarousel.vue';
    import LeavesCarousel from './LeavesCarousel.vue';
+   import Introduction from '../GestureIndications/Introduction.vue';
  
   
   
@@ -18,11 +32,18 @@
     name: 'CarouselContainer',
     components: {
       LeavesCarousel,
-      TreesCarousel
+      TreesCarousel,
+      Introduction
     },
     data() {
       return {
-        currentIndex: 6 // Index initial pour centrer le 6ème container
+        currentIndex: 6, // Index initial pour centrer le 6ème container
+        showIntroduction: true,
+        title: 'Leaves',
+        description: 'Duration : 30 Seconds',
+        startButtonText: 'Start',
+        orangeRoute: 'notsimilar',
+        greenRoute: 'similar', 
       };
     },
     methods: {
