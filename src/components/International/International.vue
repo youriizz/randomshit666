@@ -41,9 +41,9 @@ export default {
   data() {
     return {
       showIntroduction: true,
-      title: 'Bienvenue',
-      description: 'Voici une introduction à notre galerie.',
-      startButtonText: 'Commencer',
+      title: 'International',
+      description: 'Duration : 1 Minute',
+      startButtonText: 'Start',
       orangeRoute: 'notsimilar',
       greenRoute: 'similar',
       globalClickCount: 0

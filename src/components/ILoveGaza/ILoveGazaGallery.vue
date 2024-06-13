@@ -8,6 +8,8 @@
       :gestureType="['touch', 'scroll-right']"
       :buttonText="startButtonText"
       :clickThrough="true"
+      :orangeRoute="orangeRoute"
+      :greenRoute="greenRoute"
       @start="handleStart"
     />
     
@@ -54,8 +56,10 @@ export default {
     return {
       showIntroduction: true,
       title: 'I love',
-      description: 'Duration : 2 Minutes',
+      description: 'Duration : 30 Seconds',
       startButtonText: 'Start',
+      orangeRoute: 'notsimilar',
+      greenRoute: 'similar',
       tshirts: [
         {
           id: 0,

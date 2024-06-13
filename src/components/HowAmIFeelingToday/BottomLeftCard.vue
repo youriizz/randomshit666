@@ -1,6 +1,10 @@
 <template>
   <div class="bottom-left-card" :class="{ show: isActive }">
-    <TrafficLight :relativeSize="true" />
+    <TrafficLight
+          :orange-route="orangeRoute"
+          :green-route="greenRoute"
+          :relativeSize="true"
+        />
   </div>
 </template>
 
@@ -13,6 +17,12 @@ export default {
   },
   components: {
     TrafficLight
+  },
+  data() {
+    return {
+      orangeRoute: 'notsimilar',
+      greenRoute: 'similar',     // Remplacez par votre route
+    };
   }
 };
 </script>
@@ -39,7 +49,6 @@ export default {
   transform: scale(1);
   pointer-events: auto;
 }
-
 
 @media (max-width: 768px) {
   .bottom-left-card {

@@ -1,4 +1,16 @@
 <template>
+  <div>
+    <Introduction
+      v-if="showIntroduction"
+      :title="title"
+      :description="description"
+      :gestureType="['touch']"
+      :buttonText="startButtonText"
+      :clickThrough="false"
+      :orangeRoute="orangeRoute"
+      :greenRoute="greenRoute"
+      @start="handleStart"
+    />
   <div class="container-window">
     <div class="background-layer" :class="{ show: isActiveBackground }" :style="backgroundLayerStyle"></div>
     <GridItem 
@@ -8,6 +20,7 @@
       :active-item-id="activeItemId"
       @toggle-active="toggleActive" 
     />
+  </div>
   </div>
 </template>
 
@@ -22,13 +35,21 @@ import buttonemojiBg from '@/assets/HowAmIFeelingToday/background3.webp';
 import clampemojiBg from '@/assets/HowAmIFeelingToday/background4.webp';
 import moaiemojiBg from '@/assets/HowAmIFeelingToday/background1.webp';
 import petriemojiBg from '@/assets/HowAmIFeelingToday/background6.webp';
+import Introduction from '../GestureIndications/Introduction.vue';
 
 export default {
   components: {
-    GridItem
+    GridItem, 
+    Introduction
   },
   data() {
     return {
+      showIntroduction: true,
+      title: 'How Am I Feeling Today?',
+      description: 'Duration : 1 Minute',
+      startButtonText: 'Start',
+      orangeRoute: 'notsimilar',
+      greenRoute: 'similar',
       items: [
         { id: 1, activePosition: { top: '10%', left: '10%' }, mobilePosition: { top: '7.5%', left: '5%' }, bgImage: brickemojiBg },
         { id: 2, activePosition: { top: '10%', left: '40%' }, mobilePosition: { top: '7.5%', left: '55%' }, bgImage: bubbleemojiBg },
