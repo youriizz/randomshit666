@@ -1,5 +1,17 @@
 <template>
-  <div>
+   <div>
+    <!-- Introduction Component -->
+    <Introduction
+      v-if="showIntroduction"
+      :title="title"
+      :description="description"
+      :gestureType="['touch', 'scroll-down']"
+      :buttonText="startButtonText"
+      :clickThrough="false"
+      :orangeRoute="orangeRoute"
+      :greenRoute="greenRoute"
+      @start="handleStart"
+    />
     <header class="BB140header"></header>
 
     <div class="BB140container-1">
@@ -99,21 +111,30 @@
       <span class="arrow-down"></span>
     </div>
   </div>
+
 </template>
 
 <script>
 import p5 from 'p5';
 import TrafficLightBtn from '../TrafficLightBtn.vue';
+import Introduction from '../GestureIndications/Introduction.vue';
 
 
 export default {
   components: {
-        TrafficLightBtn
+        TrafficLightBtn,
+        Introduction
     },
 
   data() {
     return {
-      p5Instance: null
+      p5Instance: null,
+      showIntroduction: true,
+      title: 'Cities',
+      description: 'Duration : 2 Minutes',
+      startButtonText: 'Start',
+      orangeRoute: 'notsimilar',
+      greenRoute: 'similar',
     };
   },
   mounted() {
