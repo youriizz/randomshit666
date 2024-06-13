@@ -1,29 +1,57 @@
 <template>
-    <div class="traffic-light">
-        <TrafficLightBtn light-type="red" />
-        <TrafficLightBtn light-type="orange" />
-        <TrafficLightBtn light-type="green" />
+
+    <div :class="['traffic-light', { 'relative-size': relativeSize }]">
+      <TrafficLightBtn light-type="red" />
+      <TrafficLightBtn light-type="orange" :orange-route="orangeRoute" />
+      <TrafficLightBtn light-type="green" :green-route="greenRoute" />
+
     </div>
-</template>
+  </template>
+  
+  <script>
+  import TrafficLightBtn from "@/components/TrafficLightBtn.vue";
+  
+  export default {
 
-<script>
-import TrafficLightBtn from "@/components/TrafficLightBtn.vue";
-
-export default {
     components: { TrafficLightBtn },
-}
-</script>
+    props: {
+      orangeRoute: {
+        type: String,
+        default: null
+      },
+      greenRoute: {
+        type: String,
+        default: null
+      },
+    
+      relativeSize: {
+        type: Boolean,
+        default: false
+      }
+    },
+    components: { TrafficLightBtn },
 
-
-<style scoped>
-.traffic-light {
-    border: 1px solid black;
-    position: absolute;
+  }
+  </script>
+  
+  <style scoped>
+  
+  .traffic-light {
+    border: 0px solid black;
     width: 200px;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-</style>
+  }
+  
+  .traffic-light.relative-size {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 0px solid black;
+  }
+  
+  </style>
+  

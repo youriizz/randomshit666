@@ -11,6 +11,15 @@ import Fingers from '@/components/Fingers/Fingers.vue';
 import CommunistShit from '@/components/CommunistShit/CommunistShit.vue';
 import Ismmm from '@/components/Ismmm/Ismmm.vue';
 import Meditation from '@/components/Meditation/Meditation.vue';
+import Cities from "@/components/Cities/Cities.vue";
+import Rome from '@/components/Cities/Rome.vue';
+import Dubai from '@/components/Cities/Dubai.vue';
+import Rio from '@/components/Cities/Rio.vue';
+import NewYork from '@/components/Cities/NewYork.vue';
+import Beijing from '@/components/Cities/Beijing.vue';
+import Leaves from '@/components/Leaves/Leaves.vue';
+import HowAmIFeelingToday from '@/components/HowAmIFeelingToday/HowAmIFeelingToday.vue';
+import TheMediumIsTheMessage from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessage.vue'
 
 
 const router = createRouter({
@@ -75,6 +84,51 @@ const router = createRouter({
       path: "/meditation",
       name: "meditation",
       component: Meditation,
+    },
+    {
+      path: "/cities",
+      name: "cities",
+      component: Cities,
+    },
+    {
+      path: "/rome",
+      name: "rome",
+      component: Rome,
+    },
+    {
+      path: "/dubai",
+      name: "dubai",
+      component: Dubai,
+    },
+    {
+      path: "/rio",
+      name: "rio",
+      component: Rio,
+    },
+    {
+      path: "/newyork",
+      name: "newyork",
+      component: NewYork,
+    },
+    {
+      path: "/beijing",
+      name: "beijing",
+      component: Beijing,
+    },
+    {
+      path: "/leaves",
+      name: "leaves",
+      component: Leaves,
+    },
+    {
+      path: "/howamifeelingtoday",
+      name: "howamifeelingtoday",
+      component: HowAmIFeelingToday,
+    },
+    {
+      path: "/themediumisthemessage",
+      name: "themediumisthemessage",
+      component: TheMediumIsTheMessage,
     }
       // {
     //   path: '/about',
