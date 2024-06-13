@@ -18,6 +18,7 @@ import NewYork from '@/components/Cities/NewYork.vue';
 import Beijing from '@/components/Cities/Beijing.vue';
 import Leaves from '@/components/Leaves/Leaves.vue';
 import HowAmIFeelingToday from '@/components/HowAmIFeelingToday/HowAmIFeelingToday.vue';
+import TheMediumIsTheMessage from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessage.vue'
 
 
 const router = createRouter({
@@ -117,6 +118,11 @@ const router = createRouter({
       path: "/howamifeelingtoday",
       name: "howamifeelingtoday",
       component: HowAmIFeelingToday,
+    },
+    {
+      path: "/themediumisthemessage",
+      name: "themediumisthemessage",
+      component: TheMediumIsTheMessage,
     }
       // {
     //   path: '/about',

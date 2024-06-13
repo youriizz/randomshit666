@@ -37,7 +37,7 @@
   <style scoped>
   
   .traffic-light {
-    border: 1px solid black;
+    border: 0px solid black;
     width: 200px;
     height: 300px;
     display: flex;

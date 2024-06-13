@@ -12,6 +12,8 @@ import IsmmmThumbnail from '@/components/Ismmm/IsmmmThumbnail.vue';
 import CitiesThumbnail from '@/components/Cities/CitiesThumbnail.vue';
 import LeavesThumbnail from '@/components/Leaves/LeavesThumbnail.vue';
 import HowAmIFeelingTodayThumbnail from '@/components/HowAmIFeelingToday/HowAmIFeelingTodayThumbnail.vue';
+import TheMediumIsTheMessageThumbnail from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessageThumbnail.vue';
+
 
 
 
@@ -29,7 +31,8 @@ const items: GridItem[] = [
   { name: 'Ismmm', route: 'ismmm', component: IsmmmThumbnail },
   { name: 'Cities', route: 'cities', component: CitiesThumbnail },
   { name: 'Leaves', route: 'leaves', component: LeavesThumbnail},
-  { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail}
+  { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail},
+  { name: 'TheMediumIsTheMessage', route: 'themediumisthemessage', component: TheMediumIsTheMessageThumbnail}
 ];
 
 </script>
