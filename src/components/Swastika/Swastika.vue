@@ -122,6 +122,7 @@ body, html {
   font-size: 24px;
   color: black;
   cursor: pointer;
+  z-index: 10;
 }
 
 .BB100EXITrondinfo::after {

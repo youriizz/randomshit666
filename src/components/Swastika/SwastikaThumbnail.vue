@@ -1,53 +1,70 @@
 <template>
-  <div class="container-1">
-    <div class="round"></div>
-    <div class="round"></div>
-    <div class="round"></div>
-    <div class="round"></div>
-    <div class="round"></div>
+  <div class="image-container">
+    <img 
+      :src="imageSrc" 
+      alt="Medium Message Thumbnail"
+      class="responsive-image">
   </div>
 </template>
 
 <script>
-export default {
+import imageFile from '@/assets/Swastika/churchrain.gif';
 
+export default {
+  data() {
+    return {
+      imageSrc: imageFile
+    };
+  }
 }
 </script>
 
 <style scoped>
-
-.container-1 {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.round {
-  position: absolute;
-  height: 25%;
-  width: 25%;
-  border: 2px solid black;
-  background-color: white;
-  border-radius: 50%;
-  animation: Rotate 3s linear infinite;
+  height: 100%; /* Vous pouvez ajuster la hauteur selon vos besoins */
+  cursor: pointer;
+  animation: churchrain 15s linear infinite;
+  transition: background-color 2s;
 }
 
-@media (max-width:768px) {
-  .round {
-    height: 20%;
-    width: 20%;
+.responsive-image {
+  max-height: 125%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .responsive-image {
+    max-height: 130%;
+    max-width: 130%;
   }
 }
 
-@keyframes Rotate {
+@keyframes churchrain {
   0%, 100% {
-    transform: rotate(0deg) translateX(100px) rotate(0deg);
+    background-color: rgb(199, 199, 199);
   }
-  100% {
-    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  50% {
+    background-color: rgb(56, 56, 56);
   }
 }
 
+@keyframes churchrain2 {
+  0%, 100% {
+    background-color: rgb(148, 38, 58);
+  }
+}
+
+.image-container:hover, .image-container:active {
+  animation: churchrain2 15s linear infinite;
+}
+
+.image-container:hover {
+  transition: background-color 2s;
+}
 </style>
