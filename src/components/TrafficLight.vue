@@ -12,7 +12,6 @@
   import TrafficLightBtn from "@/components/TrafficLightBtn.vue";
   
   export default {
-
     components: { TrafficLightBtn },
     props: {
       orangeRoute: {
@@ -23,15 +22,15 @@
         type: String,
         default: null
       },
+  
     
       relativeSize: {
         type: Boolean,
         default: false
       }
-    },
-    components: { TrafficLightBtn },
+    }
+  };
 
-  }
   </script>
   
   <style scoped>
@@ -42,8 +41,8 @@
     height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+
   }
   
   .traffic-light.relative-size {

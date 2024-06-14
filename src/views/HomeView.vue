@@ -12,10 +12,9 @@ import IsmmmThumbnail from '@/components/Ismmm/IsmmmThumbnail.vue';
 import MeditationThumbnail from '@/components/Meditation/MeditationThumbnail.vue';
 import CitiesThumbnail from '@/components/Cities/CitiesThumbnail.vue';
 import LeavesThumbnail from '@/components/Leaves/LeavesThumbnail.vue';
+import SwastikaThumbnail from '@/components/Swastika/SwastikaThumbnail.vue';
 import HowAmIFeelingTodayThumbnail from '@/components/HowAmIFeelingToday/HowAmIFeelingTodayThumbnail.vue';
 import TheMediumIsTheMessageThumbnail from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessageThumbnail.vue';
-
-
 
 
 const items: GridItem[] = [
@@ -30,9 +29,10 @@ const items: GridItem[] = [
   { name: 'Fingers', route: 'fingers', component: FingersThumbnail },
   { name: 'CommunistShit', route: 'communistshit', component: CommunistShitThumbnail }, 
   { name: 'Ismmm', route: 'ismmm', component: IsmmmThumbnail },
+  { name: 'Leaves', route: 'leaves', component: LeavesThumbnail},
+  { name: 'Swastika', route: 'swastika', component: SwastikaThumbnail},
   { name: 'Meditation', route: 'meditation', component: MeditationThumbnail },
   { name: 'Cities', route: 'cities', component: CitiesThumbnail },
-  { name: 'Leaves', route: 'leaves', component: LeavesThumbnail},
   { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail},
   { name: 'TheMediumIsTheMessage', route: 'themediumisthemessage', component: TheMediumIsTheMessageThumbnail}
 ];
@@ -42,6 +42,5 @@ const items: GridItem[] = [
 <template>
   <main>
     <Grid :items="items" />
-    <TrafficLight />
   </main>
 </template>
