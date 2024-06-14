@@ -1,538 +1,627 @@
 <template>
+  <div>
+    <!-- Introduction Component -->
+    <Introduction
+      v-if="showIntroduction"
+      :title="title"
+      :description="description"
+      :gestureType="['touch']"
+      :buttonText="startButtonText"
+      :clickThrough="false"
+      :orangeRoute="orangeRoute"
+      :greenRoute="greenRoute"
+      @start="handleStart"
+    />
   <div class="meditation-app">
     <audio ref="audio" :src="MeditationAudio" />
-    <button v-if="isMobile && !audioReady" @click="initializeAudio" class="start-button">Start</button>
     <MeditationDraggable
+      v-if="startTime"
       :src="'https://images.vexels.com/media/users/3/126615/isolated/preview/c5989809e0bb7b8c780aa6c4d85c5653-buddhistische-meditationspose-ikone.png'"
       :appearanceTime="2000"
       :duration="20000"
       :width="400"
       :height="400"
       additionalClass="person-sit"
+      :startTime="startTime"
     />
     <MeditationDraggable
+     v-if="startTime"
       :src="'https://static.vecteezy.com/system/resources/previews/012/996/221/original/beautiful-lotus-flower-transparent-png.png'"
       :appearanceTime="8000"
       :duration="29000"
       :width="400"
       :height="400"
       additionalClass="flower-lotus"
+      :startTime="startTime"
     />
     <MeditationDraggable
+      v-if="startTime"
       :src="RelievedFaceEmoji"
       :appearanceTime="16000"
       :duration="19000"
       :width="200"
       :height="200"
       additionalClass="relieved-face-emoji"
+      :startTime="startTime"
     />
     <MeditationDraggable
-      :src="'https://autocollant-sticker.com/2026-thickbox_default/arbre-de-vie.jpg'"
-      :appearanceTime="22000"
-      :duration="10000"
-      :width="300"
-      :height="300"
-      additionalClass="tree-life"
-    />
-    <MeditationDraggable
-      :src="'https://i.pinimg.com/originals/82/b0/d9/82b0d91458e8291ddf1529f14c171c1d.png'"
-      :appearanceTime="25000"
-      :duration="15000"
-      :width="200"
-      :height="200"
-      additionalClass="shakra-1"
-    />
-
-
-
-
-
-
-
-    <MeditationDraggable
-      :src="collines"
-      :appearanceTime="55000"
-      :duration="63000"
-      :width="1000"
-      :height="250"
-      additionalClass="collines-1"
-    />
-    <MeditationDraggable
-      :src="river"
-      :appearanceTime="65000"
-      :duration="50000"
-      :width="700"
-      :height="200"
-      additionalClass="river-1"
-    />
-    <MeditationDraggable
-      :src="house"
-      :appearanceTime="51000"
-      :duration="64000"
-      :width="400"
-      :height="400"
-      additionalClass="house-position"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/cloud/png_cloud_5790_small.png'"
-      :appearanceTime="64000"
-      :duration="60000"
-      :width="500"
-      :height="200"
-      additionalClass="cloud-1"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/cloud/png_cloud_5775.png'"
-      :appearanceTime="64000"
-      :duration="50000"
-      :width="500"
-      :height="300"
-      additionalClass="cloud-2"
-    />
-
-    <MeditationDraggable
-      :src="tree1"
-      :appearanceTime="43000"
-      :duration="70000"
-      :width="300"
-      :height="400"
-      additionalClass="tree1-position"
-    />
-
-    <MeditationDraggable
-      :src="'https://freepngimg.com/thumb/tree/8-tree-png-image.png'"
-      :appearanceTime="50000"
-      :duration="65000"
-      :width="250"
-      :height="300"
-      additionalClass="tree2-position"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/tree/png_tree_7814.png'"
-      :appearanceTime="58000"
-      :duration="60000"
-      :width="250"
-      :height="400"
-      additionalClass="tree3-position"
-    />
-    <MeditationDraggable
-      :src="tree1"
-      :appearanceTime="67000"
-      :duration="50000"
-      :width="200"
-      :height="300"
-      additionalClass="tree4-position"
-    />
-    <MeditationDraggable
-      :src="birdsbackground"
-      :appearanceTime="60000"
-      :duration="50000"
-      :width="300"
-      :height="300"
-      additionalClass="birds-background"
-    />
-    
-    <MeditationDraggable
-      :src="'https://i.pinimg.com/originals/54/d3/ae/54d3ae04cae803cafc21389dfd31fc88.gif'"
-      :appearanceTime="47000"
-      :duration="70000"
-      :width="200"
-      :height="200"
-      additionalClass="sun-position"
-    />
-    <MeditationDraggable
-      :src="famille"
-      :appearanceTime="50000"
-      :duration="50000"
-      :width="400"
-      :height="300"
-      additionalClass="famille"
-    />
-   
-
-    <MeditationDraggable
-      :src="babouchka"
-      :appearanceTime="62000"
-      :duration="40000"
-      :width="150"
-      :height="150"
-      additionalClass="babouchka-position"
-    />
-
-    <MeditationDraggable
-      :src="'https://png.pngtree.com/png-clipart/20230414/original/pngtree-fairy-tale-world-fairy-tale-book-cartoon-illustration-png-image_9056973.png'"
-      :appearanceTime="95000"
-      :duration="20000"
-      :width="300"
-      :height="300"
-      additionalClass="book-stories"
-    />
-    <MeditationDraggable
-      :src="'https://cdni.iconscout.com/illustration/premium/thumb/kid-birthday-party-9484053-7710789.png?f=webp'"
-      :appearanceTime="105000"
-      :duration="13000"
-      :width="200"
-      :height="200"
-      additionalClass="birthday-position"
-    />
-    <MeditationDraggable
-      :src="'https://i.pinimg.com/originals/f2/c6/64/f2c66478753920bc59bb2ccef4014915.png'"
-      :appearanceTime="110000"
-      :duration="10000"
-      :width="200"
-      :height="200"
-      additionalClass="playmobil"
-    />
-
-
-
-
-
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/city/png_city_38.png'"
-      :appearanceTime="128000"
-      :duration="40000"
-      :width="1500"
-      :height="400"
-      additionalClass="city-1"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/road/png_road_79493_small.png'"
-      :appearanceTime="136000"
-      :duration="30000"
-      :width="300"
-      :height="200"
-      additionalClass="road-1"
-    />
-
- <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/coal/png_coal_87580_small.png'"
-      :appearanceTime="148000"
-      :duration="10000"
-      :width="300"
-      :height="300"
-      additionalClass="coal"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/money/png_money_32675_small.png'"
-      :appearanceTime="138000"
-      :duration="20000"
-      :width="300"
-      :height="300"
-      additionalClass="money"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/businessman/png_businessman_36352_small.png'"
-      :appearanceTime="142000"
-      :duration="7000"
-      :width="250"
-      :height="250"
-      additionalClass="business-man"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/crowd/png_crowd_36912_small.png'"
-      :appearanceTime="145000"
-      :duration="10000"
-      :width="300"
-      :height="250"
-      additionalClass="famille-2"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/roulette/png_roulette_87521_small.png'"
-      :appearanceTime="152000"
-      :duration="18000"
-      :width="400"
-      :height="350"
-      additionalClass="russian-roulette"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/daewoo/png_daewoo_19934_small.png'"
-      :appearanceTime="133000"
-      :duration="19000"
-      :width="400"
-      :height="250"
-      additionalClass="car-1"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/green_card/png_green_card_89076_small.png'"
-      :appearanceTime="134000"
-      :duration="30000"
-      :width="300"
-      :height="250"
-      additionalClass="identity-card"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/vodka/png_vodka_16839_small.png'"
-      :appearanceTime="153000"
-      :duration="15000"
-      :width="150"
-      :height="400"
-      additionalClass="vodka"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/barbwire/png_barbwire_45142_small.png'"
-      :appearanceTime="162000"
-      :duration="6000"
-      :width="350"
-      :height="350"
-      additionalClass="barbwire"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/stopwatch/png_stopwatch_72990_small.png'"
-      :appearanceTime="165000"
-      :duration="4000"
-      :width="250"
-      :height="250"
-      additionalClass="watch-1"
-    />
-
-
-
-
-
-
-
-
-
-    <MeditationDraggable
-      :src="burial"
-      :appearanceTime="258000"
-      :duration="10000"
-      :width="1100"
-      :height="600"
-      additionalClass="burial"
-    />
-
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/yoga/png_yoga_61345_small.png'"
-      :appearanceTime="169000"
-      :duration="39000"
-      :width="350"
-      :height="350"
-      additionalClass="meditation-2"
-    />
-    
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/eye/png_eye_37460.png'"
-      :appearanceTime="225000"
-      :duration="40000"
-      :width="600"
-      :height="600"
-      additionalClass="eye-2"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/gemini/png_gemini_77967_small.png'"
-      :appearanceTime="178000"
-      :duration="29000"
-      :width="150"
-      :height="150"
-      additionalClass="gemini-symbol"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/gemini/png_gemini_77967_small.png'"
-      :appearanceTime="220000"
-      :duration="23000"
-      :width="200"
-      :height="200"
-      additionalClass="lanterne"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/eye/png_eye_37456_small.png'"
-      :appearanceTime="185000"
-      :duration="18000"
-      :width="200"
-      :height="250"
-      additionalClass="eye-1"
-    />
-    
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/face/png_face_37504_small.png'"
-      :appearanceTime="180000"
-      :duration="40000"
-      :width="350"
-      :height="350"
-      additionalClass="face-1"
-    />
- 
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/brain/png_brain_36287_small.png'"
-      :appearanceTime="180000"
-      :duration="15000"
-      :width="200"
-      :height="200"
-      additionalClass="brain-1"
-    />
-
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/brain/png_brain_36256_small.png'"
-      :appearanceTime="190000"
-      :duration="15000"
-      :width="250"
-      :height="250"
-      additionalClass="brain-2"
-    />
-    
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/masha_and_the_bear/png_masha_and_the_bear_53.png'"
-      :appearanceTime="220000"
-      :duration="30000"
-      :width="300"
-      :height="400"
-      additionalClass="little-girl"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/angel/png_angel_40781.png'"
-      :appearanceTime="192000"
-      :duration="58000"
-      :width="300"
-      :height="400"
-      additionalClass="angel"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/peter_pan/png_peter_pan_76354.png'"
-      :appearanceTime="180000"
-      :duration="42000"
-      :width="300"
-      :height="300"
-      additionalClass="peter-pan"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/chakra/png_chakra_41043.png'"
-      :appearanceTime="200000"
-      :duration="49000"
-      :width="300"
-      :height="300"
-      additionalClass="chakra-2"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/nose/png_nose_38737_small.png'"
-      :appearanceTime="212000"
-      :duration="5000"
-      :width="500"
-      :height="500"
-      additionalClass="inhale-nose"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/mouth_smile/png_mouth_smile_38518_small.png'"
-      :appearanceTime="218000"
-      :duration="5000"
-      :width="500"
-      :height="300"
-      additionalClass="exhale-mouth"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/mouth_smile/png_mouth_smile_38519_small.png'"
-      :appearanceTime="225000"
-      :duration="15000"
-      :width="250"
-      :height="250"
-      additionalClass="mouth-2"
-    />
-    
-
-
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/white_roses/png_white_roses_25376.png'"
-      :appearanceTime="230000"
-      :duration="43000"
-      :width="400"
-      :height="400"
-      additionalClass="white-flower"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/chakra/png_chakra_41029.png'"
-      :appearanceTime="210000"
-      :duration="40000"
-      :width="300"
-      :height="300"
-      additionalClass="chakra-3"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/fireplace/png_fireplace_48505_small.png'"
-      :appearanceTime="240000"
-      :duration="25000"
-      :width="300"
-      :height="300"
-      additionalClass="fireplace"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/medical_mask/png_medical_mask_27208_small.png'"
-      :appearanceTime="245000"
-      :duration="10000"
-      :width="250"
-      :height="250"
-      additionalClass="covid-mask"
-    />
-   
-    <MeditationDraggable
-      :src="'https://www.picng.com/upload/death/png_death_41318.png'"
-      :appearanceTime="264000"
-      :duration="7000"
-      :width="350"
-      :height="350"
-      additionalClass="death"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/face/png_face_37468_small.png'"
-      :appearanceTime="227000"
-      :duration="50000"
-      :width="350"
-      :height="450"
-      additionalClass="face-2"
-    />
-    <MeditationDraggable
-      :src="'https://www.picng.com/thumbnail/carnival_mask/png_carnival_mask_85153_small.png'"
-      :appearanceTime="260000"
-      :duration="10000"
-      :width="350"
-      :height="350"
-      additionalClass="carnival-mask"
-    />
-
-
-
-
-
-    
-
-
-
-
-    <TrafficLightDraggable
-      lightType="red"
-      :appearanceTime="274000"
-      :duration="100000"
-      :width="100"
-      :height="100"
-      additionalClass="traffic-light-red"
-    />
-    <TrafficLightDraggable
-      lightType="orange"
-      orangeRoute="notsimilar"
-      :appearanceTime="273000"
-      :duration="100000"
-      :width="100"
-      :height="100"
-      additionalClass="traffic-light-orange"
-    />
-    <TrafficLightDraggable
-      lightType="green"
-      greenRoute="similar"
-      :appearanceTime="272000"
-      :duration="100000"
-      :width="100"
-      :height="100"
-      additionalClass="traffic-light-green"
-    />
-    <MeditationSubtitles :subtitles="subtitles" />
+        v-if="startTime"
+        :src="'https://autocollant-sticker.com/2026-thickbox_default/arbre-de-vie.jpg'"
+        :appearanceTime="22000"
+        :duration="10000"
+        :width="300"
+        :height="300"
+        additionalClass="tree-life"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://i.pinimg.com/originals/82/b0/d9/82b0d91458e8291ddf1529f14c171c1d.png'"
+        :appearanceTime="25000"
+        :duration="15000"
+        :width="200"
+        :height="200"
+        additionalClass="shakra-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="collines"
+        :appearanceTime="55000"
+        :duration="63000"
+        :width="1000"
+        :height="250"
+        additionalClass="collines-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="river"
+        :appearanceTime="65000"
+        :duration="50000"
+        :width="700"
+        :height="200"
+        additionalClass="river-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="house"
+        :appearanceTime="51000"
+        :duration="64000"
+        :width="400"
+        :height="400"
+        additionalClass="house-position"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/cloud/png_cloud_5790_small.png'"
+        :appearanceTime="64000"
+        :duration="60000"
+        :width="500"
+        :height="200"
+        additionalClass="cloud-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/cloud/png_cloud_5775.png'"
+        :appearanceTime="64000"
+        :duration="50000"
+        :width="500"
+        :height="300"
+        additionalClass="cloud-2"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="tree1"
+        :appearanceTime="43000"
+        :duration="70000"
+        :width="300"
+        :height="400"
+        additionalClass="tree1-position"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://freepngimg.com/thumb/tree/8-tree-png-image.png'"
+        :appearanceTime="50000"
+        :duration="65000"
+        :width="250"
+        :height="300"
+        additionalClass="tree2-position"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/tree/png_tree_7814.png'"
+        :appearanceTime="58000"
+        :duration="60000"
+        :width="250"
+        :height="400"
+        additionalClass="tree3-position"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="tree1"
+        :appearanceTime="67000"
+        :duration="50000"
+        :width="200"
+        :height="300"
+        additionalClass="tree4-position"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="birdsbackground"
+        :appearanceTime="60000"
+        :duration="50000"
+        :width="300"
+        :height="300"
+        additionalClass="birds-background"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://i.pinimg.com/originals/54/d3/ae/54d3ae04cae803cafc21389dfd31fc88.gif'"
+        :appearanceTime="47000"
+        :duration="70000"
+        :width="200"
+        :height="200"
+        additionalClass="sun-position"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="famille"
+        :appearanceTime="50000"
+        :duration="50000"
+        :width="400"
+        :height="300"
+        additionalClass="famille"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="babouchka"
+        :appearanceTime="62000"
+        :duration="40000"
+        :width="150"
+        :height="150"
+        additionalClass="babouchka-position"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://png.pngtree.com/png-clipart/20230414/original/pngtree-fairy-tale-world-fairy-tale-book-cartoon-illustration-png-image_9056973.png'"
+        :appearanceTime="95000"
+        :duration="20000"
+        :width="300"
+        :height="300"
+        additionalClass="book-stories"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://cdni.iconscout.com/illustration/premium/thumb/kid-birthday-party-9484053-7710789.png?f=webp'"
+        :appearanceTime="105000"
+        :duration="13000"
+        :width="200"
+        :height="200"
+        additionalClass="birthday-position"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://i.pinimg.com/originals/f2/c6/64/f2c66478753920bc59bb2ccef4014915.png'"
+        :appearanceTime="110000"
+        :duration="10000"
+        :width="200"
+        :height="200"
+        additionalClass="playmobil"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/city/png_city_38.png'"
+        :appearanceTime="128000"
+        :duration="40000"
+        :width="1500"
+        :height="400"
+        additionalClass="city-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/road/png_road_79493_small.png'"
+        :appearanceTime="136000"
+        :duration="30000"
+        :width="300"
+        :height="200"
+        additionalClass="road-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/coal/png_coal_87580_small.png'"
+        :appearanceTime="148000"
+        :duration="10000"
+        :width="300"
+        :height="300"
+        additionalClass="coal"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/money/png_money_32675_small.png'"
+        :appearanceTime="138000"
+        :duration="20000"
+        :width="300"
+        :height="300"
+        additionalClass="money"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/businessman/png_businessman_36352_small.png'"
+        :appearanceTime="142000"
+        :duration="7000"
+        :width="250"
+        :height="250"
+        additionalClass="business-man"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/crowd/png_crowd_36912_small.png'"
+        :appearanceTime="145000"
+        :duration="10000"
+        :width="300"
+        :height="250"
+        additionalClass="famille-2"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/roulette/png_roulette_87521_small.png'"
+        :appearanceTime="152000"
+        :duration="18000"
+        :width="400"
+        :height="350"
+        additionalClass="russian-roulette"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/daewoo/png_daewoo_19934_small.png'"
+        :appearanceTime="133000"
+        :duration="19000"
+        :width="400"
+        :height="250"
+        additionalClass="car-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/green_card/png_green_card_89076_small.png'"
+        :appearanceTime="134000"
+        :duration="30000"
+        :width="300"
+        :height="250"
+        additionalClass="identity-card"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/vodka/png_vodka_16839_small.png'"
+        :appearanceTime="153000"
+        :duration="15000"
+        :width="150"
+        :height="400"
+        additionalClass="vodka"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/barbwire/png_barbwire_45142_small.png'"
+        :appearanceTime="162000"
+        :duration="6000"
+        :width="350"
+        :height="350"
+        additionalClass="barbwire"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/stopwatch/png_stopwatch_72990_small.png'"
+        :appearanceTime="165000"
+        :duration="4000"
+        :width="250"
+        :height="250"
+        additionalClass="watch-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="burial"
+        :appearanceTime="258000"
+        :duration="10000"
+        :width="1100"
+        :height="600"
+        additionalClass="burial"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/yoga/png_yoga_61345_small.png'"
+        :appearanceTime="169000"
+        :duration="39000"
+        :width="350"
+        :height="350"
+        additionalClass="meditation-2"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/eye/png_eye_37460.png'"
+        :appearanceTime="225000"
+        :duration="40000"
+        :width="600"
+        :height="600"
+        additionalClass="eye-2"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/gemini/png_gemini_77967_small.png'"
+        :appearanceTime="178000"
+        :duration="29000"
+        :width="150"
+        :height="150"
+        additionalClass="gemini-symbol"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/gemini/png_gemini_77967_small.png'"
+        :appearanceTime="220000"
+        :duration="23000"
+        :width="200"
+        :height="200"
+        additionalClass="lanterne"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/eye/png_eye_37456_small.png'"
+        :appearanceTime="185000"
+        :duration="18000"
+        :width="200"
+        :height="250"
+        additionalClass="eye-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/face/png_face_37504_small.png'"
+        :appearanceTime="180000"
+        :duration="40000"
+        :width="350"
+        :height="350"
+        additionalClass="face-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/brain/png_brain_36287_small.png'"
+        :appearanceTime="180000"
+        :duration="15000"
+        :width="200"
+        :height="200"
+        additionalClass="brain-1"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/brain/png_brain_36256_small.png'"
+        :appearanceTime="190000"
+        :duration="15000"
+        :width="250"
+        :height="250"
+        additionalClass="brain-2"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/masha_and_the_bear/png_masha_and_the_bear_53.png'"
+        :appearanceTime="220000"
+        :duration="30000"
+        :width="300"
+        :height="400"
+        additionalClass="little-girl"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/angel/png_angel_40781.png'"
+        :appearanceTime="192000"
+        :duration="58000"
+        :width="300"
+        :height="400"
+        additionalClass="angel"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/peter_pan/png_peter_pan_76354.png'"
+        :appearanceTime="180000"
+        :duration="42000"
+        :width="300"
+        :height="300"
+        additionalClass="peter-pan"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/chakra/png_chakra_41043.png'"
+        :appearanceTime="200000"
+        :duration="49000"
+        :width="300"
+        :height="300"
+        additionalClass="chakra-2"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/nose/png_nose_38737_small.png'"
+        :appearanceTime="212000"
+        :duration="5000"
+        :width="500"
+        :height="500"
+        additionalClass="inhale-nose"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/mouth_smile/png_mouth_smile_38518_small.png'"
+        :appearanceTime="218000"
+        :duration="5000"
+        :width="500"
+        :height="300"
+        additionalClass="exhale-mouth"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/mouth_smile/png_mouth_smile_38519_small.png'"
+        :appearanceTime="225000"
+        :duration="15000"
+        :width="250"
+        :height="250"
+        additionalClass="mouth-2"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/white_roses/png_white_roses_25376.png'"
+        :appearanceTime="230000"
+        :duration="43000"
+        :width="400"
+        :height="400"
+        additionalClass="white-flower"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/chakra/png_chakra_41029.png'"
+        :appearanceTime="210000"
+        :duration="40000"
+        :width="300"
+        :height="300"
+        additionalClass="chakra-3"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/fireplace/png_fireplace_48505_small.png'"
+        :appearanceTime="240000"
+        :duration="25000"
+        :width="300"
+        :height="300"
+        additionalClass="fireplace"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/medical_mask/png_medical_mask_27208_small.png'"
+        :appearanceTime="245000"
+        :duration="10000"
+        :width="250"
+        :height="250"
+        additionalClass="covid-mask"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/upload/death/png_death_41318.png'"
+        :appearanceTime="264000"
+        :duration="7000"
+        :width="350"
+        :height="350"
+        additionalClass="death"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/face/png_face_37468_small.png'"
+        :appearanceTime="227000"
+        :duration="50000"
+        :width="350"
+        :height="450"
+        additionalClass="face-2"
+        :startTime="startTime"
+      />
+      <MeditationDraggable
+        v-if="startTime"
+        :src="'https://www.picng.com/thumbnail/carnival_mask/png_carnival_mask_85153_small.png'"
+        :appearanceTime="260000"
+        :duration="10000"
+        :width="350"
+        :height="350"
+        additionalClass="carnival-mask"
+        :startTime="startTime"
+      />
+      <TrafficLightDraggable
+        v-if="startTime"
+        lightType="red"
+        :appearanceTime="274000"
+        :duration="100000"
+        :width="100"
+        :height="100"
+        additionalClass="traffic-light-red"
+        :startTime="startTime"
+      />
+      <TrafficLightDraggable
+        v-if="startTime"
+        lightType="orange"
+        orangeRoute="notsimilar"
+        :appearanceTime="273000"
+        :duration="100000"
+        :width="100"
+        :height="100"
+        additionalClass="traffic-light-orange"
+        :startTime="startTime"
+      />
+      <TrafficLightDraggable
+        v-if="startTime"
+        lightType="green"
+        greenRoute="similar"
+        :appearanceTime="272000"
+        :duration="100000"
+        :width="100"
+        :height="100"
+        additionalClass="traffic-light-green"
+        :startTime="startTime"
+      />
+      
+    <MeditationSubtitles 
+        v-if="audioReady && startTime"
+        :subtitles="subtitles" 
+        :startTime="startTime"
+      />
     <MeditationCircle
-      v-if="audioReady"
+      v-if="audioReady && startTime"
       :audioRef="$refs.audio"
       :appearanceTime="1000"
       :duration="500000"
       :initialDiameter="40"
       additionalClass="circle-position"
+      :startTime="startTime"
     />
+  </div>
   </div>
 </template>
 
@@ -557,6 +646,7 @@ import burial from '@/assets/Meditation/Dead/burial.png'
 
 import MeditationAudio from '@/assets/Meditation/MeditationAudioFull.mp3';
 import MeditationCircle from './MeditationCircle.vue';
+import Introduction from '../GestureIndications/Introduction.vue';
 
 
 export default {
@@ -566,10 +656,17 @@ export default {
     TrafficLightDraggable,
     MeditationSubtitles,
     MeditationCircle,
+    Introduction
 
   },
   data() {
     return {
+      showIntroduction: true,
+      title: 'Meditation',
+      description: 'Duration : 4 Minutes',
+      startButtonText: 'Start',
+      orangeRoute: 'notsimilar',
+      greenRoute: 'similar',
       babouchka,
       tree1,
       house,
@@ -631,29 +728,25 @@ export default {
         { text: 'for eternity.', appearanceTime: 267, duration: 2 },
         { text: 'for eternity.', appearanceTime: 271, duration: 2 },
       ],
-      audioReady: false
+      audioReady: false,
+      startTime: null
     };
-  },
-  computed: {
-    isMobile() {
-      return window.innerWidth <= 768; // Example breakpoint for mobile devices
-    }
   },
   methods: {
     initializeAudio() {
       this.$refs.audio.play().then(() => {
         this.audioReady = true;
+        console.log("Audio is ready");
       }).catch(error => {
         console.error("Audio play failed: ", error);
       });
-    }
-  },
-  mounted() {
-    if (!this.isMobile) {
-      this.$refs.audio.addEventListener('canplaythrough', () => {
-        this.audioReady = true;
-        this.$refs.audio.play();
-      });
+    },
+    handleStart() {
+      this.showIntroduction = false;
+      this.startTime = Date.now();
+      console.log("Start Time:", this.startTime);
+      console.log("Subtitles at Start:", this.subtitles);
+      this.initializeAudio();
     }
   }
 };

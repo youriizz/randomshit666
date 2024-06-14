@@ -1,11 +1,9 @@
 <template>
   <div 
+    ref="container"
     :style="[computedStyle, additionalStyles]" 
-    :class="{ hovered: isHovered || isActive }" 
-    class="container-morning" 
-    @mouseenter="handleMouseEnter" 
-    @click="toggleActive" 
-    @touchstart="toggleActive">
+    :class="{ visible: isVisible }" 
+    class="container-morning">
     {{ text }}
   </div>
 </template>
@@ -19,8 +17,7 @@ export default {
   },
   data() {
     return {
-      isHovered: false,
-      isActive: false
+      isVisible: false
     };
   },
   computed: {
@@ -30,13 +27,25 @@ export default {
       };
     }
   },
+  mounted() {
+    this.createObserver();
+  },
   methods: {
-    handleMouseEnter() {
-      this.isHovered = true;
-    },
-    toggleActive() {
-      this.isActive = true;
-      this.isHovered = true; // Ensure the color stays after click
+    createObserver() {
+      const options = {
+        root: null,
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.isVisible = true;
+          }
+        });
+      }, options);
+      
+      observer.observe(this.$refs.container);
     }
   }
 }
@@ -56,8 +65,9 @@ export default {
   background-color: rgb(255, 255, 255);
   box-sizing: border-box;
   cursor: grab;
+  transition: background-color 3.5s ease;
 }
-.container-morning.hovered {
+.container-morning.visible {
   background-color: rgb(247, 255, 173);
 }
 
@@ -67,11 +77,9 @@ export default {
   font-style: normal;
 }
 
-
 @media (max-width: 600px) {
   .container-morning {
     padding: 5vw
   }
-  
 }
 </style>

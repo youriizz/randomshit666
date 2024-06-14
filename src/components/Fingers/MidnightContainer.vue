@@ -1,11 +1,9 @@
 <template>
   <div 
+    ref="container"
     :style="[computedStyle, additionalStyles]" 
-    :class="{ hovered: isHovered || isActive }" 
-    class="container-midnight" 
-    @mouseenter="handleMouseEnter" 
-    @click="toggleActive" 
-    @touchstart="toggleActive">
+    :class="{ visible: isVisible }" 
+    class="container-midnight">
     {{ text }}
   </div>
 </template>
@@ -19,8 +17,7 @@ export default {
   },
   data() {
     return {
-      isHovered: false,
-      isActive: false
+      isVisible: false
     };
   },
   computed: {
@@ -30,49 +27,54 @@ export default {
       };
     }
   },
+  mounted() {
+    this.createObserver();
+  },
   methods: {
-    handleMouseEnter() {
-      this.isHovered = true;
-    },
-    toggleActive() {
-      this.isActive = true;
-      this.isHovered = true; // Ensure the color stays after click
+    createObserver() {
+      const options = {
+        root: null,
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.isVisible = true;
+          }
+        });
+      }, options);
+      
+      observer.observe(this.$refs.container);
     }
   }
 }
 </script>
 
-  <style scoped>
-  .container-midnight {
-    width: 100%;
-    display: flex;
-    padding: 2vw;
-    justify-content: left;
-    align-items: start;
-    border: 0px solid black;
-    font-family: 'Libre Baskerville', serif;
-    font-weight: 500;
-    font-size: clamp(23px, 3vw, 45px);
-    background-color: rgb(255, 255, 255);
-    box-sizing: border-box;
-    cursor: grab;
-  }
-  .container-midnight.hovered{
-    background-color: rgb(0, 0, 0);
-    color: white;
-  }
-
-  .libre-baskerville-regular {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  font-style: normal;
+<style scoped>
+.container-midnight {
+  width: 100%;
+  display: flex;
+  padding: 2vw;
+  justify-content: left;
+  align-items: start;
+  border: 0px solid black;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 500;
+  font-size: clamp(23px, 3vw, 45px);
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  cursor: grab;
+  transition: background-color 1.5s ease;
+}
+.container-midnight.visible {
+  background-color: rgb(0, 0, 0);
+  color: white;
 }
 
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
   .container-midnight {
-    padding: 5vw
+    padding: 5vw;
   }
-  
 }
-  </style>
-  
+</style>

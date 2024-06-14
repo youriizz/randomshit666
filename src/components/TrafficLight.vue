@@ -46,11 +46,18 @@
   }
   
   .traffic-light.relative-size {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border: 0px solid black;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  border: 0px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
   
   </style>
   

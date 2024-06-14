@@ -1,6 +1,18 @@
 <template>
+  <div>
+    <!-- Introduction Component -->
+    <Introduction
+      v-if="showIntroduction"
+      :title="title"
+      :description="description"
+      :gestureType="['scroll-down']"
+      :buttonText="startButtonText"
+      :clickThrough="true"
+      :orangeRoute="orangeRoute"
+      :greenRoute="greenRoute"
+      @start="handleStart"
+    />
   <div class="big-container">
-    <GestureIndications :type="['zoom']" class="gesture-indication"/>
     <div class="container-left"></div>
     <div class="container-middle">
       <component
@@ -20,6 +32,7 @@
       <TrafficLightBtn lightType="green" :greenRoute="'notsimilar'" />
     </div>
   </div>
+  </div>
 </template>
 
   
@@ -31,6 +44,7 @@
   import TitleContainer from './TitleContainer.vue'
   import TrafficLightBtn from '../TrafficLightBtn.vue';
   import GestureIndications from '../GestureIndications/GestureIndications.vue';
+  import Introduction from '../GestureIndications/Introduction.vue';
 
 
   
@@ -42,13 +56,20 @@
       MidnightContainer,
       TitleContainer,
       TrafficLightBtn,
-      GestureIndications
+      GestureIndications,
+      Introduction
 
     },
     data() {
       return {
+        showIntroduction: true,
+      title: 'A story',
+      description: 'Duration : 3 Minutes',
+      startButtonText: 'Start',
+      orangeRoute: 'notsimilar',
+      greenRoute: 'similar',
         containers: [
-          { type: 'TitleContainer', text: 'Scroll', height: 120 },
+          { type: 'MorningContainer', text: '', height: 50, additionalStyles: { fontSize: 'clamp(40px, 4vw, 75px)' , justifyContent: 'center', hoverColor: 'rgb(257, 265, 183)' }  },
           { type: 'MorningContainer', text: 'yellow = 09:00', height: 70, additionalStyles: { fontSize: 'clamp(40px, 4vw, 75px)' , justifyContent: 'center', hoverColor: 'rgb(257, 265, 183)' } },
           { type: 'MorningContainer', text: 'The birds are singing.', height: 50, additionalStyles: { justifyContent: 'center'  }},
           { type: 'AfternoonContainer', text: 'pink = 14:00', height: 70, additionalStyles:{ fontSize: 'clamp(40px, 4vw, 75px)' , justifyContent: 'center'}  },
@@ -57,8 +78,7 @@
           { type: 'EveningContainer', text: 'The sun is setting.', height: 50, additionalStyles: { justifyContent: 'center'  } },
           { type: 'MidnightContainer', text: 'black = 00:00', height: 70, additionalStyles:{ fontSize: 'clamp(40px, 4vw, 75px)' , justifyContent: 'center'}  },
           { type: 'MidnightContainer', text: 'The car suddenly stops.', height: 50, additionalStyles: { justifyContent: 'center'  } },
-          { type: 'TitleContainer', text: 'A story.', height: 50, additionalStyles: { textDecoration: 'underline', alignItems : 'center'} },
-          { type: 'DownArrow' },
+          { type: 'TitleContainer', text: 'A story.', height: 80, additionalStyles: { textDecoration: 'underline', alignItems : 'center'} },
           { type: 'MorningContainer', text: 'This morning, when she woke up, she decided to take a cold shower.', height: 70},
           { type: 'MorningContainer', text: 'Once, she saw in a magazine that water running over your body helps you to think straight.', height: 70},
           { type: 'MorningContainer', text: "She never understood the reason why", height: 70},

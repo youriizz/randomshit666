@@ -22,46 +22,48 @@
       additionalClass: {
         type: String,
         default: ''
-      }
+      },
+      startTime: Number
     },
     data() {
       return {
-          isDragging: false,
-          x: 0,
-          y: 0,
-          moved: false,
-          start: null,
-          isVisible: false,
-          opacity: 0,
-          imageRef: 'draggableImage'
+        isDragging: false,
+        x: 0,
+        y: 0,
+        moved: false,
+        start: null,
+        isVisible: false,
+        opacity: 0,
+        imageRef: 'draggableImage'
       };
     },
     computed: {
       imageStyle() {
-          const width = this.isMobile ? this.width / 2 : this.width;
-          const height = this.isMobile ? this.height / 2 : this.height;
-          return {
-              display: this.isVisible ? 'block' : 'none',
-              opacity: this.opacity,
-              width: `${width}px`,
-              height: `${height}px`
-          };
+        const width = this.isMobile ? this.width / 2 : this.width;
+        const height = this.isMobile ? this.height / 2 : this.height;
+        return {
+          display: this.isVisible ? 'block' : 'none',
+          opacity: this.opacity,
+          width: `${width}px`,
+          height: `${height}px`
+        };
       },
       isMobile() {
-          return window.innerWidth <= 768; // Example breakpoint for mobile devices
+        return window.innerWidth <= 768;
       }
     },
     mounted() {
-      // Schedule the appearance of the image
-      setTimeout(() => {
-          this.isVisible = true;
-          this.fadeIn();
-      }, this.appearanceTime);
+      const actualAppearanceTime = this.startTime + this.appearanceTime - Date.now();
+      console.log("Appearance Time for", this.src, ":", actualAppearanceTime);
   
-      // Schedule the disappearance of the image
       setTimeout(() => {
-          this.fadeOut();
-      }, this.appearanceTime + this.duration);
+        this.isVisible = true;
+        this.fadeIn();
+      }, actualAppearanceTime);
+  
+      setTimeout(() => {
+        this.fadeOut();
+      }, actualAppearanceTime + this.duration);
   
       document.addEventListener('mousemove', this.dragging);
       document.addEventListener('mouseup', this.dragEnd);
@@ -76,63 +78,63 @@
     },
     methods: {
       fadeIn() {
-          let op = 0;
-          const timer = setInterval(() => {
-              if (op >= 1) {
-                  clearInterval(timer);
-              }
-              this.opacity = op;
-              op += 0.02;
-          }, 100);
+        let op = 0;
+        const timer = setInterval(() => {
+          if (op >= 1) {
+            clearInterval(timer);
+          }
+          this.opacity = op;
+          op += 0.02;
+        }, 100);
       },
       fadeOut() {
-          let op = 1;
-          const timer = setInterval(() => {
-              if (op <= 0) {
-                  clearInterval(timer);
-                  this.isVisible = false;
-              }
-              this.opacity = op;
-              op -= 0.02;
-          }, 100);
+        let op = 1;
+        const timer = setInterval(() => {
+          if (op <= 0) {
+            clearInterval(timer);
+            this.isVisible = false;
+          }
+          this.opacity = op;
+          op -= 0.02;
+        }, 100);
       },
       dragStart(e) {
-          e.preventDefault();
+        e.preventDefault();
   
-          const img = this.$refs[this.imageRef];
-          this.isDragging = true;
+        const img = this.$refs[this.imageRef];
+        this.isDragging = true;
   
-          const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-          const clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
-          this.x = clientX - img.offsetLeft;
-          this.y = clientY - img.offsetTop;
-          img.style.cursor = 'grabbing';
-          img.style.opacity = '1';
+        const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+        const clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+        this.x = clientX - img.offsetLeft;
+        this.y = clientY - img.offsetTop;
+        img.style.cursor = 'grabbing';
+        img.style.opacity = '1';
   
-          if (!this.moved) {
-              this.start = img.getBoundingClientRect();
-          }
+        if (!this.moved) {
+          this.start = img.getBoundingClientRect();
+        }
   
-          this.moved = true;
+        this.moved = true;
       },
       dragging(e) {
-          if (this.isDragging) {
-              e.preventDefault();
-              const img = this.$refs[this.imageRef];
-              const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-              const clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+        if (this.isDragging) {
+          e.preventDefault();
+          const img = this.$refs[this.imageRef];
+          const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+          const clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
   
-              img.style.position = 'absolute';
-              img.style.left = clientX - this.x + 'px';
-              img.style.top = clientY - this.y + 'px';
-          }
+          img.style.position = 'absolute';
+          img.style.left = clientX - this.x + 'px';
+          img.style.top = clientY - this.y + 'px';
+        }
       },
       dragEnd() {
-          if (this.isDragging) {
-              this.isDragging = false;
-              const img = this.$refs[this.imageRef];
-              img.style.cursor = 'grab';
-          }
+        if (this.isDragging) {
+          this.isDragging = false;
+          const img = this.$refs[this.imageRef];
+          img.style.cursor = 'grab';
+        }
       }
     }
   };
@@ -140,11 +142,11 @@
   
   <style scoped>
   .draggable-image {
-      position: absolute;
-      object-fit: contain;
-      cursor: grab;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.5s;
+    position: absolute;
+    object-fit: contain;
+    cursor: grab;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s;
   }
   </style>
   
