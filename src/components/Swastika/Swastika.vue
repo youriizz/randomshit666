@@ -1,25 +1,50 @@
 <template>
+  <div>
+    <!-- Introduction Component -->
+    <Introduction
+      v-if="showIntroduction"
+      :title="title"
+      :description="description"
+      :gestureType="['scroll-down']"
+      :buttonText="startButtonText"
+      :clickThrough="true"
+      :orangeRoute="orangeRoute"
+      :greenRoute="greenRoute"
+      @start="handleStart"
+    />
   <div class="BB200grille-1">
     <div v-for="n in 23" :key="n" :class="`BB200item BB200item-${n}`">Item {{ n }}</div>
     <div class="BB200item BB200item-24">
-      <TrafficLight :orangeRoute="'orangePage'" :greenRoute="'greenPage'"/>
+      <TrafficLight :orangeRoute="'similar'" :greenRoute="'notsimilar'"/>
       <div class="BB100EXITrondinfo" @mouseover="showInfo = !isMobile" @mouseleave="showInfo = false" @click="toggleInfo">?</div>
     </div>
     <div v-if="showInfo && !isMobile" class="info-popup">
       The symbol has no single function or meaning. In Hinduism, Jainism and Buddhism, the Swastika is still used today as a religious symbol of good luck. In German, a heraldic symbol that resembles the Swastika has been called a „Hakenkreuz“ since the 18th century.
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 import TrafficLight from "@/components/TrafficLight.vue";
+import Introduction from "../GestureIndications/Introduction.vue";
+
 
 export default {
-  components: { TrafficLight },
+  components: { 
+    TrafficLight,
+    Introduction
+   },
   data() {
     return {
       showInfo: false,
-      isMobile: false
+      isMobile: false,
+      showIntroduction: true,
+      title: 'Swastika',
+      description: 'Duration : 45 Seconds',
+      startButtonText: 'Start',
+      orangeRoute: 'notsimilar',
+      greenRoute: 'similar',
     };
   },
   mounted() {

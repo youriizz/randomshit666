@@ -1,6 +1,22 @@
 <script>
+import Introduction from '../GestureIndications/Introduction.vue';
+
 export default {
+  components: {
+    Introduction
+  },
   name: 'Oval1',
+  data() {
+    return {
+      showIntroduction: true,
+      title: 'Writing 1',
+      description: 'Duration : 20 Seconds',
+      startButtonText: 'Start',
+      orangeRoute: 'notsimilar',
+      greenRoute: 'similar',
+      globalClickCount: 0
+    };
+  },
   methods: {
     navigateToOval2() {
       this.$router.push({ name: 'oval2' });
@@ -11,6 +27,19 @@ export default {
 
 
 <template>
+  <div>
+    <!-- Introduction Component -->
+    <Introduction
+      v-if="showIntroduction"
+      :title="title"
+      :description="description"
+      :gestureType="['touch']"
+      :buttonText="startButtonText"
+      :clickThrough="false"
+      :orangeRoute="orangeRoute"
+      :greenRoute="greenRoute"
+      @start="handleStart"
+    />
     <div class="BB120container-1" @click="navigateToOval2">
       <span class="BB120writing-1">
         A country road. A tree. Evening.
@@ -130,6 +159,7 @@ export default {
         Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE.Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE.Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE.Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE, CLICK ANYWHERE, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, Click anywhere, CLICK ANYWHERE, Click anywhere, Click anywhere, CLICK ANYWHERE.
       </span>
     </div>
+  </div>
   </template>
   
 
@@ -158,13 +188,13 @@ export default {
   }
   
   .BB120writing-1 {
-    animation: moveTextaround2 10s infinite alternate-reverse ease-in-out;
+    animation: moveTextaround2 10s infinite alternate ease-in-out;
     text-align: right;
     background-color: coral;
   }
   
   .BB120writing-2 {
-    animation: moveTextaround2 10s infinite alternate ease-in-out;
+    animation: moveTextaround2 10s infinite alternate-reverse ease-in-out;
     text-align: left;
     background-color: yellow;
   }
@@ -186,11 +216,11 @@ export default {
     line-height: 1.1;
   }
   .BB120writing-1 {
-    animation: moveTextaround2 7s infinite alternate-reverse ease-in-out;
+    animation: moveTextaround2 7s infinite alternate ease-in-out;
 
   }
   .BB120writing-2 {
-    animation: moveTextaround2 7s infinite alternate ease-in-out;
+    animation: moveTextaround2 7s infinite alternate-reverse ease-in-out;
 
   }
 
