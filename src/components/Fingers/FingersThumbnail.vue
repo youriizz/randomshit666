@@ -1,5 +1,5 @@
 <template>
-  <div class="thumbnail" :style="{ backgroundColor: backgroundColor, transform: hoverSkew }" @mouseenter="applyRandomSkew" @mouseleave="resetSkew">
+  <div class="thumbnail" :class="{ 'skew-animation': isMobile }" :style="{ backgroundColor: backgroundColor, transform: hoverSkew }" @mouseenter="applyRandomSkew" @mouseleave="resetSkew">
     <div class="fixed-time" v-if="fixedTimes[0]">{{ fixedTimes[0] }}</div>
     <div class="counter" :class="{ whiteText: currentTime >= 20 }" v-if="currentTime < 9">{{ formatTime(currentTime) }}</div>
     <div class="fixed-time" v-if="fixedTimes[1]">{{ fixedTimes[1] }}</div>
@@ -12,6 +12,7 @@
   </div>
 </template>
 
+
 <script>
 export default {
   data() {
@@ -22,11 +23,13 @@ export default {
       startTime: null,
       interval: null,
       resetTimeout: null,
-      hoverSkew: '' // Add this data property
+      hoverSkew: '', // Remove this data property
+      isMobile: false // Add this data property
     };
   },
   mounted() {
     this.startCounter();
+    this.checkIfMobile();
   },
   methods: {
     startCounter() {
@@ -76,11 +79,18 @@ export default {
       this.startCounter();
     },
     applyRandomSkew() {
-      const skewValue = Math.random() > 0.5 ? 'skew(10deg, 10deg)' : 'skew(-10deg, -10deg)';
-      this.hoverSkew = `scale(1.4) rotate(5deg) ${skewValue}`;
+      if (!this.isMobile) {
+        const skewValue = Math.random() > 0.5 ? 'skew(10deg, 10deg)' : 'skew(-10deg, -10deg)';
+        this.hoverSkew = `scale(1.4) rotate(5deg) ${skewValue}`;
+      }
     },
     resetSkew() {
-      this.hoverSkew = '';
+      if (!this.isMobile) {
+        this.hoverSkew = '';
+      }
+    },
+    checkIfMobile() {
+      this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     }
   },
   beforeDestroy() {
@@ -88,6 +98,7 @@ export default {
     clearTimeout(this.resetTimeout);
   }
 };
+
 </script>
 
 <style scoped>
@@ -112,4 +123,27 @@ export default {
 .counter.whiteText, .fixed-time.whiteText {
   color: white;
 }
+
+@keyframes skew-animation {
+  0% { transform: skew(-10deg, -10deg); }
+  33% { transform: skew(10deg, 10deg); }
+  66% { transform: skew(-10deg, -10deg); }
+  100% { transform: skew(10deg, 10deg); }
+}
+
+.skew-animation {
+  animation: skew-animation 30s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+  
+  .thumbnail {
+    position: relative;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+}
 </style>
+

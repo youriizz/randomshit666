@@ -1,13 +1,28 @@
 <template>
-  <div class="gallery" v-dragscroll>
-    <ILoveGazaDynamicTshirt v-if="tshirts[0]" :contents="tshirts[0].contents" :clickCount="clickCount"
-      @clicked="handleClick(0)" class="gallery-item" />
-    <ILoveGazaStaticTshirts v-for="(tshirt, index) in tshirts.slice(1, -1)" :key="tshirt.id" :contents="tshirt.contents"
-      :class="{ 'is-hidden': !showGallery }" class="gallery-item">
-      <img :src="tshirt.contents[0]" alt="T-shirt image" />
-    </ILoveGazaStaticTshirts>
-    <div v-if="clickCount >= 6" class="gallery-item centered">
-      <TrafficLights />
+  <div>
+    <!-- Introduction Component -->
+    <Introduction
+      v-if="showIntroduction"
+      :title="title"
+      :description="description"
+      :gestureType="['touch', 'scroll-right']"
+      :buttonText="startButtonText"
+      :clickThrough="true"
+      :orangeRoute="orangeRoute"
+      :greenRoute="greenRoute"
+      @start="handleStart"
+    />
+    
+    <div class="gallery" v-dragscroll @click="handleGlobalClick">
+      <ILoveGazaDynamicTshirt v-if="tshirts[0]" :contents="tshirts[0].contents" :clickCount="clickCount"
+        @clicked="handleClick(0)" class="gallery-item" />
+      <ILoveGazaStaticTshirts v-for="(tshirt, index) in tshirts.slice(1, -1)" :key="tshirt.id" :contents="tshirt.contents"
+        :class="{ 'is-hidden': !showGallery }" class="gallery-item" @clicked="handleClick(index + 1)">
+        <img :src="tshirt.contents[0]" alt="T-shirt image" />
+      </ILoveGazaStaticTshirts>
+      <div v-if="clickCount >= 6" class="gallery-item centered">
+        <TrafficLights />
+      </div>
     </div>
   </div>
 </template>
@@ -16,6 +31,7 @@
 import ILoveGazaDynamicTshirt from './ILoveGazaDynamicTshirts.vue';
 import ILoveGazaStaticTshirts from './ILoveGazaStaticTshirts.vue';
 import TrafficLights from '../TrafficLight.vue';
+import Introduction from '../GestureIndications/Introduction.vue';
 import image1 from '@/assets/ILoveGaza/I.svg';
 import image2 from '@/assets/ILoveGaza/heart.svg';
 import image3 from '@/assets/ILoveGaza/Gaza.svg';
@@ -33,10 +49,17 @@ export default {
   components: {
     ILoveGazaDynamicTshirt,
     ILoveGazaStaticTshirts,
-    TrafficLights
+    TrafficLights, 
+    Introduction
   },
   data() {
     return {
+      showIntroduction: true,
+      title: 'I love',
+      description: 'Duration : 30 Seconds',
+      startButtonText: 'Start',
+      orangeRoute: 'notsimilar',
+      greenRoute: 'similar',
       tshirts: [
         {
           id: 0,
@@ -87,7 +110,7 @@ export default {
         }
       ],
       currentIndex: 0,
-      clickCount: 0,
+      clickCount: 1, // Initialisation du clickCount à 1
       showGallery: false
     };
   },
@@ -99,16 +122,29 @@ export default {
   },
 
   methods: {
+    handleStart() {
+      console.log('Start button clicked, handling start');
+      this.showIntroduction = false;
+    },
     handleClick(index) {
+      console.log(`handleClick called with index ${index}`);
       if (index === 0) {
         this.clickCount++;
+        console.log(`clickCount is now ${this.clickCount}`);
         if (this.clickCount >= 6) {
           this.showGallery = true;
         }
       } else {
         this.currentIndex = index;
       }
+    },
+    handleGlobalClick(event) {
+      console.log('Global click detected in gallery', event);
     }
+  },
+
+  mounted() {
+    console.log('ILoveGaza.vue mounted');
   }
 }
 </script>
@@ -142,6 +178,7 @@ img {
   width: 60vw;
   height: 90vh;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 .gallery-item:first-child {

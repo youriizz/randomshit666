@@ -79,7 +79,7 @@ import flagwestalia from '@/assets/International/images/flagwestalia.webp'
         sounds: [
           { src: Money, start: 4, end: 9, class: 'moneysound' },
           { src: Democracysound, start: 9, end: 13, class: 'democracysound' },
-          { src: Mozart, start: 9, end: 13, class: 'democracysound' },
+          { src: Mozart, start: 9, end: 13, class: 'dysound' },
           { src: RobloxWii, start: 14, end: 19, class: 'robloxwii'},
           { src: Avengers, start: 16, end: 22, class: 'avengers'},
           { src: CommunistAlert, start: 18, end: 25, class: 'communistalert' },
@@ -121,8 +121,7 @@ import flagwestalia from '@/assets/International/images/flagwestalia.webp'
   width: 50%;
   bottom: -20%;
 }
-.president {
-}
+
 .healthcare {
   width: 30%;
   left: -10%;

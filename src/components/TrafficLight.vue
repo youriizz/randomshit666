@@ -1,8 +1,10 @@
 <template>
-    <div class="traffic-light">
+
+    <div :class="['traffic-light', { 'relative-size': relativeSize }]">
       <TrafficLightBtn light-type="red" />
       <TrafficLightBtn light-type="orange" :orange-route="orangeRoute" />
       <TrafficLightBtn light-type="green" :green-route="greenRoute" />
+
     </div>
   </template>
   
@@ -19,20 +21,36 @@
       greenRoute: {
         type: String,
         default: null
+      },
+  
+    
+      relativeSize: {
+        type: Boolean,
+        default: false
       }
     }
   };
+
   </script>
   
   <style scoped>
+  
   .traffic-light {
-    position: relative;
-    z-index: 1;
+    border: 0px solid black;
+    width: 200px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100%;
+
   }
+  
+  .traffic-light.relative-size {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 0px solid black;
+  }
+  
   </style>
   

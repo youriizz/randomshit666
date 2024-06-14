@@ -9,8 +9,8 @@
     >
       <div v-if="item.value === 10" class="traffic-lights">
         <TrafficLightBtn lightType="red" style="top: 45%; left: 30%; transform: scale(0.4);" />
-        <TrafficLightBtn lightType="green" style="top: 30%; left: 50%; transform: scale(0.6);" />
-        <TrafficLightBtn lightType="orange" style="top: 40%; left: 75%; transform: scale(0.3);" />
+        <TrafficLightBtn lightType="green" greenRoute="similar" style="top: 30%; left: 50%; transform: scale(0.6);" />
+        <TrafficLightBtn lightType="orange" orangeRoute="notsimilar" style="top: 40%; left: 75%; transform: scale(0.3);" />
       </div>
       <img :src="item.src" alt="" v-if="item.src" />
       <span v-else>{{ item.value }}</span>
