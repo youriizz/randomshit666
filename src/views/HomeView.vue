@@ -33,7 +33,6 @@ const items: GridItem[] = [
   { name: 'Swastika', route: 'swastika', component: SwastikaThumbnail},
   { name: 'Meditation', route: 'meditation', component: MeditationThumbnail },
   { name: 'Cities', route: 'cities', component: CitiesThumbnail },
-  { name: 'Leaves', route: 'leaves', component: LeavesThumbnail},
   { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail},
   { name: 'TheMediumIsTheMessage', route: 'themediumisthemessage', component: TheMediumIsTheMessageThumbnail}
 ];
