@@ -30,7 +30,7 @@ const items: GridItem[] = [
   { name: 'CommunistShit', route: 'communistshit', component: CommunistShitThumbnail }, 
   { name: 'Ismmm', route: 'ismmm', component: IsmmmThumbnail },
   { name: 'Leaves', route: 'leaves', component: LeavesThumbnail},
-  { name: 'Swastika', route: 'swastika', component: SwastikaThumbnail}
+  { name: 'Swastika', route: 'swastika', component: SwastikaThumbnail},
   { name: 'Meditation', route: 'meditation', component: MeditationThumbnail },
   { name: 'Cities', route: 'cities', component: CitiesThumbnail },
   { name: 'Leaves', route: 'leaves', component: LeavesThumbnail},
