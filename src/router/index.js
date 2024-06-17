@@ -21,7 +21,7 @@ import Leaves from '@/components/Leaves/Leaves.vue';
 import Swastika from '@/components/Swastika/Swastika.vue';
 import HowAmIFeelingToday from '@/components/HowAmIFeelingToday/HowAmIFeelingToday.vue';
 import TheMediumIsTheMessage from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessage.vue'
-
+import Quiz from '@/components/Quiz/Quiz.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -135,6 +135,11 @@ const router = createRouter({
       path: "/themediumisthemessage",
       name: "themediumisthemessage",
       component: TheMediumIsTheMessage,
+    },
+    {
+      path: "/quiz",
+      name: "quiz",
+      component: Quiz,
     }
       // {
     //   path: '/about',

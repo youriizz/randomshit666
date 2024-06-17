@@ -2,7 +2,6 @@
 import Grid from '@/components/Grid.vue';
 import { GridItem } from '@/components/GridItem.vue';
 import NetflixThumbnail from '@/components/Netflix/NetflixThumbnail.vue';
-import TrafficLight from "@/components/TrafficLight.vue";
 import ILoveGazaThumbnail from "@/components/ILoveGaza/ILoveGazaThumbnail.vue";
 import InternationalThumbnail from '@/components/International/InternationalThumbnail.vue';
 import OvalThumbnail from '@/components/Oval/OvalThumbnail.vue';
@@ -15,6 +14,7 @@ import LeavesThumbnail from '@/components/Leaves/LeavesThumbnail.vue';
 import SwastikaThumbnail from '@/components/Swastika/SwastikaThumbnail.vue';
 import HowAmIFeelingTodayThumbnail from '@/components/HowAmIFeelingToday/HowAmIFeelingTodayThumbnail.vue';
 import TheMediumIsTheMessageThumbnail from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessageThumbnail.vue';
+import QuizThumbnail from '@/components/Quiz/QuizThumbnail.vue';
 
 
 const items: GridItem[] = [
@@ -34,7 +34,8 @@ const items: GridItem[] = [
   { name: 'Meditation', route: 'meditation', component: MeditationThumbnail },
   { name: 'Cities', route: 'cities', component: CitiesThumbnail },
   { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail},
-  { name: 'TheMediumIsTheMessage', route: 'themediumisthemessage', component: TheMediumIsTheMessageThumbnail}
+  { name: 'TheMediumIsTheMessage', route: 'themediumisthemessage', component: TheMediumIsTheMessageThumbnail},
+  { name: 'Quiz', route: 'quiz', component: QuizThumbnail}
 ];
 
 </script>

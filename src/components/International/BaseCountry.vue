@@ -24,7 +24,11 @@
       <div v-for="(style, index) in activeStyles"
            :class="getClassForStyle(style)"
            :key="`style-${index}`"></div>
-      <TrafficLight v-if="showTrafficLights" />
+      <TrafficLight 
+          :orange-route="orangeRoute"
+          :green-route="greenRoute"
+          :relativeSize="false"
+          v-if="showTrafficLights" />
     </div>
   </template>
   
@@ -63,6 +67,8 @@
       return {
         clickCount: 0,
         zIndex: 1,
+        orangeRoute: 'notsimilar',
+         greenRoute: 'similar', 
       };
     },
     computed: {
