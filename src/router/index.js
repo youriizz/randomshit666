@@ -138,6 +138,11 @@ const router = createRouter({
       name: "themediumisthemessage",
       component: TheMediumIsTheMessage,
     },
+    {
+      path: "/hailmary",
+      name: "hailmary",
+      component: HailMary,
+    },
     // {
     //   path: '/about',
     //   name: 'about',

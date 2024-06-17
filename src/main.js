@@ -10,8 +10,4 @@ import { TroisJSVuePlugin } from "troisjs";
 
 const app = createApp(App);
 app.config.globalProperties.$EventBus = EventBus;
-app.use(router).use(VueDragscroll).mount("#app");
-
-app.use(router);
-app.use(TroisJSVuePlugin);
-app.mount("#app");
+app.use(router).use(VueDragscroll).use(TroisJSVuePlugin).mount("#app");
