@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import Netflix from "@/components/Netflix/Netflix.vue";
+import Interchangeable from "@/components/Interchangeable/Interchangeable.vue";
 import NotSimilar from "@/components/NotSimilar.vue";
 import Similar from "@/components/Similar.vue";
 import ILoveGaza from "@/components/ILoveGaza/ILoveGazaGallery.vue";
@@ -32,9 +32,9 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/netflix",
-      name: "netflix",
-      component: Netflix,
+      path: "/interchangeable",
+      name: "interchangeable",
+      component: Interchangeable,
     },
     {
       path: "/similar",
