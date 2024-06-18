@@ -30,6 +30,13 @@ import Question4 from './Question4.vue';
 import Question5 from './Question5.vue';
 import Question6 from './Question6.vue';
 import Question7 from './Question7.vue';
+import Question8 from './Question8.vue';
+import Question9 from './Question9.vue';
+import Question10 from './Question10.vue';
+import Question11 from './Question11.vue';
+import Question12 from './Question12.vue';
+import Question13 from './Question13.vue';
+import Question14 from './Question14.vue';
 import QuestionText from './QuestionText.vue';
 import nextQuestionImage from '@/assets/Quiz/nextquestion.webp';
 import QuestionEnd from './QuestionEnd.vue';
@@ -44,6 +51,13 @@ export default {
     Question5,
     Question6,
     Question7,
+    Question8,
+    Question9,
+    Question10,
+    Question11,
+    Question12,
+    Question13,
+    Question14,
     QuestionEnd,
     QuestionText
   },
@@ -93,9 +107,44 @@ export default {
     delay: 2000, // Pas de délai
      },
      {
+    text: 'Question 8: What is 666 x 666? 🤓',
+    component: 'Question8',
+    delay: 2000, // Pas de délai
+     },
+     {
+    text: 'Question 9: How do you say "Metaphysical dialectics" in korean?',
+    component: 'Question9',
+    delay: 2000, // Pas de délai
+     },
+     {
+    text: 'Question 10: Why did you answer the last question randomly? 🤔',
+    component: 'Question10',
+    delay: 2000, // Pas de délai
+     },
+     {
+    text: "Question 11: Do you really think I'm just an object that you can control? 😡",
+    component: 'Question11',
+    delay: 2000, // Pas de délai
+     },
+     {
+    text: "Question 12: Look at your screen time, Isn't it me who's controlling you? 🕹️",
+    component: 'Question12',
+    delay: 2000, // Pas de délai
+     },
+     {
+    text: "Question 13: That's better. But it's too late. How do you want to die? 🪦",
+    component: 'Question13',
+    delay: 2000, // Pas de délai
+     },
+     {
+    text: 'Question 14: And when do you want to die? 🤗',
+    component: 'Question14',
+    delay: 2000, // Pas de délai
+     },
+     {
     text: 'You made it to the end! 🥳 Make sure you stay on the website 😉',
     component: 'QuestionEnd',
-    delay: 3000, // Délai de 3 secondes
+    delay: 4000, // Délai de 3 secondes
   },
   
 ]
@@ -175,6 +224,7 @@ export default {
   transform: translate(0, -50%);
   transition: all 1s;
 }
+
 
 .question-transition {
   transform: scale(0.3) translate(-70%, -70%);
