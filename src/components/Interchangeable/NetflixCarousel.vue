@@ -86,11 +86,12 @@ export default defineComponent({
 }
 
 .netflix-item-container {
-    padding: 20px
+    padding: 0px
 }
 
 .image {
     object-fit: contain;
+    padding-left: 0px;
 }
 
 .text,
