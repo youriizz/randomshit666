@@ -25,35 +25,38 @@ import {
     Scene,
 } from 'troisjs';
 
+// The icon field 
 const models = ref([
     {
-        path: "/models/Hail Mary.glb",
         active: true,
-        icon: "+"
+        icon: "H"
     },
     {
-        path: "/models/korean.glb",
         active: false,
-        icon: "+"
+        icon: "K"
     },
     {
-        path: "/models/Hail Mary.glb",
         active: false,
-        icon: "+"
+        icon: "M"
     },
     {
-        path: "/models/Hail Mary.glb",
         active: false,
-        icon: "+"
+        icon: "F"
     },
 ]);
 
-function selectModel(index) {
+function selectModel(index = null) {
+    resetModels();
+    console.log(index);
+    if (index !== null) {
+        models.value[index].active = true;
+    }
+}
+
+function resetModels() {
     models.value.forEach((model) => {
         model.active = false;
     });
-
-    models.value[index].active = true;
 }
 
 function handleError(error) {
