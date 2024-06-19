@@ -47,7 +47,6 @@ const models = ref([
 
 function selectModel(index = null) {
     resetModels();
-    console.log(index);
     if (index !== null) {
         models.value[index].active = true;
     }
