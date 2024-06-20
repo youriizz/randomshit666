@@ -22,6 +22,7 @@ import Swastika from '@/components/Swastika/Swastika.vue';
 import HowAmIFeelingToday from '@/components/HowAmIFeelingToday/HowAmIFeelingToday.vue';
 import TheMediumIsTheMessage from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessage.vue'
 import Quiz from '@/components/Quiz/Quiz.vue'
+import GrabMe from '@/components/GrabMe/GrabMe.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -140,6 +141,11 @@ const router = createRouter({
       path: "/quiz",
       name: "quiz",
       component: Quiz,
+    },
+    {
+      path: "/grabme",
+      name: "grabme",
+      component: GrabMe,
     }
       // {
     //   path: '/about',

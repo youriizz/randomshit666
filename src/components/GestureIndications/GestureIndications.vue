@@ -3,17 +3,34 @@
     <div class="text-container">
       <div v-for="gesture in type" :key="gesture" class="gesture-text">{{ formatGestureText(gesture) }}</div>
     </div>
-    <div v-if="type.includes('touch')" class="touch-animation">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-    </div>
+  
     <div v-if="type.includes('scroll-down')" class="scroll-animation arrow-down"></div>
     <div v-if="type.includes('scroll-up')" class="scroll-animation arrow-up"></div>
     <div v-if="type.includes('scroll-left')" class="scroll-animation arrow-left"></div>
     <div v-if="type.includes('scroll-right')" class="scroll-animation arrow-right"></div>
-    <div v-if="type.includes('zoom')" class="zoom-animation">
-      <img src="https://imgvisuals.com/cdn/shop/products/animated-zoom-out-linear-ui-icon-900016.gif?v=1697071168" alt="Zoom animation" class="zoom-gif"/>
+
+    <div class="gif-container">
+      <div v-if="type.includes('grab and drop')" class="gif-animation">
+        <img src="@/assets/GestureIndications/grabanddrop.gif" alt="Grab and Drop animation" class="gif"/>
+      </div>
+      <div v-if="type.includes('write')" class="gif-animation">
+        <img src="@/assets/GestureIndications/write.gif" alt="Write animation" class="gif"/>
+      </div>
+      <div v-if="type.includes('touch')" class="gif-animation">
+        <img src="@/assets/GestureIndications/touch.gif" alt="Touch animation" class="gif"/>
+      </div>
+      <div v-if="type.includes('touch and hold')" class="gif-animation">
+        <img src="@/assets/GestureIndications/touchandhold.gif" alt="Touch and Hold animation" class="gif"/>
+      </div>
+      <div v-if="type.includes('watch')" class="gif-animation">
+        <img src="@/assets/GestureIndications/watch.gif" alt=" Watch animation" class="gif"/>
+      </div>
+      <div v-if="type.includes('move around')" class="gif-animation">
+        <img src="@/assets/GestureIndications/movearound.gif" alt="Watch animation" class="gif"/>
+      </div>
+      <div v-if="type.includes('zoom-in zoom-out')" class="gif-animation">
+        <img src="@/assets/GestureIndications/zoominzoomout.gif" alt="Zoom-in Zoom-out animation" class="gif"/>
+      </div>
     </div>
   </div>
 </template>
@@ -21,13 +38,14 @@
 
 
 <script>
+
 export default {
   props: {
     type: {
       type: Array,
       required: true,
-      validator: value => value.every(val => ['touch', 'scroll-left', 'scroll-right', 'scroll-up', 'scroll-down', 'zoom'].includes(val))
-    }
+      validator: value => value.every(val => ['zoom-in zoom-out', 'move around','watch', 'touch', 'touch and hold', 'scroll-left', 'scroll-right', 'scroll-up', 'scroll-down', 'zoom', 'grab and drop', 'write'].includes(val))
+    },
   },
   data() {
     return {
@@ -45,6 +63,7 @@ export default {
     }
   }
 };
+
 </script>
 
 
@@ -90,6 +109,17 @@ export default {
   opacity: 0;
 }
 
+.gif-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 30px;
+  flex-direction: row;
+}
+
 .gesture-indications.visible .text-container {
   opacity: 1;
   transform: translateY(0);
@@ -100,20 +130,6 @@ export default {
   text-transform: lowercase; /* Ensure text is lowercase */
 }
 
-.touch-animation .circle {
-  width: 20px;
-  height: 20px;
-  margin: 10px;
-  border-radius: 50%;
-  background-color: black;
-  opacity: 0;
-  animation: pulse 1.5s infinite;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-.gesture-indications.visible .touch-animation .circle {
-  opacity: 1;
-}
 
 .arrow-down,
 .arrow-up,
@@ -160,19 +176,26 @@ export default {
   animation: bounce-right 1s infinite;
 }
 
-.zoom-animation .zoom-gif {
+.gif-animation .gif {
   object-fit: contain;
-  width: 400px;
-  height: 400px;
+  max-height: 90%;
+  max-width: 90%;
+  width: 300px; /* Limite la largeur maximale */
+  height: 300px; /* Limite la hauteur maximale */
   opacity: 0;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.gesture-indications.visible .zoom-gif {
+
+.gesture-indications.visible .gif-animation .gif {
   opacity: 1;
 }
 
 @media (max-width: 768px) {
+  .gif-animation .gif {
+    width: 200px;
+    height: 200px;
+  }
   .arrow-down {
     bottom: 5%;
     left: 46%;
@@ -237,6 +260,7 @@ export default {
     transform: translateY(20px) rotate(-45deg);
   }
 }
+
 </style>
 
 
