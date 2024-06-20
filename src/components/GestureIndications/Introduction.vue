@@ -1,4 +1,5 @@
 <template>
+  <div v-if="blockClicks" class="blocker"></div>
   <div v-if="visible" class="introduction">
     <TitleComponent :title="title" @titleMoved="handleTitleMoved"/>
     <Description v-if="descriptionVisible" :description="description" />
@@ -67,8 +68,14 @@ export default {
       descriptionVisible: false,
       gestureVisible: false,
       startButtonVisible: false,
-      trafficLightsVisible: false
+      trafficLightsVisible: false,
+      blockClicks: true
     };
+  },
+  mounted() {
+    if (this.blockClicks) {
+      this.disableScroll();
+    }
   },
   methods: {
     handleTitleMoved() {
@@ -96,7 +103,24 @@ export default {
     start() {
       console.log('Start button clicked');
       this.visible = false;
+      this.blockClicks = false; // Disable block clicks
+      this.enableScroll();
       this.$emit('start');
+    },
+    disableScroll() {
+      document.body.style.overflow = 'hidden';
+    },
+    enableScroll() {
+      document.body.style.overflow = '';
+    }
+  },
+  watch: {
+    blockClicks(newValue) {
+      if (newValue) {
+        this.disableScroll();
+      } else {
+        this.enableScroll();
+      }
     }
   }
 }
@@ -122,5 +146,16 @@ export default {
 
 .introduction.hidden {
   opacity: 0;
+}
+
+.blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 15; /* Ensure blocker is above other elements */
 }
 </style>
