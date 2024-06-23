@@ -143,6 +143,16 @@ const router = createRouter({
       name: "hailmary",
       component: HailMary,
     },
+    {
+      path: "/quiz",
+      name: "quiz",
+      component: Quiz,
+    },
+    {
+      path: "/grabme",
+      name: "grabme",
+      component: GrabMe,
+    },
     // {
     //   path: '/about',
     //   name: 'about',
