@@ -18,6 +18,8 @@
     "mitt": "^3.0.1",
     "p5": "^1.9.4",
     "simplex-noise": "^4.0.1",
+    "three": "^0.134.0",
+    "troisjs": "^0.3.4",
     "vue": "^3.4.21",
     "vue-dragscroll": "^4.0.5",
     "vue-router": "^4.3.0"
