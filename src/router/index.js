@@ -1,10 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import Interchangeable from "@/components/Interchangeable/Interchangeable.vue";
-<<<<<<< HEAD
-=======
 import HailMary from "@/components/HailMary/HailMary.vue";
->>>>>>> origin/netflix
 import NotSimilar from "@/components/NotSimilar.vue";
 import Similar from "@/components/Similar.vue";
 import ILoveGaza from "@/components/ILoveGaza/ILoveGazaGallery.vue";
