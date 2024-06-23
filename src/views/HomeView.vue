@@ -2,6 +2,7 @@
 import Grid from '@/components/Grid.vue';
 import { GridItem } from '@/components/GridItem.vue';
 import InterchangeableThumbnail from '@/components/Interchangeable/InterchangeableThumbnail.vue';
+import TrafficLight from "@/components/TrafficLight.vue";
 import ILoveGazaThumbnail from "@/components/ILoveGaza/ILoveGazaThumbnail.vue";
 import InternationalThumbnail from '@/components/International/InternationalThumbnail.vue';
 import OvalThumbnail from '@/components/Oval/OvalThumbnail.vue';
@@ -24,7 +25,7 @@ const items: GridItem[] = [
   { name: 'item 3', route: "" },
   { name: 'item 4', route: "" },
   { name: 'ILoveGaza', route: "ilovegaza", component: ILoveGazaThumbnail },
-  { name: 'Interchangeable', route: "interchangeable" },
+  { name: 'Interchangeable', route: "interchangeable", component: InterchangeableThumbnail },
   { name: 'Hail Mary', route: "hailmary", component: InterchangeableThumbnail },
   { name: 'International', route: "international", component: InternationalThumbnail },
   { name: 'Oval', route: "oval", component: OvalThumbnail },
