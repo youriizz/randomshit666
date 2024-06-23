@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Grid from '@/components/Grid.vue';
 import { GridItem } from '@/components/GridItem.vue';
-import NetflixThumbnail from '@/components/Netflix/NetflixThumbnail.vue';
+import InterchangeableThumbnail from '@/components/Interchangeable/InterchangeableThumbnail.vue';
 import ILoveGazaThumbnail from "@/components/ILoveGaza/ILoveGazaThumbnail.vue";
 import InternationalThumbnail from '@/components/International/InternationalThumbnail.vue';
 import OvalThumbnail from '@/components/Oval/OvalThumbnail.vue';
@@ -24,8 +24,8 @@ const items: GridItem[] = [
   { name: 'item 3', route: "" },
   { name: 'item 4', route: "" },
   { name: 'ILoveGaza', route: "ilovegaza", component: ILoveGazaThumbnail },
-  { name: 'Netflix', route: "netflix" },
-  { name: 'Hail Mary', route: "hailmary", component: NetflixThumbnail },
+  { name: 'Interchangeable', route: "interchangeable" },
+  { name: 'Hail Mary', route: "hailmary", component: InterchangeableThumbnail },
   { name: 'International', route: "international", component: InternationalThumbnail },
   { name: 'Oval', route: "oval", component: OvalThumbnail },
   { name: 'Fingers', route: 'fingers', component: FingersThumbnail },
