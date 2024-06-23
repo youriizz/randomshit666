@@ -23,6 +23,7 @@ import HowAmIFeelingToday from '@/components/HowAmIFeelingToday/HowAmIFeelingTod
 import TheMediumIsTheMessage from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessage.vue'
 import Quiz from '@/components/Quiz/Quiz.vue'
 import GrabMe from '@/components/GrabMe/GrabMe.vue'
+import Church from "@/components/Church/Church.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -146,6 +147,11 @@ const router = createRouter({
       path: "/grabme",
       name: "grabme",
       component: GrabMe,
+    },
+    {
+      path: "/church",
+      name: "church",
+      component: Church,
     }
       // {
     //   path: '/about',
