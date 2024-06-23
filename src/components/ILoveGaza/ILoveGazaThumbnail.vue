@@ -1,6 +1,6 @@
 <template>
     <div class="container-1">
-        <img src="@/assets/ILoveGaza/animation1rot.gif" alt="Animated Heart" class="FF100item-12-GIF-1" width="100%" height="100%">
+        <img src="/ILoveGaza/animation1rot.gif" alt="Animated Heart" class="FF100item-12-GIF-1" width="100%" height="100%">
     </div>
 </template>
 
