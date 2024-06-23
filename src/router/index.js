@@ -1,27 +1,32 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import Interchangeable from "@/components/Interchangeable/Interchangeable.vue";
+<<<<<<< HEAD
+=======
+import HailMary from "@/components/HailMary/HailMary.vue";
+>>>>>>> origin/netflix
 import NotSimilar from "@/components/NotSimilar.vue";
 import Similar from "@/components/Similar.vue";
 import ILoveGaza from "@/components/ILoveGaza/ILoveGazaGallery.vue";
 import International from "@/components/International/International.vue";
-import Oval1 from '@/components/Oval/Oval1.vue';
-import Oval2 from '@/components/Oval/Oval2.vue';
-import Fingers from '@/components/Fingers/Fingers.vue';
-import CommunistShit from '@/components/CommunistShit/CommunistShit.vue';
-import Ismmm from '@/components/Ismmm/Ismmm.vue';
-import Meditation from '@/components/Meditation/Meditation.vue';
+import Oval1 from "@/components/Oval/Oval1.vue";
+import Oval2 from "@/components/Oval/Oval2.vue";
+import Fingers from "@/components/Fingers/Fingers.vue";
+import CommunistShit from "@/components/CommunistShit/CommunistShit.vue";
+import Ismmm from "@/components/Ismmm/Ismmm.vue";
+import Meditation from "@/components/Meditation/Meditation.vue";
 import Cities from "@/components/Cities/Cities.vue";
-import Rome from '@/components/Cities/Rome.vue';
-import Dubai from '@/components/Cities/Dubai.vue';
-import Rio from '@/components/Cities/Rio.vue';
-import NewYork from '@/components/Cities/NewYork.vue';
-import Beijing from '@/components/Cities/Beijing.vue';
-import Leaves from '@/components/Leaves/Leaves.vue';
-import Swastika from '@/components/Swastika/Swastika.vue';
-import HowAmIFeelingToday from '@/components/HowAmIFeelingToday/HowAmIFeelingToday.vue';
-import TheMediumIsTheMessage from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessage.vue'
-
+import Rome from "@/components/Cities/Rome.vue";
+import Dubai from "@/components/Cities/Dubai.vue";
+import Rio from "@/components/Cities/Rio.vue";
+import NewYork from "@/components/Cities/NewYork.vue";
+import Beijing from "@/components/Cities/Beijing.vue";
+import Leaves from "@/components/Leaves/Leaves.vue";
+import Swastika from "@/components/Swastika/Swastika.vue";
+import HowAmIFeelingToday from "@/components/HowAmIFeelingToday/HowAmIFeelingToday.vue";
+import TheMediumIsTheMessage from "@/components/TheMediumIsTheMessage/TheMediumIsTheMessage.vue";
+import Quiz from "@/components/Quiz/Quiz.vue";
+import GrabMe from "@/components/GrabMe/GrabMe.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -72,9 +77,9 @@ const router = createRouter({
       component: Fingers,
     },
     {
-    path: "/communistshit",
-    name: "communistshit",
-    component: CommunistShit,
+      path: "/communistshit",
+      name: "communistshit",
+      component: CommunistShit,
     },
     {
       path: "/ismmm",
@@ -125,7 +130,7 @@ const router = createRouter({
       path: "/swastika",
       name: "swastika",
       component: Swastika,
-     },
+    },
     {
       path: "/howamifeelingtoday",
       name: "howamifeelingtoday",
@@ -135,8 +140,13 @@ const router = createRouter({
       path: "/themediumisthemessage",
       name: "themediumisthemessage",
       component: TheMediumIsTheMessage,
-    }
-      // {
+    },
+    {
+      path: "/hailmary",
+      name: "hailmary",
+      component: HailMary,
+    },
+    // {
     //   path: '/about',
     //   name: 'about',
     //   // route level code-splitting

@@ -2,6 +2,7 @@
     <div class="image-container">
         <img src="/Netflix/Thumbnail/centaurehead.png" class="image1">
         <img src="/Netflix/Thumbnail/centaurebody.png" class="image2">
+
     </div>
 </template>
 

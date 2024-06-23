@@ -2,7 +2,10 @@
 import Grid from '@/components/Grid.vue';
 import { GridItem } from '@/components/GridItem.vue';
 import InterchangeableThumbnail from '@/components/Interchangeable/InterchangeableThumbnail.vue';
+<<<<<<< HEAD
 import TrafficLight from "@/components/TrafficLight.vue";
+=======
+>>>>>>> origin/netflix
 import ILoveGazaThumbnail from "@/components/ILoveGaza/ILoveGazaThumbnail.vue";
 import InternationalThumbnail from '@/components/International/InternationalThumbnail.vue';
 import OvalThumbnail from '@/components/Oval/OvalThumbnail.vue';
@@ -15,6 +18,8 @@ import LeavesThumbnail from '@/components/Leaves/LeavesThumbnail.vue';
 import SwastikaThumbnail from '@/components/Swastika/SwastikaThumbnail.vue';
 import HowAmIFeelingTodayThumbnail from '@/components/HowAmIFeelingToday/HowAmIFeelingTodayThumbnail.vue';
 import TheMediumIsTheMessageThumbnail from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessageThumbnail.vue';
+import QuizThumbnail from '@/components/Quiz/QuizThumbnail.vue';
+import GrabMeThumbnail from '@/components/GrabMe/GrabMeThumbnail.vue';
 
 
 const items: GridItem[] = [
@@ -23,18 +28,25 @@ const items: GridItem[] = [
   { name: 'item 3', route: "" },
   { name: 'item 4', route: "" },
   { name: 'ILoveGaza', route: "ilovegaza", component: ILoveGazaThumbnail },
+<<<<<<< HEAD
   { name: 'Interchangeable', route: "interchangeable", component: InterchangeableThumbnail },
+=======
+  { name: 'Interchangeable', route: "interchangeable" },
+  { name: 'Hail Mary', route: "hailmary", component: InterchangeableThumbnail },
+>>>>>>> origin/netflix
   { name: 'International', route: "international", component: InternationalThumbnail },
   { name: 'Oval', route: "oval", component: OvalThumbnail },
   { name: 'Fingers', route: 'fingers', component: FingersThumbnail },
-  { name: 'CommunistShit', route: 'communistshit', component: CommunistShitThumbnail }, 
+  { name: 'CommunistShit', route: 'communistshit', component: CommunistShitThumbnail },
   { name: 'Ismmm', route: 'ismmm', component: IsmmmThumbnail },
-  { name: 'Leaves', route: 'leaves', component: LeavesThumbnail},
-  { name: 'Swastika', route: 'swastika', component: SwastikaThumbnail},
+  { name: 'Leaves', route: 'leaves', component: LeavesThumbnail },
+  { name: 'Swastika', route: 'swastika', component: SwastikaThumbnail },
   { name: 'Meditation', route: 'meditation', component: MeditationThumbnail },
   { name: 'Cities', route: 'cities', component: CitiesThumbnail },
-  { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail},
-  { name: 'TheMediumIsTheMessage', route: 'themediumisthemessage', component: TheMediumIsTheMessageThumbnail}
+  { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail },
+  { name: 'TheMediumIsTheMessage', route: 'themediumisthemessage', component: TheMediumIsTheMessageThumbnail },
+  { name: 'Quiz', route: 'quiz', component: QuizThumbnail },
+  { name: 'GrabMe', route: 'grabme', component: GrabMeThumbnail },
 ];
 
 </script>
