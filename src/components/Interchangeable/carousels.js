@@ -562,7 +562,7 @@ export const carousels = [
     { src: "/Netflix/grass2.png", type: "img",},
     { src: "/Netflix/grass3.png", type: "img",},
     { src: "/Netflix/grass4.png", type: "img",},
-    { src: "/Netflix/grass5.png", type: "img",},
+    { src: "/Netflix/grass3.png", type: "img",},
     { src: "/Netflix/grass2.png", type: "img",},
     { src: "/Netflix/grass1.png", type: "img",},
   ],
