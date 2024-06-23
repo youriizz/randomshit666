@@ -24,7 +24,7 @@ export const carousels = [
         { src: "/Netflix/UpperBody4.png", type: "img",},
         { src: "/Netflix/UpperBody5.png", type: "img",},
         { src: "/Netflix/UpperBody6.png", type: "img",},
-        { src: "@/assets/Netflix/UpperBody7.png", type: "img",},
+        { src: "/Netflix/UpperBody7.png", type: "img",},
     ],
   },
   {
