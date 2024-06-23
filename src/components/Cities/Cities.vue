@@ -5,7 +5,7 @@
       v-if="showIntroduction"
       :title="title"
       :description="description"
-      :gestureType="['touch', 'scroll-down']"
+      :gestureType="['scroll-down']"
       :buttonText="startButtonText"
       :clickThrough="false"
       :orangeRoute="orangeRoute"
@@ -107,8 +107,8 @@
       </div>
     </div>
 
-    <div class="scroll-indicator" @click="scrollToContainer2">
-      <span class="arrow-down"></span>
+    <div class="BB140scroll-indicator" @click="scrollToContainer2">
+      <span class="BB140arrow-down"></span>
     </div>
   </div>
 
@@ -1060,7 +1060,7 @@ export default {
   
   
   /* Ajoutez cela dans votre style.css */
-  .scroll-indicator {
+  .BB140scroll-indicator {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -1068,7 +1068,7 @@ export default {
     cursor: pointer;
   }
   
-  .arrow-down {
+  .BB140arrow-down {
     display: inline-block;
     width: 0;
     height: 0;
@@ -1082,14 +1082,6 @@ export default {
   
   
   
-  body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: "Helvetica neue", sans-serif;
-    font-weight: 500;
-
-}
   
   
   
