@@ -32,18 +32,18 @@ import ILoveGazaDynamicTshirt from './ILoveGazaDynamicTshirts.vue';
 import ILoveGazaStaticTshirts from './ILoveGazaStaticTshirts.vue';
 import TrafficLights from '../TrafficLight.vue';
 import Introduction from '../GestureIndications/Introduction.vue';
-import image1 from '@/assets/ILoveGaza/I.png';
-import image2 from '@/assets/ILoveGaza/heart.png';
-import image3 from '@/assets/ILoveGaza/Gaza.png';
-import image4 from '@/assets/ILoveGaza/TshirtWhite.png';
-import image5 from '@/assets/ILoveGaza/recycle5.png';
-import image6 from '@/assets/ILoveGaza/stopwar6.png';
-import image7 from '@/assets/ILoveGaza/green7.png';
-import image8 from '@/assets/ILoveGaza/queer8.png';
-import image9 from '@/assets/ILoveGaza/ocean9.png';
-import image10 from '@/assets/ILoveGaza/fastfashion10.png';
-import image11 from '@/assets/ILoveGaza/capitalism11.png';
-import image12 from '@/assets/ILoveGaza/capitalism12.png';
+import image1 from '/ILoveGaza/I.svg';
+import image2 from '/ILoveGaza/heart.svg';
+import image3 from '/ILoveGaza/Gaza.svg';
+import image4 from '/ILoveGaza/TshirtWhite.png';
+import image5 from '/ILoveGaza/recycle5.png';
+import image6 from '/ILoveGaza/stopwar6.png';
+import image7 from '/ILoveGaza/green7.png';
+import image8 from '/ILoveGaza/queer8.png';
+import image9 from '/ILoveGaza/ocean9.png';
+import image10 from '/ILoveGaza/fastfashion10.png';
+import image11 from '/ILoveGaza/capitalism11.png';
+import image12 from '/ILoveGaza/capitalism12.png';
 
 export default {
   components: {
