@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Grid from '@/components/Grid.vue';
 import { GridItem } from '@/components/GridItem.vue';
-import NetflixThumbnail from '@/components/Netflix/NetflixThumbnail.vue';
+import InterchangeableThumbnail from '@/components/Interchangeable/InterchangeableThumbnail.vue';
+import TrafficLight from "@/components/TrafficLight.vue";
 import ILoveGazaThumbnail from "@/components/ILoveGaza/ILoveGazaThumbnail.vue";
 import InternationalThumbnail from '@/components/International/InternationalThumbnail.vue';
 import OvalThumbnail from '@/components/Oval/OvalThumbnail.vue';
@@ -25,14 +26,15 @@ const items: GridItem[] = [
   { name: 'item 3', route: "" },
   { name: 'item 4', route: "" },
   { name: 'ILoveGaza', route: "ilovegaza", component: ILoveGazaThumbnail },
-  { name: 'Netflix', route: "netflix", component: NetflixThumbnail },
+  { name: 'Interchangeable', route: "interchangeable", component: InterchangeableThumbnail },
+  { name: 'Hail Mary', route: "hailmary", component: InterchangeableThumbnail },
   { name: 'International', route: "international", component: InternationalThumbnail },
   { name: 'Oval', route: "oval", component: OvalThumbnail },
   { name: 'Fingers', route: 'fingers', component: FingersThumbnail },
-  { name: 'CommunistShit', route: 'communistshit', component: CommunistShitThumbnail }, 
+  { name: 'CommunistShit', route: 'communistshit', component: CommunistShitThumbnail },
   { name: 'Ismmm', route: 'ismmm', component: IsmmmThumbnail },
-  { name: 'Leaves', route: 'leaves', component: LeavesThumbnail},
-  { name: 'Swastika', route: 'swastika', component: SwastikaThumbnail},
+  { name: 'Leaves', route: 'leaves', component: LeavesThumbnail },
+  { name: 'Swastika', route: 'swastika', component: SwastikaThumbnail },
   { name: 'Meditation', route: 'meditation', component: MeditationThumbnail },
   { name: 'Cities', route: 'cities', component: CitiesThumbnail },
   { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail},
@@ -40,6 +42,7 @@ const items: GridItem[] = [
   { name: 'Quiz', route: 'quiz', component: QuizThumbnail},
   { name: 'GrabMe', route: 'grabme', component: GrabMeThumbnail},
   { name: 'Church', route: 'church', component: ChurchThumbnail},
+
 ];
 
 </script>

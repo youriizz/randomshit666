@@ -95,8 +95,8 @@
         </div>
       </div>
   
-      <div class="scroll-indicator" @click="scrollToContainer2">
-        <span class="arrow-down"></span>
+      <div class="BB140scroll-indicator" @click="scrollToContainer2">
+        <span class="BB140arrow-down"></span>
       </div>
     </div>
   </template>

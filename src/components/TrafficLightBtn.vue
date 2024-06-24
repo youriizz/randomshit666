@@ -1,5 +1,6 @@
 <template>
-  <div :class="lightClass" class="light" @click="navigate"></div>
+  <div :class="lightClass" class="light" @click="navigate">
+  </div>
 </template>
 
 <script>
