@@ -27,7 +27,6 @@
 import TrafficLight from '../TrafficLight.vue';
 import ContainerImage from './ContainerImage.vue';
 import ContainerText from './ContainerText.vue';
-import artefact1 from '@/assets/Church/artefact1.png';
 import artefact4 from '@/assets/Church/artefact4.png';
 import eglise2 from '@/assets/Church/eglise2.png';
 import tableau1 from '@/assets/Church/tableau1.png';
@@ -41,7 +40,6 @@ export default {
   },
   data() {
     return {
-      artefact1,
       artefact4,
       eglise2,
       tableau1,
