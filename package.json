@@ -22,7 +22,8 @@
     "troisjs": "^0.3.4",
     "vue": "^3.4.21",
     "vue-dragscroll": "^4.0.5",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vue3-carousel": "^0.3.3"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
