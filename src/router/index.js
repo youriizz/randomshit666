@@ -25,6 +25,7 @@ import TheMediumIsTheMessage from '@/components/TheMediumIsTheMessage/TheMediumI
 import Quiz from '@/components/Quiz/Quiz.vue'
 import GrabMe from '@/components/GrabMe/GrabMe.vue'
 import Church from "@/components/Church/Church.vue";
+import IsThisArt from '@/components/IsThisArt/IsThisArt.vue'
 
 
 const router = createRouter({
@@ -159,7 +160,13 @@ const router = createRouter({
       path: "/church",
       name: "church",
       component: Church,
+    },
+    {
+      path: "/isthisart",
+      name: "isthisart",
+      component: IsThisArt,
     }
+
 
     // {
     //   path: '/about',
