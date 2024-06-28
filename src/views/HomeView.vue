@@ -19,6 +19,7 @@ import QuizThumbnail from '@/components/Quiz/QuizThumbnail.vue';
 import GrabMeThumbnail from '@/components/GrabMe/GrabMeThumbnail.vue';
 import ChurchThumbnail from '@/components/Church/ChurchThumbnail.vue';
 import IsThisArtThumbnail from '@/components/IsThisArt/IsThisArtThumbnail.vue';
+import HoldItThumbnail from '@/components/HoldIt/HoldItThumbnail.vue';
 
 
 const items: GridItem[] = [
@@ -44,6 +45,7 @@ const items: GridItem[] = [
   { name: 'GrabMe', route: 'grabme', component: GrabMeThumbnail},
   { name: 'Church', route: 'church', component: ChurchThumbnail},
   { name: 'IsThisArt', route: 'isthisart', component: IsThisArtThumbnail},
+  { name: 'HoldIt', route: 'holdit', component: HoldItThumbnail},
 ];
 
 </script>
