@@ -26,6 +26,7 @@ import Quiz from '@/components/Quiz/Quiz.vue'
 import GrabMe from '@/components/GrabMe/GrabMe.vue'
 import Church from "@/components/Church/Church.vue";
 import IsThisArt from '@/components/IsThisArt/IsThisArt.vue'
+import HoldIt from '@/components/HoldIt/HoldIt.vue'
 
 
 const router = createRouter({
@@ -165,7 +166,13 @@ const router = createRouter({
       path: "/isthisart",
       name: "isthisart",
       component: IsThisArt,
+    },
+    {
+      path: "/holdit",
+      name: "holdit",
+      component: HoldIt,
     }
+
 
 
     // {
