@@ -184,14 +184,17 @@ function selectTrafficLights() {
 
     .traffic-light:nth-child(1) {
         left: 0;
+        top: 0;
     }
 
     .traffic-light:nth-child(2) {
         left: 50px;
+        top: 0;
     }
 
     .traffic-light:nth-child(3) {
         left: 100px;
+        top: 0;
     }
 }
 </style>

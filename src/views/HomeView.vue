@@ -20,6 +20,7 @@ import GrabMeThumbnail from '@/components/GrabMe/GrabMeThumbnail.vue';
 import ChurchThumbnail from '@/components/Church/ChurchThumbnail.vue';
 import IsThisArtThumbnail from '@/components/IsThisArt/IsThisArtThumbnail.vue';
 import HoldItThumbnail from '@/components/HoldIt/HoldItThumbnail.vue';
+import { onMounted } from 'vue';
 
 
 const items: GridItem[] = [
@@ -39,14 +40,18 @@ const items: GridItem[] = [
   { name: 'Swastika', route: 'swastika', component: SwastikaThumbnail },
   { name: 'Meditation', route: 'meditation', component: MeditationThumbnail },
   { name: 'Cities', route: 'cities', component: CitiesThumbnail },
-  { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail},
-  { name: 'TheMediumIsTheMessage', route: 'themediumisthemessage', component: TheMediumIsTheMessageThumbnail},
-  { name: 'Quiz', route: 'quiz', component: QuizThumbnail},
-  { name: 'GrabMe', route: 'grabme', component: GrabMeThumbnail},
-  { name: 'Church', route: 'church', component: ChurchThumbnail},
-  { name: 'IsThisArt', route: 'isthisart', component: IsThisArtThumbnail},
-  { name: 'HoldIt', route: 'holdit', component: HoldItThumbnail},
+  { name: 'Howamifeelingtoday', route: 'howamifeelingtoday', component: HowAmIFeelingTodayThumbnail },
+  { name: 'TheMediumIsTheMessage', route: 'themediumisthemessage', component: TheMediumIsTheMessageThumbnail },
+  { name: 'Quiz', route: 'quiz', component: QuizThumbnail },
+  { name: 'GrabMe', route: 'grabme', component: GrabMeThumbnail },
+  { name: 'Church', route: 'church', component: ChurchThumbnail },
+  { name: 'IsThisArt', route: 'isthisart', component: IsThisArtThumbnail },
+  { name: 'HoldIt', route: 'holdit', component: HoldItThumbnail },
 ];
+
+onMounted(() => {
+  document.body.style.overflow = 'auto';
+});
 
 </script>
 
