@@ -5,10 +5,11 @@
             <Camera :position="{ x: 1, y: 0, z: 0 }" />
             <Scene background="white">
                 <AmbientLight></AmbientLight>
-                <GltfModel v-if="models[0].active" src="/models/hailmary.glb" @error="handleError" @load="onLoad" />
-                <GltfModel v-if="models[1].active" src="/models/korean.glb" @error="handleError" @load="onLoad" />
-                <GltfModel v-if="models[2].active" src="/models/meatboy.glb" @error="handleError" @load="onLoad" />
-                <GltfModel v-if="models[3].active" src="/models/forklift.glb" @error="handleError" @load="onLoad" />
+                <GltfModel v-if="models[0].active" src="/models/womanantique1.glb" @error="handleError"
+                    @load="onLoad" />
+                <GltfModel v-if="models[1].active" src="/models/womanmonet2.glb" @error="handleError" @load="onLoad" />
+                <GltfModel v-if="models[2].active" src="/models/womanchair3.glb" @error="handleError" @load="onLoad" />
+                <GltfModel v-if="models[3].active" src="/models/womanfuture4.glb" @error="handleError" @load="onLoad" />
             </Scene>
         </Renderer>
     </div>
