@@ -1,53 +1,85 @@
 <template>
     <div class="card">
         <div class="top">
-            <div class="userDeatils">
+            <div class="user_details">
                 <div class="profileImg">
                     <img src="" alt="user" class="cover">
                 </div>
-                <h3>Nikhil Kumar<br><span>Web Designer</span></h3>
-            </div>
-            <div class="dot">
-                <img src="" alt="dot">
+                <h3>{{ post.author }}<br></h3>
             </div>
         </div>
-        <div class="imgBg">
-            <img src="" alt="bg" class="cover">
+        <div class="carousel_container">
+            <Carousel wrap-around autoplay>
+                <Slide v-for="(comment, index) in post.comments" :key="index">
+                    <div class="item">
+                        {{ comment.content }}
+                    </div>
+                </Slide>
+                <template #addons>
+                    <Navigation />
+                </template>
+            </Carousel>
         </div>
         <div class="btns">
             <div class="left">
-                <img src="" alt="heart" class="heart" onclick="likeButton()">
-                <img src="" alt="comment">
-                <img src="" alt="share">
+                <img src="/Instagram/like.svg" alt="heart" class="heart" onclick="likeButton()">
+                <img src="/Instagram/comment.svg" alt="comment">
+                <img src="/Instagram/send.svg" alt="share">
             </div>
             <div class="right">
-                <img src="" alt="bookmark">
+                <img src="/Instagram/save.svg" alt="bookmark">
             </div>
         </div>
         <h4 class="likes">{{ post.likes }} likes</h4>
         <h4 class="message">
-            <b>Nikhil Kumar</b>
-            Captain America: Civil War
-            <span>#ironman</span>
-            <span>#captainamerica</span>
+            {{ post.description }}
         </h4>
-        <h4 class="comments">View all 546 comments</h4>
+        <h4 class="comments">View all {{ post.comments.length }} comments</h4>
         <div class="addComments">
-            <div class="userImg">
-                <img src="" alt="user" class="cover">
-            </div>
-            <input type="text" class="text" placeholder="Add a comment...">
+            <input v-model="newComment" type="text" class="text" placeholder="Add a comment..."
+                @keydown.enter="pushComment">
+            <button>Send</button>
         </div>
-        <h5 class="postTime">{{ post.date }}</h5>
+        <h5 class="date">{{ post.date }}</h5>
     </div>
 </template>
 
 <script setup>
+import { db } from "@/database/firebase";
+import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import { Carousel, Navigation, Slide } from 'vue3-carousel';
+import { ref } from 'vue';
+
 const props = defineProps({
     post: Object
 })
 
+const emit = defineEmits(['pushComment']);
 
+const newComment = ref(null);
+
+const pushComment = async () => {
+    const comments = props.post.comments;
+    comments.push({
+        author: 'Tony',
+        content: newComment.value
+    });
+
+    try {
+        const postRef = doc(db, import.meta.env.VITE_FIREBASE_COLLECTION_INSTAGRAM + '/' + props.post.id);
+        await updateDoc(postRef, {
+            'comments': arrayUnion({
+                'author': 'Tony',
+                'content': newComment.value
+            }),
+        });
+    } catch (error) {
+        console.error(error);
+    }
+
+    newComment.value = null;
+    emit('pushComment');
+}
 </script>
 
 <style scoped>
@@ -66,12 +98,12 @@ const props = defineProps({
     align-items: center;
 }
 
-.card .top .userDeatils {
+.card .top .user_details {
     display: flex;
     align-items: center;
 }
 
-.card .top .userDeatils .profileImg {
+.card .top .user_details .profileImg {
     position: relative;
     width: 40px;
     height: 40px;
@@ -91,7 +123,7 @@ const props = defineProps({
     cursor: pointer;
 }
 
-.card .top .userDeatils h3 {
+.card .top .user_details h3 {
     font-size: 18px;
     color: #4d4d4f;
     font-weight: 700;
@@ -99,7 +131,7 @@ const props = defineProps({
     cursor: pointer;
 }
 
-.card .top .userDeatils span {
+.card .top .user_details span {
     font-size: 0.75em;
 }
 
@@ -108,14 +140,49 @@ const props = defineProps({
     cursor: pointer;
 }
 
-.imgBg {
+.carousel_container {
     position: relative;
     width: 100%;
     height: 320px;
     margin: 10px 0 15px;
 }
 
+.carousel,
+.carousel__viewport,
+.carousel__track,
+.carousel__slide {
+    margin: 0 !;
+    width: 100%;
+    height: 320px;
+}
+
+::v-deep .carousel__track {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__prev,
+.carousel__next {
+    box-sizing: content-box;
+    border: 5px solid black;
+}
+
 .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btns .left {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -186,7 +253,7 @@ const props = defineProps({
     color: #777;
 }
 
-.postTime {
+.date {
     margin-top: 10px;
     font-weight: 500;
     color: #777;

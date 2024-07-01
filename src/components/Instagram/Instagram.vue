@@ -1,9 +1,15 @@
 <template>
-    <div>
-        <Post v-for="post in posts" :key="post.id" :post="post" />
+    <div class="instagram">
+        <Post v-for="post in posts" :key="post.id" :post="post" @push-comment="fetchPosts" />
     </div>
 </template>
-
+<style scoped>
+.instagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
 <script>
 import { db } from "@/database/firebase";
 import { collection, getDocs, query } from "firebase/firestore";
@@ -32,10 +38,9 @@ export default {
                     return doc.data();
                 });
             } catch (error) {
-                console.log('asda');
                 console.error(error);
             }
-        }
+        },
     },
 }
 </script>
