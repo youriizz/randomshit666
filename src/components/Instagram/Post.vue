@@ -35,7 +35,7 @@
             {{ post.description }}
         </h4>
         <h4 class="comments">View all {{ post.comments.length }} comments</h4>
-        <div class="addComments">
+        <div class="addComments" v-if="post.comments.length < 10">
             <input v-model="newComment" type="text" class="text" placeholder="Add a comment..."
                 @keydown.enter="pushComment">
             <button>Send</button>
