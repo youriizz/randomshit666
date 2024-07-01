@@ -12,22 +12,22 @@ import Fingers from "@/components/Fingers/Fingers.vue";
 import CommunistShit from "@/components/CommunistShit/CommunistShit.vue";
 import Ismmm from "@/components/Ismmm/Ismmm.vue";
 import Meditation from "@/components/Meditation/Meditation.vue";
-import Cities from "@/components/Cities/Cities.vue";
-import Rome from '@/components/Cities/Rome.vue';
-import Dubai from '@/components/Cities/Dubai.vue';
-import Rio from '@/components/Cities/Rio.vue';
-import NewYork from '@/components/Cities/NewYork.vue';
-import Beijing from '@/components/Cities/Beijing.vue';
-import Leaves from '@/components/Leaves/Leaves.vue';
-import Swastika from '@/components/Swastika/Swastika.vue';
-import HowAmIFeelingToday from '@/components/HowAmIFeelingToday/HowAmIFeelingToday.vue';
-import TheMediumIsTheMessage from '@/components/TheMediumIsTheMessage/TheMediumIsTheMessage.vue'
-import Quiz from '@/components/Quiz/Quiz.vue'
-import GrabMe from '@/components/GrabMe/GrabMe.vue'
+import GrabMe from "@/components/GrabMe/GrabMe.vue";
 import Church from "@/components/Church/Church.vue";
-import IsThisArt from '@/components/IsThisArt/IsThisArt.vue'
-import HoldIt from '@/components/HoldIt/HoldIt.vue'
-
+import IsThisArt from "@/components/IsThisArt/IsThisArt.vue";
+import HoldIt from "@/components/HoldIt/HoldIt.vue";
+import Cities from "@/components/Cities/Cities.vue";
+import Rome from "@/components/Cities/Rome.vue";
+import Dubai from "@/components/Cities/Dubai.vue";
+import Rio from "@/components/Cities/Rio.vue";
+import NewYork from "@/components/Cities/NewYork.vue";
+import Beijing from "@/components/Cities/Beijing.vue";
+import Leaves from "@/components/Leaves/Leaves.vue";
+import Swastika from "@/components/Swastika/Swastika.vue";
+import HowAmIFeelingToday from "@/components/HowAmIFeelingToday/HowAmIFeelingToday.vue";
+import TheMediumIsTheMessage from "@/components/TheMediumIsTheMessage/TheMediumIsTheMessage.vue";
+import Quiz from "@/components/Quiz/Quiz.vue";
+import Instagram from "@/components/Instagram/Instagram.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -171,9 +171,12 @@ const router = createRouter({
       path: "/holdit",
       name: "holdit",
       component: HoldIt,
-    }
-
-
+    },
+    {
+      path: "/instagram",
+      name: "instagram",
+      component: Instagram,
+    },
 
     // {
     //   path: '/about',
